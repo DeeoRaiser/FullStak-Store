@@ -1,0 +1,117 @@
+.header{
+    position: fixed;
+    width: 100%;
+}
+
+
+.navbar{
+    height:60 px;
+    background-color: $color-bg-primary;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+
+    &__logo{
+        height: 150px;
+    }
+
+    &__menu-label{
+        color:$color-font-ligth;
+        margin-left: auto;
+        height: 100%;
+        width: 44px;
+        margin-right: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__menu-btn{
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        opacity: 0;
+    }
+
+    &__menu-btn:checked ~ &__nav-links-container{
+        height: calc(100vh - 150px);
+        }
+
+
+    &__menu-icon{
+        height: 3px;
+        background-color: $color-font-ligth;
+        width: 18px;
+        position: relative;
+
+        &::after, &::before{
+            content: '';
+            height: 3px;
+            background-color: $color-font-ligth;
+            position: absolute;
+            width: 100%;
+            transition: all .2s ease-out;
+        }
+        &::after{
+            top: 5px;
+        }
+        &::before{
+            top: -5px;
+        }
+
+        
+    }
+
+    &__menu-btn:checked ~ &__menu-label &__menu-icon{
+        background:transparent;
+        &::after{
+            transform: rotate(45deg);
+            top: 0;
+        }
+        &::before{
+            transform: rotate(-45deg);
+            top: 0;
+        }
+    }
+    
+
+    &__nav-links-container{
+        list-style: none;
+        position: absolute;
+        top: 150px;
+        background-color: $color-bg-secondary;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+    }
+
+    &__nav-item{
+        padding: .75rem 1rem;
+        color: $color-font-ligth;
+        font-size: 18px;
+        
+
+        &:not(:last-child){
+            border-bottom: 1px solid $color-bg-primary;
+        }
+    }
+}
+
+@media screen and (min-width: 600px){
+    .navbar{
+        &__menu-label, &__menu-btn{
+            display: none;
+        }
+        &__nav-links-container{
+            position: static;
+            flex-direction: row;
+            height: 45px;
+        }
+    }
+}
