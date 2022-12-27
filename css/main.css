@@ -19,6 +19,23 @@ body {
 .header {
   position: fixed;
   width: 100%;
+  top: 0;
+}
+
+.user-navbar {
+  margin-left: auto;
+  display: flex;
+  gap: 0.5rem;
+  color: rgb(236, 227, 227);
+  align-items: center;
+  padding: 0 1rem;
+}
+.user-navbar__user-avatar {
+  width: 50px;
+}
+.user-navbar__cart-icon-container {
+  color: rgb(236, 227, 227);
+  font-size: 2rem;
 }
 
 .navbar {
@@ -34,7 +51,7 @@ body {
 }
 .navbar__menu-label {
   color: rgb(236, 227, 227);
-  margin-left: auto;
+  /* margin-left: auto; */
   height: 100%;
   width: 44px;
   margin-right: 4px;
@@ -114,6 +131,9 @@ body {
     flex-direction: row;
     height: 45px;
   }
+  .user-navbar {
+    order: 3;
+  }
 }
 .footer {
   display: flex;
@@ -150,5 +170,73 @@ body {
 @media screen and (min-width: 600px) {
   .footer {
     flex-direction: row;
+  }
+}
+.main {
+  margin-top: 150px;
+  padding: 1.5rem;
+  color: rgb(27, 26, 26);
+}
+
+.card {
+  margin: 1rem;
+  border: 1px solid rgb(27, 26, 26);
+}
+.card__header {
+  height: 140px;
+  background-color: rgb(236, 227, 227);
+}
+.card__img {
+  height: 140px;
+}
+.card__body {
+  padding: 1rem;
+}
+.card__title {
+  font-weight: 500;
+  font-size: 1.5rem;
+  border-bottom: 2px solid rgb(27, 26, 26);
+}
+.card__description {
+  padding: 1rem 0;
+}
+.card__price {
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: rgb(139, 165, 139);
+}
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.card__btn {
+  background-color: rgb(139, 165, 139);
+  padding: 1rem 2rem;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.section-cards__header {
+  text-transform: uppercase;
+  font-size: 2 rem;
+  text-align: center;
+}
+.section-cards__subtitle {
+  background-color: rgb(139, 165, 139);
+  font-size: 1rem;
+}
+.section-cards__products-search-container {
+  padding: 1rem;
+  background-color: rgb(85, 97, 85);
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+@media screen and (min-width: 1000px) {
+  .section-cards__header {
+    display: flex;
   }
 }/*# sourceMappingURL=main.css.map */
