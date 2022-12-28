@@ -270,10 +270,6 @@ body {
   border-radius: 10px 0px 0px 10px;
 }
 
-/* $color-bg-primary: rgb(139, 165, 139);
-$color-bg-secondary: rgb(85, 97, 85);
-$color-font-dark: rgb(27, 26, 26);
-$color-font-ligth: rgb(236, 227, 227); */
 .section-cards__header {
   text-transform: uppercase;
   font-size: 2 rem;
@@ -286,42 +282,72 @@ $color-font-ligth: rgb(236, 227, 227); */
   background-color: rgb(255, 255, 255);
 }
 .section-cards__products-search-container {
-  background-color: red;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
   padding: 2rem;
   margin-bottom: 1rem;
 }
 
+.product-search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* ANIMACION LUPA */
+}
 .product-search__input {
-  border: none;
+  outline: none;
+  border: 1px solid rgb(85, 97, 85);
   border-radius: 5px 0 0 5px;
   padding: 0.6rem;
   width: 50%;
   color: rgb(27, 26, 26);
   font-size: 1.2rem;
   font-weight: 500;
-  margin-right: -2rem;
   box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3137254902);
-  background-color: blue;
+  background-color: rgb(255, 255, 255);
+  padding-left: 2.6rem;
 }
-.product-search__input:focus {
-  outline: none;
+.product-search__input:not(:-moz-placeholder-shown) + button {
+  -moz-transition: all 0.8s ease-in;
+  transition: all 0.8s ease-in;
+  transform: rotate(360deg);
 }
-.product-search__input:active {
-  outline: none;
+.product-search__input:not(:-ms-input-placeholder) + button {
+  -ms-transition: all 0.8s ease-in;
+  transition: all 0.8s ease-in;
+  transform: rotate(360deg);
+}
+.product-search__input:not(:placeholder-shown) + button {
+  transition: all 0.8s ease-in;
+  transform: rotate(360deg);
 }
 .product-search__btn {
-  border: none;
-  border-radius: 0 5px 5px 0;
+  border: 1px solid rgb(85, 97, 85);
+  background-color: rgb(85, 97, 85);
+  color: rgb(255, 255, 255);
+  margin-left: -0.4rem;
+  border-radius: 0 20px 20px 0;
   padding: 0.6rem;
   font-size: 1.2rem;
   font-weight: 500;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3137254902);
 }
-.product-search .fa-magnifying-glass:hover {
-  transition: all 0.2s ease-out;
+.product-search__btn:hover {
+  border: 1px solid rgb(85, 97, 85);
+  background-color: rgb(255, 255, 255);
+  color: rgb(85, 97, 85);
+}
+.product-search__icon {
+  display: flex;
+  padding: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-right: -2.6rem;
+  z-index: 2;
+}
+.product-search .product-search__icon:hover {
+  transition: all 0.8s ease-out;
   transform: rotate(360deg);
-}
-.product-search__label {
-  color: rgb(27, 26, 26);
 }
 
 .cards-container {
