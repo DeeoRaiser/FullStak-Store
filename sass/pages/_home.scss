@@ -3,84 +3,28 @@
         text-transform: uppercase;
         font-size: 2 rem;
         text-align: center;
-        background-color: $color-background;;
     }
     &__subtitle{
         background-color: $color-bg-primary;
         font-size: 1rem;
-        background-color:$color-background;
     }
     &__products-search-container{
-
-        background-color: red;
-        padding: 2rem;
-        margin-bottom: 1rem;
-
-    }
-
-}
-
-.product-search{
-    &__input{
-        border: none;
-        border-radius: 5px 0 0 5px;
-        padding: .6rem;
-        width:50%;
-        color: $color-font-dark;
-        font-size: 1.2rem;
-        font-weight: 500;
-        margin-right: -2rem;
-        box-shadow:0px 5px 5px 0px  #00000050;
-        background-color: blue;
-    }
-    &__input:focus{
-        outline: none;
-    }
-    &__input:active{
-        outline: none;
-    }
-
-    &__btn{
-        border: none;
-        border-radius: 0 5px 5px 0;
-        padding: .6rem;
-        font-size: 1.2rem;
-        font-weight: 500;
-        
-    }
-
-    .fa-magnifying-glass:hover{
-        transition:  all .2s ease-out;
-        transform: rotate(360deg);
-    }
-
-    
-    &__label{
-        
-        color: $color-font-dark;
+        padding: 1rem;
+        background-color: $color-bg-secondary;
     }
 }
-
-
-
 
 .cards-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
 }
 
 
-.whatsapp-container{
-    position: fixed;
-    bottom: 20px;
-    right:20px;
-    &__img{
-        width: 80px;
-        filter: grayscale(90%);
-    }
-    &__img:hover{
-        width: 80px;
-        filter: grayscale(20%);
-    }
+@media screen and (min-width:1000px){
+    .section-cards{
+        &__header{
+            display: flex;
 
+        }
+    }
 }

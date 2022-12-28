@@ -278,67 +278,23 @@ $color-font-ligth: rgb(236, 227, 227); */
   text-transform: uppercase;
   font-size: 2 rem;
   text-align: center;
-  background-color: rgb(255, 255, 255);
 }
 .section-cards__subtitle {
   background-color: rgb(139, 165, 139);
   font-size: 1rem;
-  background-color: rgb(255, 255, 255);
 }
 .section-cards__products-search-container {
-  background-color: red;
-  padding: 2rem;
-  margin-bottom: 1rem;
-}
-
-.product-search__input {
-  border: none;
-  border-radius: 5px 0 0 5px;
-  padding: 0.6rem;
-  width: 50%;
-  color: rgb(27, 26, 26);
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-right: -2rem;
-  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3137254902);
-  background-color: blue;
-}
-.product-search__input:focus {
-  outline: none;
-}
-.product-search__input:active {
-  outline: none;
-}
-.product-search__btn {
-  border: none;
-  border-radius: 0 5px 5px 0;
-  padding: 0.6rem;
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-.product-search .fa-magnifying-glass:hover {
-  transition: all 0.2s ease-out;
-  transform: rotate(360deg);
-}
-.product-search__label {
-  color: rgb(27, 26, 26);
+  padding: 1rem;
+  background-color: rgb(85, 97, 85);
 }
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-.whatsapp-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-}
-.whatsapp-container__img {
-  width: 80px;
-  filter: grayscale(90%);
-}
-.whatsapp-container__img:hover {
-  width: 80px;
-  filter: grayscale(20%);
+@media screen and (min-width: 1000px) {
+  .section-cards__header {
+    display: flex;
+  }
 }/*# sourceMappingURL=main.css.map */
