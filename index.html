@@ -19,9 +19,15 @@
             <div class="user-navbar">
                 <div class="user-navbar__cart-icon-container">
                     <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="user-navbar__cart-counter">
+                        10
+                    </div>
                 </div>
                 <div class="user-navbar__user-avatar-container">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
+                    <div class="user-navbar__user-name">
+                        Juan
+                    </div>
                 </div>
                 <!-- TODO: avatar de la persona logueada o nombre -->
             </div>
@@ -56,7 +62,7 @@
             <header class="section-cards__header">
                 <div class="section-cards__title-container">
                     <h1 class="section-cards__title">
-                        Lorem ipsum dolor sit amet.
+                        Titulo de la tienda
                     </h1>
                     <p class="section-cards__subtitle">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus hic architecto praesentium similique assumenda officiis!
@@ -67,7 +73,7 @@
                     <div class="product-search">
                         <label for="" class="product-search__label">Buscar</label>
                         <input type="text" class="product-search__input">
-                        <button class="product-search__btn">Buscar</button>
+                        <button class="product-search__btn"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
 
                     <div class="section-cards__products-count">
@@ -95,16 +101,49 @@
                         </div>
                     </div>
                     <div class="card__footer">
-                        <div class="card__date">
-                            13/12/2022
+                        <div class="card__btn-container">
+                            <a class="card__btn-cart" href="#">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Agregar
+                            </a>
                         </div>
                         <div class="card__btn-container">
                             <a class="card__btn" href="#">
+                                <i class="fa-solid fa-circle-info"></i>
                                 Detalle
                             </a>
                         </div>
                     </div>
-                </article>             
+                </article>                    <article class="card">
+                    <div class="card__header">
+                        <img src="#" alt="Product Image" class="card__img">
+                    </div>
+                    <div class="card__body">
+                        <div class="card__title">
+                            PRODUCT NAME
+                        </div>
+                        <p class="card__description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iusto repellendus laudantium expedita nesciunt dolores. Culpa consequuntur doloribus ab aperiam?
+                        </p>
+                        <div class="card__price">
+                            $ XXXXX
+                        </div>
+                    </div>
+                    <div class="card__footer">
+                        <div class="card__btn-container">
+                            <a class="card__btn-cart" href="#">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Agregar
+                            </a>
+                        </div>
+                        <div class="card__btn-container">
+                            <a class="card__btn" href="#">
+                                <i class="fa-solid fa-circle-info"></i>
+                                Detalle
+                            </a>
+                        </div>
+                    </div>
+                </article>
                 <article class="card">
                     <div class="card__header">
                         <img src="#" alt="Product Image" class="card__img">
@@ -121,16 +160,20 @@
                         </div>
                     </div>
                     <div class="card__footer">
-                        <div class="card__date">
-                            13/12/2022
+                        <div class="card__btn-container">
+                            <a class="card__btn-cart" href="#">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Agregar
+                            </a>
                         </div>
                         <div class="card__btn-container">
                             <a class="card__btn" href="#">
+                                <i class="fa-solid fa-circle-info"></i>
                                 Detalle
                             </a>
                         </div>
                     </div>
-                </article> 
+                </article>
                 <article class="card">
                     <div class="card__header">
                         <img src="#" alt="Product Image" class="card__img">
@@ -147,16 +190,20 @@
                         </div>
                     </div>
                     <div class="card__footer">
-                        <div class="card__date">
-                            13/12/2022
+                        <div class="card__btn-container">
+                            <a class="card__btn-cart" href="#">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Agregar
+                            </a>
                         </div>
                         <div class="card__btn-container">
                             <a class="card__btn" href="#">
+                                <i class="fa-solid fa-circle-info"></i>
                                 Detalle
                             </a>
                         </div>
                     </div>
-                </article> 
+                </article>
                 <article class="card">
                     <div class="card__header">
                         <img src="#" alt="Product Image" class="card__img">
@@ -173,23 +220,27 @@
                         </div>
                     </div>
                     <div class="card__footer">
-                        <div class="card__date">
-                            13/12/2022
+                        <div class="card__btn-container">
+                            <a class="card__btn-cart" href="#">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Agregar
+                            </a>
                         </div>
                         <div class="card__btn-container">
                             <a class="card__btn" href="#">
+                                <i class="fa-solid fa-circle-info"></i>
                                 Detalle
                             </a>
                         </div>
                     </div>
-                </article> 
+                </article>
             </div>
 
         </section>
     </main>
     <div class="whatsapp-container">
         <a href="" class="whatsapp-container__link">
-            <img src="#" alt="Whatsapp contact link" class="whatsapp-container__img">
+            <img src="/assets/img/icons/whatsapp.png" alt="Whatsapp contact link" class="whatsapp-container__img">
         </a>
     </div>
     <footer class="footer">

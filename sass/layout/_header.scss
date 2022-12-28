@@ -13,16 +13,36 @@
     padding: 0 1rem;
 
     &__user-avatar{
+        padding-right: 10px;
         width: 50px;
     }
     &__cart-icon-container{
+        display: flex;
+        padding-right: 15px;
         color: $color-font-ligth;
         font-size: 2rem;
+        text-align: center;
+    }
+    &__user-name{
+        position: fixed;
+        padding: 4px;
+        border-radius: 7px;
+        font-size: 1rem;
+        background-color: $color-bg-secondary;
+        top: 6rem;
+        width: 45px;
+        text-align: center;
+    }
+    &__cart-counter{
+        position: fixed;
+        padding: 4px;
+        border-radius: 7px;
+        font-size: 1rem;
+        background-color: $color-bg-secondary;
+        top: 6rem;
+        width: 36px;
     }
 }
-
-
-
 
 .navbar{
     height:60 px;
@@ -34,6 +54,7 @@
 
     &__logo{
         height: 150px;
+        margin-left: 0rem;
     }
 
     &__menu-label{
@@ -57,7 +78,6 @@
     &__menu-btn:checked ~ &__nav-links-container{
         height: calc(100vh - 150px);
         }
-
 
     &__menu-icon{
         height: 3px;
@@ -100,10 +120,10 @@
         list-style: none;
         position: absolute;
         top: 150px;
-        background-color: $color-bg-secondary;
+        background-color: $color-bg-primary;
         width: 100%;
         height: 0;
-        overflow: hidden;
+        overflow: hidden; 
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -115,12 +135,23 @@
         padding: .75rem 1rem;
         color: $color-font-ligth;
         font-size: 18px;
-        
+        border-bottom: 1px solid $color-bg-secondary; 
 
-        &:not(:last-child){
-            border-bottom: 1px solid $color-bg-primary;
-        }
+        /* &:not(:last-child){
+            border-bottom: 1px solid $color-bg-secondary;
+        }  */
     }
+
+    &__nav-link{
+        color: $color-font-ligth;
+    }
+    &__nav-link:hover{
+        color: $color-bg-secondary;
+    }
+    &__nav-link:active{
+        color: $color-bg-secondary;
+    }
+    
 }
 
 @media screen and (min-width: 600px){
@@ -128,10 +159,15 @@
         &__menu-label, &__menu-btn{
             display: none;
         }
+
         &__nav-links-container{
             position: static;
             flex-direction: row;
             height: 45px;
+        }
+        &__logo{
+            height: 150px;
+            margin-left: 3rem;
         }
     }
     .user-navbar{
