@@ -141,7 +141,7 @@ body {
   padding: 0.75rem 1rem;
   color: rgb(236, 227, 227);
   font-size: 18px;
-  border-bottom: 1px solid rgb(85, 97, 85);
+  border-bottom: 5px solid rgb(85, 97, 85);
   /* &:not(:last-child){
       border-bottom: 1px solid $color-bg-secondary;
   }  */
@@ -281,6 +281,9 @@ body {
   font-size: 1rem;
   background-color: rgb(255, 255, 255);
 }
+.section-cards__products-count {
+  padding: 1rem;
+}
 .section-cards__products-search-container {
   text-align: center;
   background-color: rgb(255, 255, 255);
@@ -292,6 +295,14 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+  /*     &__input:not(:placeholder-shown){
+
+          + button{
+              transition:  all .8s ease-in;
+              transform: rotate(360deg);
+          } 
+      } */
   /* ANIMACION LUPA */
 }
 .product-search__input {
@@ -307,25 +318,10 @@ body {
   background-color: rgb(255, 255, 255);
   padding-left: 2.6rem;
 }
-.product-search__input:not(:-moz-placeholder-shown) + button {
-  -moz-transition: all 0.8s ease-in;
-  transition: all 0.8s ease-in;
-  transform: rotate(360deg);
-}
-.product-search__input:not(:-ms-input-placeholder) + button {
-  -ms-transition: all 0.8s ease-in;
-  transition: all 0.8s ease-in;
-  transform: rotate(360deg);
-}
-.product-search__input:not(:placeholder-shown) + button {
-  transition: all 0.8s ease-in;
-  transform: rotate(360deg);
-}
 .product-search__btn {
   border: 1px solid rgb(85, 97, 85);
   background-color: rgb(85, 97, 85);
   color: rgb(255, 255, 255);
-  margin-left: -0.4rem;
   border-radius: 0 20px 20px 0;
   padding: 0.6rem;
   font-size: 1.2rem;
@@ -350,6 +346,16 @@ body {
   transform: rotate(360deg);
 }
 
+@media screen and (max-width: 600px) {
+  .product-search__input {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .product-search__input {
+    width: 90%;
+  }
+}
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
