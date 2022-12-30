@@ -20,6 +20,7 @@ body {
   position: fixed;
   width: 100%;
   top: 0;
+  z-index: 3;
 }
 
 .user-navbar {
@@ -339,7 +340,7 @@ body {
   font-size: 1.2rem;
   font-weight: 500;
   margin-right: -2.6rem;
-  z-index: 2;
+  z-index: 1;
 }
 .product-search .product-search__icon:hover {
   transition: all 0.8s ease-out;
