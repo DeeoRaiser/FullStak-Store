@@ -21,11 +21,7 @@ body {
   position: sticky;
   width: 100%;
   top: 0;
-<<<<<<< HEAD
-  z-index: 3;
-=======
   z-index: 4;
->>>>>>> b5fab6d451fb9d60dc5b46ef657311bd010c730e
 }
 
 .user-navbar {
@@ -246,11 +242,7 @@ body {
   z-index: 2;
 }
 .card__heart:hover {
-<<<<<<< HEAD
   color: rgb(238, 155, 155);
-=======
-  color: rgb(207, 106, 106);
->>>>>>> b5fab6d451fb9d60dc5b46ef657311bd010c730e
 }
 .card__heart:active {
   color: rgb(204, 29, 29);
@@ -317,10 +309,6 @@ body {
   color: rgb(199, 194, 194);
 }
 
-/* $color-bg-primary: rgb(139, 165, 139);
-$color-bg-secondary: rgb(85, 97, 85);
-$color-font-dark: rgb(27, 26, 26);
-$color-font-ligth: rgb(236, 227, 227); */
 .section-cards__header {
   text-transform: uppercase;
   font-size: 2 rem;
@@ -432,6 +420,20 @@ $color-font-ligth: rgb(236, 227, 227); */
   justify-content: center;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.whatsapp-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.whatsapp-container__img {
+  width: 80px;
+  filter: grayscale(90%);
+}
+.whatsapp-container__img:hover {
+  width: 80px;
+  filter: grayscale(20%);
 }
 
 @media screen and (min-width: 1000px) {

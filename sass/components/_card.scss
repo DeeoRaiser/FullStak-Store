@@ -13,16 +13,6 @@
       }
       &__heart{
          position:relative;
-<<<<<<< HEAD
-            i {
-               position:absolute;
-               right: 0;
-               padding: 1rem;
-               font-size: 1.8rem;
-               text-shadow: $shadow1;
-               z-index: 2;
-            }
-=======
          i {
             position:absolute;
             right: 0;
@@ -31,21 +21,14 @@
             text-shadow: $shadow1;
             z-index: 2;
          }
->>>>>>> b5fab6d451fb9d60dc5b46ef657311bd010c730e
          }
 
          &__heart:hover{
             color: $color-wish-list-hover;
             }
-<<<<<<< HEAD
-         &__heart:active{
-               color: $color-wish-list-on;
-            }
-=======
             &__heart:active{
                color: $color-wish-list-on;
                }
->>>>>>> b5fab6d451fb9d60dc5b46ef657311bd010c730e
 
    &__img{
       width: 100%;
@@ -117,8 +100,3 @@
 .whish-list-off{
    color: $color-wish-list-off;
 }
-
-/* $color-bg-primary: rgb(139, 165, 139);
-$color-bg-secondary: rgb(85, 97, 85);
-$color-font-dark: rgb(27, 26, 26);
-$color-font-ligth: rgb(236, 227, 227); */
