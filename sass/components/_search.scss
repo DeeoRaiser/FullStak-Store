@@ -43,13 +43,13 @@
         padding-left: 2.6rem;
     }
     
-/*     &__input:not(:placeholder-shown){
+    &__input:not(:placeholder-shown){
 
         + button{
             transition:  all .8s ease-in;
             transform: rotate(360deg);
         } 
-    } */
+    }
     
     &__btn{
         border: 1px solid $color-bg-secondary;
@@ -75,7 +75,7 @@
         font-size: 1.2rem;
         font-weight: 500;
         margin-right: -2.6rem;
-        z-index: 2;
+        z-index: 1; 
     }
 
     
