@@ -13,14 +13,22 @@
       }
       &__heart{
          position:relative;
-         i {
-            position:absolute;
-            right: 0;
-            padding: 1rem;
-            font-size: 1.8rem;
-            text-shadow: $shadow1;
+            i {
+               position:absolute;
+               right: 0;
+               padding: 1rem;
+               font-size: 1.8rem;
+               text-shadow: $shadow1;
+               z-index: 2;
+            }
          }
-         }
+
+         &__heart:hover{
+            color: $color-wish-list-hover;
+            }
+         &__heart:active{
+               color: $color-wish-list-on;
+            }
 
    &__img{
       width: 100%;
@@ -33,7 +41,6 @@
       transform: rotate(-3deg) scale(1.2);
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       transition: all 0.3s ease-out;
-
    }
 
 
