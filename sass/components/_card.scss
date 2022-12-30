@@ -19,8 +19,16 @@
             padding: 1rem;
             font-size: 1.8rem;
             text-shadow: $shadow1;
+            z-index: 2;
          }
          }
+
+         &__heart:hover{
+            color: $color-wish-list-hover;
+            }
+            &__heart:active{
+               color: $color-wish-list-on;
+               }
 
    &__img{
       width: 100%;

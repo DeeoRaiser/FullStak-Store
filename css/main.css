@@ -20,6 +20,7 @@ body {
   position: fixed;
   width: 100%;
   top: 0;
+  z-index: 4;
 }
 
 .user-navbar {
@@ -237,6 +238,13 @@ body {
   padding: 1rem;
   font-size: 1.8rem;
   text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
+  z-index: 2;
+}
+.card__heart:hover {
+  color: rgb(207, 106, 106);
+}
+.card__heart:active {
+  color: rgb(204, 29, 29);
 }
 .card__img {
   width: 100%;
