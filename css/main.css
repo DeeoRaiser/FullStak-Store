@@ -21,7 +21,11 @@ body {
   position: sticky;
   width: 100%;
   top: 0;
+<<<<<<< HEAD
   z-index: 3;
+=======
+  z-index: 4;
+>>>>>>> b5fab6d451fb9d60dc5b46ef657311bd010c730e
 }
 
 .user-navbar {
@@ -242,7 +246,11 @@ body {
   z-index: 2;
 }
 .card__heart:hover {
+<<<<<<< HEAD
   color: rgb(238, 155, 155);
+=======
+  color: rgb(207, 106, 106);
+>>>>>>> b5fab6d451fb9d60dc5b46ef657311bd010c730e
 }
 .card__heart:active {
   color: rgb(204, 29, 29);
