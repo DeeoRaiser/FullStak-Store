@@ -68,28 +68,48 @@
       padding: 0 0 1.5rem 0 ;
    }
    //----------------------
-   &__btn-container{
+   &__btn-container-cart{
       display: flex;
       align-items: center;
       justify-content: center;
+
    }
+
+
    //----------------------
    &__btn-cart{
+      position: relative;
+      left: -4.8rem;
+
       color: $color-font-ligth;
       background-color: $color-bg-primary;
       padding: 1rem;
       border-radius: 0px 10px 10px 0px;
    }
-
-   &__date{
-      visibility: hidden;
+   &__btn-cart:hover{
+      left: 0rem;
+      transition: all 0.3s ease-out;
    }
 
+
    &__btn{
+      position: relative;
+      left: +4.2rem;
+
       color: $color-font-ligth;
       background-color: $color-bg-primary;
-      padding: 1rem;
+      padding: +1rem;
       border-radius: 10px 0px 0px 10px;
+   }
+
+   &__btn:hover{
+      left: 0rem;
+      transition: all 0.3s ease-out;
+   }
+
+   
+   &__date{
+      visibility: hidden;
    }
 }
 

@@ -1,4 +1,5 @@
 .section-cards{
+    display: block;
     &__header{
         text-transform: uppercase;
         font-size: 2 rem;
@@ -6,7 +7,6 @@
         background-color: $color-background;
     }
     &__subtitle{
-        background-color: $color-bg-primary;
         font-size: 1rem;
         background-color:$color-background;
     }
@@ -43,13 +43,13 @@
         padding-left: 2.6rem;
     }
     
-    &__input:not(:placeholder-shown){
+/*     &__input:not(:placeholder-shown){
 
         + button{
             transition:  all .8s ease-in;
             transform: rotate(360deg);
         } 
-    }
+    } */
     
     &__btn{
         border: 1px solid $color-bg-secondary;
@@ -95,7 +95,7 @@
         &__input{
             width: 100%
         }
-    } 
+    }
 }
 
 @media screen and (max-width: 650px){

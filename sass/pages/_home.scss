@@ -1,19 +1,3 @@
-.section-cards{
-    &__header{
-        text-transform: uppercase;
-        font-size: 2 rem;
-        text-align: center;
-    }
-    &__subtitle{
-        background-color: $color-bg-primary;
-        font-size: 1rem;
-    }
-    &__products-search-container{
-        padding: 1rem;
-        background-color: $color-bg-secondary;
-    }
-}
-
 .cards-container{
     justify-content: center;
     display: grid;
@@ -33,14 +17,5 @@
         filter: grayscale(20%);
     }
 
-}
-
-@media screen and (min-width:1000px){
-    .section-cards{
-        &__header{
-            display: flex;
-
-        }
-    }
 }
 
