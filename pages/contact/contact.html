@@ -4,11 +4,144 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Contactanos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-    <h1>
-        Contacto
-    </h1>
+        <header class="header">
+            <nav class="navbar">
+                <a href="/index.html" class="navbar__nav-link">
+                    <img class="navbar__logo" src="/assets/logo.png" alt="Logo del ecommerce">
+                </a>
+                <div class="user-navbar">
+                    <div class="user-navbar__cart-icon-container">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <div class="user-navbar__cart-counter">
+                            10
+                        </div>
+                    </div>
+                    <div class="user-navbar__user-avatar-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
+                        <div class="user-navbar__user-name">
+                            Juan
+                        </div>
+                    </div>
+                    <!-- TODO: avatar de la persona logueada o nombre -->
+                </div>
+                
+                <input type="checkbox" class="navbar__menu-btn" id="menu-btn">
+    
+                <label for="menu-btn" class="navbar__menu-label">
+                    <span class="navbar__menu-icon"></span>
+                </label>
+    
+                <ul class="navbar__nav-links-container">
+                    <li class="navbar__nav-item">
+                        <a href="/index.html" class="navbar__nav-link">Inicio</a>
+                    </li>
+                    <li class="navbar__nav-item">
+                        <a href="/pages/contact/contact.html" class="navbar__nav-link">Contacto</a>
+                    </li>
+                    <li class="navbar__nav-item">
+                        <a href="/pages/about-us/about-us.html" class="navbar__nav-link">Nosotros</a>
+                    </li>
+                    <li class="navbar__nav-item">
+                        <a href="/pages/register/register.html" class="navbar__nav-link">Registro</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main">
+
+
+            <div class="form-container">
+                <form class="contact-form">
+                    <label for="name">Nombre</label>
+
+
+                    <input type="text" name="name" id="name">
+                </form>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d8040.450896753331!2d-64.54006906331583!3d-32.08025068519654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1salquimia!5e0!3m2!1ses-419!2sar!4v1672866931106!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+
+
+        </main>
+
+        <div class="whatsapp-container">
+            <a href="#" class="whatsapp-container__link">
+                <img src="/assets/img/icons/whatsapp.png" alt="Whatsapp contact link" class="whatsapp-container__img">
+            </a>
+        </div>
+        <div class="swipe-up">
+            <a href="#" class="swipe-up-container__link">
+                <img src="/assets/img/icons/swipe-up.png" alt="Subir Arriba" class="swipe-up__img">
+            </a>
+        </div>
+
+        <footer class="footer">
+            <div class="footer__column">
+                <ul class="footer__contact-container">
+                    <li class="footer__contact-item"> 
+                        <a href="#" class="footer__contact-link">
+                            <i class="fa-brands fa-facebook footer__contact-icon footer__contact-icon--facebook"></i>
+                            Facebook
+                        </a>
+                    </li>
+                    <li class="footer__contact-item">
+                        <a href="#" class="footer__contact-link">
+                            <i class="fa-brands fa-instagram 
+                            footer__contact-icon
+                            footer__contact-icon--instagram"></i>
+                            Instagram
+                        </a>
+                    </li>
+                    <li class="footer__contact-item">
+                        <a href="#" class="footer__contact-link">
+                            <i class="fa-brands fa-linkedin 
+                            footer__contact-icon
+                            footer__contact-icon--linkedin"></i>
+                            LinkedIn
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <img src="/assets/logo.png" alt="Company Logo" class="footer__logo" width="50">
+                <h2 class="footer__company-name">
+                    NOMBRE DE LA EMPRESA
+                </h2>
+                <p class="footer__copyrigth">
+                    Todos los derechos reservados a Pepito
+                </p>
+            </div>
+            <div class="footer__column">
+                <ul class="footer__contact-container">
+                    <li class="footer__contact-item">
+                        <a href="#" class="footer__contact-link">
+                            <i class="fa-solid fa-square-phone-flip footer__contact-icon"></i>
+                            Telefono
+                        </a>
+                    </li>
+                    <li class="footer__contact-item">
+                        <a href="#" class="footer__contact-link">
+                            <i class="fa-solid fa-location-dot footer__contact-icon"></i>
+                            Localizacion
+                        </a>
+                    </li>
+                    <li class="footer__contact-item">
+                        <a href="#" class="footer__contact-link">
+                            <i class="fa-solid fa-envelope footer__contact-icon"></i>
+                            Email
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
 </body>
 </html>

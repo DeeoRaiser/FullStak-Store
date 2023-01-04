@@ -12,6 +12,11 @@ a {
   display: inline-block;
 }
 
+html {
+  min-height: 100%;
+  position: relative;
+}
+
 body {
   font-family: "Inter", Arial, sans-serif;
 }
@@ -22,6 +27,7 @@ body {
   width: 100%;
   top: 0;
   z-index: 4;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .user-navbar {
@@ -269,16 +275,18 @@ body {
 .card__description {
   padding: 1rem 0;
 }
-.card__price {
-  text-align: right;
-  font-weight: 500;
-  font-size: 1.5rem;
-  color: rgb(139, 165, 139);
-}
 .card__footer {
   display: flex;
   justify-content: space-between;
-  padding: 0 0 1.5rem 0;
+  padding: 0 0 0 0;
+}
+.card__price {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-top: -2.5rem;
+  margin-bottom: 1.3rem;
+  color: rgb(139, 165, 139);
 }
 .card__btn-container-cart {
   display: flex;
@@ -296,10 +304,11 @@ body {
 .card__btn-cart:hover {
   left: 0rem;
   transition: all 0.3s ease-out;
+  background-color: rgb(27, 26, 26);
 }
 .card__btn {
   position: relative;
-  left: 4.2rem;
+  left: 4.5rem;
   color: rgb(236, 227, 227);
   background-color: rgb(139, 165, 139);
   padding: 1rem;
@@ -308,6 +317,7 @@ body {
 .card__btn:hover {
   left: 0rem;
   transition: all 0.3s ease-out;
+  background-color: rgb(27, 26, 26);
 }
 .card__date {
   visibility: hidden;
@@ -319,6 +329,11 @@ body {
 
 .whish-list-off {
   color: rgb(199, 194, 194);
+}
+
+.fa-cart-shopping, .fa-circle-info {
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .section-cards {
@@ -409,6 +424,10 @@ body {
     width: 90%;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+
 .cards-container {
   justify-content: center;
   display: grid;
@@ -418,7 +437,8 @@ body {
 .whatsapp-container {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  left: 20px;
+  z-index: 10;
 }
 .whatsapp-container__img {
   width: 80px;
@@ -426,5 +446,21 @@ body {
 }
 .whatsapp-container__img:hover {
   width: 80px;
+  filter: grayscale(20%);
+}
+
+.swipe-up {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  transition: opacity 0.17s ease;
+}
+.swipe-up__img {
+  width: 60px;
+  filter: grayscale(90%);
+}
+.swipe-up__img:hover {
+  width: 60px;
   filter: grayscale(20%);
 }/*# sourceMappingURL=main.css.map */

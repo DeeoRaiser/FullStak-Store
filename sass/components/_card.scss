@@ -43,10 +43,8 @@
       transition: all 0.3s ease-out;
    }
 
-
    &__body{
       padding: 1rem;
-
    }
    &__title{
       font-weight: 500;
@@ -56,17 +54,23 @@
    &__description{
       padding: 1rem 0;
    }
+
+   &__footer{
+      display: flex; 
+      justify-content: space-between;
+      padding: 0 0 0 0 ;
+   }
+
    &__price{
-      text-align: right;
+      text-align: center;
       font-weight: 500;
       font-size: 1.5rem;
+      margin-top: -2.5rem;
+      margin-bottom: 1.3rem;
       color: $color-bg-primary;
+
    }
-   &__footer{
-      display: flex;
-      justify-content: space-between;
-      padding: 0 0 1.5rem 0 ;
-   }
+
    //----------------------
    &__btn-container-cart{
       display: flex;
@@ -74,8 +78,6 @@
       justify-content: center;
 
    }
-
-
    //----------------------
    &__btn-cart{
       position: relative;
@@ -89,12 +91,13 @@
    &__btn-cart:hover{
       left: 0rem;
       transition: all 0.3s ease-out;
+      background-color: $color-font-dark;
    }
 
 
    &__btn{
       position: relative;
-      left: +4.2rem;
+      left: +4.5rem;
 
       color: $color-font-ligth;
       background-color: $color-bg-primary;
@@ -105,9 +108,9 @@
    &__btn:hover{
       left: 0rem;
       transition: all 0.3s ease-out;
+      background-color: $color-font-dark;
    }
 
-   
    &__date{
       visibility: hidden;
    }
@@ -119,4 +122,9 @@
 
 .whish-list-off{
    color: $color-wish-list-off;
+}
+
+.fa-cart-shopping, .fa-circle-info{
+   padding-left: 8px;
+   padding-right: 8px;
 }
