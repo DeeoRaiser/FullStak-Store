@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Home - Ecommerce</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/main.css">
 
 </head>
+
 <body>
     <header class="header">
         <nav class="navbar">
@@ -20,18 +24,19 @@
                 <div class="user-navbar__cart-icon-container">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <div class="user-navbar__cart-counter">
-                        10
+                        12
                     </div>
                 </div>
                 <div class="user-navbar__user-avatar-container">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png"
+                        class="user-navbar__user-avatar" alt="Imagen de usuario">
                     <div class="user-navbar__user-name">
                         Juan
                     </div>
                 </div>
                 <!-- TODO: avatar de la persona logueada o nombre -->
             </div>
-            
+
             <input type="checkbox" class="navbar__menu-btn" id="menu-btn">
 
             <label for="menu-btn" class="navbar__menu-label">
@@ -54,7 +59,7 @@
                 </li>
             </ul>
         </nav>
-        
+
     </header>
     <!-- TODO: Implementar carousel en 2do módulo -->
     <main class="main">
@@ -62,14 +67,14 @@
             <header class="section-cards__header">
                 <div class="section-cards__title-container">
                     <h1 class="section-cards__title">
-                        Titulo de la tienda
+                        Ransom & Wilder
                     </h1>
                     <p class="section-cards__subtitle">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus hic architecto praesentium similique assumenda officiis!
+                        The Best American Vintage Shop
                     </p>
                 </div>
                 <div class="section-cards__products-search-container">
-                    
+
                     <div class="product-search">
                         <div class="product-search__icon"><i class="fa-solid fa-magnifying-glass"></i></div>
                         <input placeholder="Que deseas comprar hoy ?" type="text" class="product-search__input">
@@ -81,457 +86,562 @@
                     </div>
                 </div>
             </header>
-            <h1 class="section-cards__category">
-                CATEGORÍA: OFERTAS
-            </h1>
+
+            <div class="section-cards__category">
+                <h1>
+                    CATEGORÍA: OFERTAS
+                </h1>
+            </div>
+
             <div class="cards-container">
 
-
                 <!-- CARD ********************************************-->
                 <article class="card">
                     <div class="card__header">
-                        
-                        <div class="card__heart whish-list-on">
+                        <!-- WHISH LIST -->
+                        <div class="card__heart whish-list-off">
                             <i class="fa-solid fa-heart"></i>
                         </div>
-                        <img src="https://static.vecteezy.com/system/resources/previews/007/710/514/non_2x/green-sneakers-or-sport-running-shoe-isolated-on-a-white-background-free-photo.jpg" alt="Product Image" class="card__img">
+                        <img src="/assets/img/store/1.jpg" alt="Product Image" class="card__img">
                     </div>
+
+
                     <div class="card__body">
                         <div class="card__title">
-                            PRODUCT NAME
+                            SONOMA V-NECK T-SHIRT POLAR MELANGE
                         </div>
                         <p class="card__description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iusto repellendus laudantium expedita nesciunt dolores. Culpa consequuntur doloribus ab aperiam?
+                            With its deep V neck and close-fitting design, the short-sleeved Sonoma T-shirt hugs your
+                            figure. The comfortable thick cotton makes this an essential casual piece.
                         </p>
+
+                        <div class="card__date">
+                            10/12/2022
+                        </div>
+                        <div class="card__price">
+                            $689
+                        </div>
+
                     </div>
                     <div class="card__footer">
                         <div class="card__btn-container">
-                            <a class="card__btn-cart" href="#">
-                                Agregar  
-                                <i class="fa-solid fa-cart-shopping">  </i>
-                            </a>
-                        </div>
-
-                        <div class="card__btn-container">
                             <a class="card__btn" href="#">
-                                <i class="fa-solid fa-circle-info">  </i>
                                 Detalle
+                                <i class="fa-solid fa-circle-info"> </i>
                             </a>
                         </div>
-                    </div>
-                    <div class="card__price">
-                        $100.000
+                        <div class="card__btn-container">
+                            <a class="card__btn-cart" href="#">
+                                <i class="fa-solid fa-cart-shopping"> </i>
+                                Agregar
+                            </a>
+                        </div>
                     </div>
                 </article>
                 <!-- CARD ********************************************-->
                 <!-- CARD ********************************************-->
                 <article class="card">
                     <div class="card__header">
-                        
-                        <div class="card__heart whish-list-on">
+                        <!-- WHISH LIST -->
+                        <div class="card__heart whish-list-off">
                             <i class="fa-solid fa-heart"></i>
                         </div>
-                        <img src="https://static.vecteezy.com/system/resources/previews/007/710/514/non_2x/green-sneakers-or-sport-running-shoe-isolated-on-a-white-background-free-photo.jpg" alt="Product Image" class="card__img">
+
+                        <img src="/assets/img/store/2.jpg" alt="Product Image" class="card__img">
                     </div>
+
                     <div class="card__body">
                         <div class="card__title">
-                            PRODUCT NAME
+                            FIZVALLEY T-SHIRT VINTAGE PEANUT
                         </div>
                         <p class="card__description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iusto repellendus laudantium expedita nesciunt dolores. Culpa consequuntur doloribus ab aperiam?
+                            The model measures 172 cm and wears a size S.
+                            Short-sleeve crew neck T-shirt, straight cut
+                            100% COTTON
                         </p>
+
+                        <div class="card__date">
+                            10/12/2022
+                        </div>
+                        <div class="card__price">
+                            $395
+                        </div>
+
                     </div>
                     <div class="card__footer">
                         <div class="card__btn-container">
-                            <a class="card__btn-cart" href="#">
-                                Agregar  
-                                <i class="fa-solid fa-cart-shopping">  </i>
-                            </a>
-                        </div>
-
-                        <div class="card__btn-container">
                             <a class="card__btn" href="#">
-                                <i class="fa-solid fa-circle-info">  </i>
                                 Detalle
+                                <i class="fa-solid fa-circle-info"> </i>
                             </a>
                         </div>
-                    </div>
-                    <div class="card__price">
-                        $100.000
+                        <div class="card__btn-container">
+                            <a class="card__btn-cart" href="#">
+                                <i class="fa-solid fa-cart-shopping"> </i>
+                                Agregar
+                            </a>
+                        </div>
                     </div>
                 </article>
                 <!-- CARD ********************************************-->
                 <!-- CARD ********************************************-->
                 <article class="card">
                     <div class="card__header">
-                        
-                        <div class="card__heart whish-list-on">
+                        <!-- WHISH LIST -->
+                        <div class="card__heart whish-list-off">
                             <i class="fa-solid fa-heart"></i>
                         </div>
-                        <img src="https://static.vecteezy.com/system/resources/previews/007/710/514/non_2x/green-sneakers-or-sport-running-shoe-isolated-on-a-white-background-free-photo.jpg" alt="Product Image" class="card__img">
+
+                        <img src="/assets/img/store/3.jpg" alt="Product Image" class="card__img">
                     </div>
+
                     <div class="card__body">
                         <div class="card__title">
-                            PRODUCT NAME
+                            PRSX LOW MAN VEAU BRODERIE BLANC MILITAIRE
                         </div>
                         <p class="card__description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iusto repellendus laudantium expedita nesciunt dolores. Culpa consequuntur doloribus ab aperiam?
+                            Calf leather upper with suede details. Embroidery on the shield, the brand's emblem. Rubber
+                            sole band. Sole height 2.5 cm. Leather and terry cotton lining. True to size.
                         </p>
+
+                        <div class="card__date">
+                            10/12/2022
+                        </div>
+                        <div class="card__price">
+                            $669
+                        </div>
+
                     </div>
                     <div class="card__footer">
                         <div class="card__btn-container">
-                            <a class="card__btn-cart" href="#">
-                                Agregar  
-                                <i class="fa-solid fa-cart-shopping">  </i>
-                            </a>
-                        </div>
-
-                        <div class="card__btn-container">
                             <a class="card__btn" href="#">
-                                <i class="fa-solid fa-circle-info">  </i>
                                 Detalle
+                                <i class="fa-solid fa-circle-info"> </i>
                             </a>
                         </div>
-                    </div>
-                    <div class="card__price">
-                        $100.000
+                        <div class="card__btn-container">
+                            <a class="card__btn-cart" href="#">
+                                <i class="fa-solid fa-cart-shopping"> </i>
+                                Agregar
+                            </a>
+                        </div>
                     </div>
                 </article>
                 <!-- CARD ********************************************-->
                 <!-- CARD ********************************************-->
                 <article class="card">
                     <div class="card__header">
-                        
-                        <div class="card__heart whish-list-on">
+                        <!-- WHISH LIST -->
+                        <div class="card__heart whish-list-off">
                             <i class="fa-solid fa-heart"></i>
                         </div>
-                        <img src="https://static.vecteezy.com/system/resources/previews/007/710/514/non_2x/green-sneakers-or-sport-running-shoe-isolated-on-a-white-background-free-photo.jpg" alt="Product Image" class="card__img">
+
+                        <img src="/assets/img/store/4.jpg" alt="Product Image" class="card__img">
                     </div>
+
                     <div class="card__body">
                         <div class="card__title">
-                            PRODUCT NAME
+                            PRSX LOW MAN FOXY LAMINE BLANC ARGENT
                         </div>
                         <p class="card__description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iusto repellendus laudantium expedita nesciunt dolores. Culpa consequuntur doloribus ab aperiam?
+                            The idea of "lived-in" as a synonym for craftsmanship can be seen clearly in the PRSX,
+                            thanks to unique, patented foxing tape that creates a purposefully imperfect sole. The
+                            shield on the side of the shoe features the coat of arms of the City of Paris, where
+                            Philippe Model launched its brand.
                         </p>
+
+                        <div class="card__date">
+                            10/12/2022
+                        </div>
+                        <div class="card__price">
+                            $669
+                        </div>
+
                     </div>
                     <div class="card__footer">
                         <div class="card__btn-container">
-                            <a class="card__btn-cart" href="#">
-                                Agregar  
-                                <i class="fa-solid fa-cart-shopping">  </i>
-                            </a>
-                        </div>
-
-                        <div class="card__btn-container">
                             <a class="card__btn" href="#">
-                                <i class="fa-solid fa-circle-info">  </i>
                                 Detalle
+                                <i class="fa-solid fa-circle-info"> </i>
                             </a>
                         </div>
-                    </div>
-                    <div class="card__price">
-                        $100.000
+                        <div class="card__btn-container">
+                            <a class="card__btn-cart" href="#">
+                                <i class="fa-solid fa-cart-shopping"> </i>
+                                Agregar
+                            </a>
+                        </div>
                     </div>
                 </article>
                 <!-- CARD ********************************************-->
                 <!-- CARD ********************************************-->
                 <article class="card">
                     <div class="card__header">
-                        
-                        <div class="card__heart whish-list-on">
+                        <!-- WHISH LIST -->
+                        <div class="card__heart whish-list-off">
                             <i class="fa-solid fa-heart"></i>
                         </div>
-                        <img src="https://static.vecteezy.com/system/resources/previews/007/710/514/non_2x/green-sneakers-or-sport-running-shoe-isolated-on-a-white-background-free-photo.jpg" alt="Product Image" class="card__img">
+
+                        <img src="/assets/img/store/5.jpg" alt="Product Image" class="card__img">
                     </div>
+
                     <div class="card__body">
                         <div class="card__title">
-                            PRODUCT NAME
+                            BOOTS 45MM SUEDE AMBRE
                         </div>
                         <p class="card__description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iusto repellendus laudantium expedita nesciunt dolores. Culpa consequuntur doloribus ab aperiam?
+                            A master of the urban-folk look, Vanessa Bruno is once again offering a pair of boots this
+                            season that are sure to add a Bohemian touch to any wardrobe. Featuring a suede upper, these
+                            shoes have a 4.5-cm heel that is both comfortable and practical.
                         </p>
+
+                        <div class="card__date">
+                            10/12/2022
+                        </div>
+                        <div class="card__price">
+                            $919
+                        </div>
+
                     </div>
                     <div class="card__footer">
                         <div class="card__btn-container">
-                            <a class="card__btn-cart" href="#">
-                                Agregar  
-                                <i class="fa-solid fa-cart-shopping">  </i>
-                            </a>
-                        </div>
-
-                        <div class="card__btn-container">
                             <a class="card__btn" href="#">
-                                <i class="fa-solid fa-circle-info">  </i>
                                 Detalle
+                                <i class="fa-solid fa-circle-info"> </i>
                             </a>
                         </div>
-                    </div>
-                    <div class="card__price">
-                        $100.000
+                        <div class="card__btn-container">
+                            <a class="card__btn-cart" href="#">
+                                <i class="fa-solid fa-cart-shopping"> </i>
+                                Agregar
+                            </a>
+                        </div>
                     </div>
                 </article>
                 <!-- CARD ********************************************-->
                 <!-- CARD ********************************************-->
                 <article class="card">
                     <div class="card__header">
-                        
-                        <div class="card__heart whish-list-on">
+                        <!-- WHISH LIST -->
+                        <div class="card__heart whish-list-off">
                             <i class="fa-solid fa-heart"></i>
                         </div>
-                        <img src="https://static.vecteezy.com/system/resources/previews/007/710/514/non_2x/green-sneakers-or-sport-running-shoe-isolated-on-a-white-background-free-photo.jpg" alt="Product Image" class="card__img">
+
+                        <img src="/assets/img/store/6.jpg" alt="Product Image" class="card__img">
                     </div>
+
                     <div class="card__body">
                         <div class="card__title">
-                            PRODUCT NAME
+                            LE SKINNY DE JEANNE DUBLIN
                         </div>
                         <p class="card__description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iusto repellendus laudantium expedita nesciunt dolores. Culpa consequuntur doloribus ab aperiam?
+                            A modern wardrobe essential, this classic mid-rise skinny jean features a clean and slim
+                            silhouette. In a medium-blue wash.
+
+                            Mid Rise Fit
+                            Super Stretch Denim
+                            44% Cotton/42% Lyocell/13% Polyester/1% Elastane
+                            Machine Wash
+                            9" Front Rise/29" Inseam/10" Leg Opening
                         </p>
+
+                        <div class="card__date">
+                            10/12/2022
+                        </div>
+                        <div class="card__price">
+                            $419
+                        </div>
+
                     </div>
                     <div class="card__footer">
                         <div class="card__btn-container">
-                            <a class="card__btn-cart" href="#">
-                                Agregar  
-                                <i class="fa-solid fa-cart-shopping">  </i>
+                            <a class="card__btn" href="#">
+                                Detalle
+                                <i class="fa-solid fa-circle-info"> </i>
                             </a>
                         </div>
-
                         <div class="card__btn-container">
-                            <a class="card__btn" href="#">
-                                <i class="fa-solid fa-circle-info">  </i>
-                                Detalle
+                            <a class="card__btn-cart" href="#">
+                                <i class="fa-solid fa-cart-shopping"> </i>
+                                Agregar
                             </a>
                         </div>
                     </div>
-                    <div class="card__price">
-                        $100.000
+                </article>
+                <!-- CARD ********************************************-->
+
+                <!-- CARD ********************************************-->
+                <article class="card">
+                    <div class="card__header">
+                        <!-- WHISH LIST -->
+                        <div class="card__heart whish-list-off">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+
+                        <img src="/assets/img/store/7.jpg" alt="Product Image" class="card__img">
+                    </div>
+
+                    <div class="card__body">
+                        <div class="card__title">
+                            HIS | HER EAU DE PARFUM
+                        </div>
+                        <p class="card__description">
+                            A unisex scent for the every guy and girl, this is the debut fragrance by who is elijah,
+                            revealing His | Her wild side. Heady enough to take you dancing through to dawn, His|Her
+                            doesn’t take itself too seriously.
+
+                        </p>
+
+                        <div class="card__date">
+                            10/12/2022
+                        </div>
+                        <div class="card__price">
+                            $419
+                        </div>
+
+                    </div>
+                    <div class="card__footer">
+                        <div class="card__btn-container">
+                            <a class="card__btn" href="#">
+                                Detalle
+                                <i class="fa-solid fa-circle-info"> </i>
+                            </a>
+                        </div>
+                        <div class="card__btn-container">
+                            <a class="card__btn-cart" href="#">
+                                <i class="fa-solid fa-cart-shopping"> </i>
+                                Agregar
+                            </a>
+                        </div>
                     </div>
                 </article>
                 <!-- CARD ********************************************-->
                 <!-- CARD ********************************************-->
                 <article class="card">
                     <div class="card__header">
-                        
-                        <div class="card__heart whish-list-on">
+                        <!-- WHISH LIST -->
+                        <div class="card__heart whish-list-off">
                             <i class="fa-solid fa-heart"></i>
                         </div>
-                        <img src="https://static.vecteezy.com/system/resources/previews/007/710/514/non_2x/green-sneakers-or-sport-running-shoe-isolated-on-a-white-background-free-photo.jpg" alt="Product Image" class="card__img">
+
+                        <img src="/assets/img/store/8.jpg" alt="Product Image" class="card__img">
                     </div>
+
                     <div class="card__body">
                         <div class="card__title">
-                            PRODUCT NAME
+                            NOR O-N SHORT 7355 SPRUCESTONE
                         </div>
                         <p class="card__description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iusto repellendus laudantium expedita nesciunt dolores. Culpa consequuntur doloribus ab aperiam?
+                            A boxy fit knitwear staple in fluffy alpaca and merino wool yarn, offering an effortless
+                            everyday jumper, with style and comfort combined. A wide round neck creates a flattering
+                            neckline to this cosy, medium gauge wool knit sweater.
                         </p>
+
+                        <div class="card__date">
+                            10/12/2022
+                        </div>
+                        <div class="card__price">
+                            $249
+                        </div>
+
                     </div>
                     <div class="card__footer">
                         <div class="card__btn-container">
-                            <a class="card__btn-cart" href="#">
-                                Agregar  
-                                <i class="fa-solid fa-cart-shopping">  </i>
-                            </a>
-                        </div>
-
-                        <div class="card__btn-container">
                             <a class="card__btn" href="#">
-                                <i class="fa-solid fa-circle-info">  </i>
                                 Detalle
+                                <i class="fa-solid fa-circle-info"> </i>
                             </a>
                         </div>
-                    </div>
-                    <div class="card__price">
-                        $100.000
+                        <div class="card__btn-container">
+                            <a class="card__btn-cart" href="#">
+                                <i class="fa-solid fa-cart-shopping"> </i>
+                                Agregar
+                            </a>
+                        </div>
                     </div>
                 </article>
                 <!-- CARD ********************************************-->
                 <!-- CARD ********************************************-->
                 <article class="card">
                     <div class="card__header">
-                        
-                        <div class="card__heart whish-list-on">
+                        <!-- WHISH LIST -->
+                        <div class="card__heart whish-list-off">
                             <i class="fa-solid fa-heart"></i>
                         </div>
-                        <img src="https://static.vecteezy.com/system/resources/previews/007/710/514/non_2x/green-sneakers-or-sport-running-shoe-isolated-on-a-white-background-free-photo.jpg" alt="Product Image" class="card__img">
+
+                        <img src="/assets/img/store/9.jpg" alt="Product Image" class="card__img">
                     </div>
+
                     <div class="card__body">
                         <div class="card__title">
-                            PRODUCT NAME
+                            GARSON VEST GRAPHITE
                         </div>
                         <p class="card__description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iusto repellendus laudantium expedita nesciunt dolores. Culpa consequuntur doloribus ab aperiam?
+                            A simplified version of the Freestyle Vest. Take on unpredictable weather conditions with a
+                            classic, quilt-through vest that offers enduring warmth where it's needed most. Crafted with
+                            a protective, hi-low hem and a leather-trimmed standing collar, it shields against high
+                            winds. Wear it on its own or layered under a soft shell for premium comfort A specialised
+                            and fully weather proofed duck down vest from the Canadian label. Classic, versatile,
+                            light-weight and well-insulated, with 625 fill power white duck down, and a proven textile
+                            designed to stay dry in extreme conditions. Heavy duty zips, storm flaps, fleece-lined
+                            handwarmer pockets, lifetime guarantee. Made in Canada.
                         </p>
+
+                        <div class="card__date">
+                            10/12/2022
+                        </div>
+                        <div class="card__price">
+                            $799
+                        </div>
+
                     </div>
                     <div class="card__footer">
                         <div class="card__btn-container">
-                            <a class="card__btn-cart" href="#">
-                                Agregar  
-                                <i class="fa-solid fa-cart-shopping">  </i>
-                            </a>
-                        </div>
-
-                        <div class="card__btn-container">
                             <a class="card__btn" href="#">
-                                <i class="fa-solid fa-circle-info">  </i>
                                 Detalle
+                                <i class="fa-solid fa-circle-info"> </i>
                             </a>
                         </div>
-                    </div>
-                    <div class="card__price">
-                        $100.000
+                        <div class="card__btn-container">
+                            <a class="card__btn-cart" href="#">
+                                <i class="fa-solid fa-cart-shopping"> </i>
+                                Agregar
+                            </a>
+                        </div>
                     </div>
                 </article>
                 <!-- CARD ********************************************-->
                 <!-- CARD ********************************************-->
                 <article class="card">
                     <div class="card__header">
-                        
-                        <div class="card__heart whish-list-on">
+                        <!-- WHISH LIST -->
+                        <div class="card__heart whish-list-off">
                             <i class="fa-solid fa-heart"></i>
                         </div>
-                        <img src="https://static.vecteezy.com/system/resources/previews/007/710/514/non_2x/green-sneakers-or-sport-running-shoe-isolated-on-a-white-background-free-photo.jpg" alt="Product Image" class="card__img">
+
+                        <img src="/assets/img/store/10.jpg" alt="Product Image" class="card__img">
                     </div>
+
                     <div class="card__body">
                         <div class="card__title">
-                            PRODUCT NAME
+                            WAVERLEIGH BLAZER BLACK
                         </div>
                         <p class="card__description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iusto repellendus laudantium expedita nesciunt dolores. Culpa consequuntur doloribus ab aperiam?
+                            Made from a premium wool fabrication the Waverleigh Blazer holds its shape and drapes fluidly. This tailored single breasted blazer has a streamlined silhouette that's punctuated with an exaggerated shoulder, a wide notched collar, and side welt pockets. 
                         </p>
+
+                        <div class="card__date">
+                            10/12/2022
+                        </div>
+                        <div class="card__price">
+                            $849
+                        </div>
+
                     </div>
                     <div class="card__footer">
                         <div class="card__btn-container">
-                            <a class="card__btn-cart" href="#">
-                                Agregar  
-                                <i class="fa-solid fa-cart-shopping">  </i>
-                            </a>
-                        </div>
-
-                        <div class="card__btn-container">
                             <a class="card__btn" href="#">
-                                <i class="fa-solid fa-circle-info">  </i>
                                 Detalle
+                                <i class="fa-solid fa-circle-info"> </i>
                             </a>
                         </div>
-                    </div>
-                    <div class="card__price">
-                        $100.000
+                        <div class="card__btn-container">
+                            <a class="card__btn-cart" href="#">
+                                <i class="fa-solid fa-cart-shopping"> </i>
+                                Agregar
+                            </a>
+                        </div>
                     </div>
                 </article>
                 <!-- CARD ********************************************-->
-                <!-- CARD ********************************************-->
-                <article class="card">
-                    <div class="card__header">
-                        
-                        <div class="card__heart whish-list-on">
-                            <i class="fa-solid fa-heart"></i>
-                        </div>
-                        <img src="https://static.vecteezy.com/system/resources/previews/007/710/514/non_2x/green-sneakers-or-sport-running-shoe-isolated-on-a-white-background-free-photo.jpg" alt="Product Image" class="card__img">
-                    </div>
-                    <div class="card__body">
-                        <div class="card__title">
-                            PRODUCT NAME
-                        </div>
-                        <p class="card__description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iusto repellendus laudantium expedita nesciunt dolores. Culpa consequuntur doloribus ab aperiam?
-                        </p>
-                    </div>
-                    <div class="card__footer">
-                        <div class="card__btn-container">
-                            <a class="card__btn-cart" href="#">
-                                Agregar  
-                                <i class="fa-solid fa-cart-shopping">  </i>
-                            </a>
-                        </div>
+<!-- CARD ********************************************-->
+<article class="card">
+    <div class="card__header">
+        <!-- WHISH LIST -->
+        <div class="card__heart whish-list-off">
+            <i class="fa-solid fa-heart"></i>
+        </div>
 
-                        <div class="card__btn-container">
-                            <a class="card__btn" href="#">
-                                <i class="fa-solid fa-circle-info">  </i>
-                                Detalle
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card__price">
-                        $100.000
-                    </div>
-                </article>
-                <!-- CARD ********************************************-->
-                <!-- CARD ********************************************-->
-                <article class="card">
-                    <div class="card__header">
-                        
-                        <div class="card__heart whish-list-on">
-                            <i class="fa-solid fa-heart"></i>
-                        </div>
-                        <img src="https://static.vecteezy.com/system/resources/previews/007/710/514/non_2x/green-sneakers-or-sport-running-shoe-isolated-on-a-white-background-free-photo.jpg" alt="Product Image" class="card__img">
-                    </div>
-                    <div class="card__body">
-                        <div class="card__title">
-                            PRODUCT NAME
-                        </div>
-                        <p class="card__description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iusto repellendus laudantium expedita nesciunt dolores. Culpa consequuntur doloribus ab aperiam?
-                        </p>
-                    </div>
-                    <div class="card__footer">
-                        <div class="card__btn-container">
-                            <a class="card__btn-cart" href="#">
-                                Agregar  
-                                <i class="fa-solid fa-cart-shopping">  </i>
-                            </a>
-                        </div>
+        <img src="/assets/img/store/11.jpg" alt="Product Image" class="card__img">
+    </div>
 
-                        <div class="card__btn-container">
-                            <a class="card__btn" href="#">
-                                <i class="fa-solid fa-circle-info">  </i>
-                                Detalle
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card__price">
-                        $100.000
-                    </div>
-                </article>
-                <!-- CARD ********************************************-->
-                <!-- CARD ********************************************-->
-                <article class="card">
-                    <div class="card__header">
-                        
-                        <div class="card__heart whish-list-on">
-                            <i class="fa-solid fa-heart"></i>
-                        </div>
-                        <img src="https://static.vecteezy.com/system/resources/previews/007/710/514/non_2x/green-sneakers-or-sport-running-shoe-isolated-on-a-white-background-free-photo.jpg" alt="Product Image" class="card__img">
-                    </div>
-                    <div class="card__body">
-                        <div class="card__title">
-                            PRODUCT NAME
-                        </div>
-                        <p class="card__description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iusto repellendus laudantium expedita nesciunt dolores. Culpa consequuntur doloribus ab aperiam?
-                        </p>
-                    </div>
-                    <div class="card__footer">
-                        <div class="card__btn-container">
-                            <a class="card__btn-cart" href="#">
-                                Agregar  
-                                <i class="fa-solid fa-cart-shopping">  </i>
-                            </a>
-                        </div>
+    <div class="card__body">
+        <div class="card__title">
+            SUNGLASSES GG1195SK001 GOLD
+        </div>
+        <p class="card__description">
+            Refined classic concept for an everyday look combining comfort and style. Square shape in full metal with acetate end tips that enriches the overall look. Gucci interlocking Logo on both temples.
+        </p>
 
-                        <div class="card__btn-container">
-                            <a class="card__btn" href="#">
-                                <i class="fa-solid fa-circle-info">  </i>
-                                Detalle
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card__price">
-                        $100.000
-                    </div>
-                </article>
-                <!-- CARD ********************************************-->
-        
+        <div class="card__date">
+            10/12/2022
+        </div>
+        <div class="card__price">
+            $659
+        </div>
+
+    </div>
+    <div class="card__footer">
+        <div class="card__btn-container">
+            <a class="card__btn" href="#">
+                Detalle
+                <i class="fa-solid fa-circle-info"> </i>
+            </a>
+        </div>
+        <div class="card__btn-container">
+            <a class="card__btn-cart" href="#">
+                <i class="fa-solid fa-cart-shopping"> </i>
+                Agregar
+            </a>
+        </div>
+    </div>
+</article>
+<!-- CARD ********************************************-->
+<!-- CARD ********************************************-->
+<article class="card">
+    <div class="card__header">
+        <!-- WHISH LIST -->
+        <div class="card__heart whish-list-off">
+            <i class="fa-solid fa-heart"></i>
+        </div>
+
+        <img src="/assets/img/store/12.jpg" alt="Product Image" class="card__img">
+    </div>
+
+    <div class="card__body">
+        <div class="card__title">
+            SUNGLASSES GG1183S006 GOLD
+        </div>
+        <p class="card__description">
+            This concept is cool & easy to wear directly developed from a vintage archive piece. Crafted in lightweight metal this pilot shape present the Gucci lettering logo on temples and comfortable flat end tips.
+        </p>
+
+        <div class="card__date">
+            10/12/2022
+        </div>
+        <div class="card__price">
+            $579
+        </div>
+
+    </div>
+    <div class="card__footer">
+        <div class="card__btn-container">
+            <a class="card__btn" href="#">
+                Detalle
+                <i class="fa-solid fa-circle-info"> </i>
+            </a>
+        </div>
+        <div class="card__btn-container">
+            <a class="card__btn-cart" href="#">
+                <i class="fa-solid fa-cart-shopping"> </i>
+                Agregar
+            </a>
+        </div>
+    </div>
+</article>
+<!-- CARD ********************************************-->
+
+
             </div>
 
         </section>
@@ -547,9 +657,9 @@
         </a>
     </div>
     <footer class="footer">
-        <div class="footer__column">
+        <div class="footer__column1">
             <ul class="footer__contact-container">
-                <li class="footer__contact-item"> 
+                <li class="footer__contact-item">
                     <a href="#" class="footer__contact-link">
                         <i class="fa-brands fa-facebook footer__contact-icon footer__contact-icon--facebook"></i>
                         Facebook
@@ -573,13 +683,13 @@
                 </li>
             </ul>
         </div>
-        <div class="footer__column">
-            <img src="/assets/logo.png" alt="Company Logo" class="footer__logo" width="50">
+        <div class="footer__column footer__center">
+            <img src="/assets/logo.png" alt="Company Logo" class="footer__logo">
             <h2 class="footer__company-name">
-                NOMBRE DE LA EMPRESA
+                Ransom & Wilder
             </h2>
             <p class="footer__copyrigth">
-                Todos los derechos reservados a Pepito
+                Todos los derechos reservados a Ransom & Wilder Company
             </p>
         </div>
         <div class="footer__column">
@@ -605,6 +715,7 @@
             </ul>
         </div>
     </footer>
-    
+
 </body>
+
 </html>

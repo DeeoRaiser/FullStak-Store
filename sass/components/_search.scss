@@ -2,9 +2,13 @@
     display: block;
     &__header{
         text-transform: uppercase;
-        font-size: 2 rem;
+        font-size: 2rem;
         text-align: center;
         background-color: $color-background;
+    }
+    &__title{
+        font-size: 1rem;
+        background-color:$color-background;
     }
     &__subtitle{
         font-size: 1rem;
@@ -18,6 +22,12 @@
         background-color:$color-background;
         padding: 2rem;
         margin-bottom: 1rem;
+
+    }
+    &__category{
+        color: $color-font-ligth2;
+        padding: .5rem;
+        border-bottom: 3px solid $color-bg-primary;
 
     }
 

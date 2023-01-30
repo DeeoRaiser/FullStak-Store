@@ -1,50 +1,94 @@
-section{
-    width: 50%;
-    overflow: hidden;
-}
-.main-contact{
+.main-contact {
     display: flex;
     flex-direction: row;
-}
+    min-height: 100%;
+    padding-left: 3rem ;
+    padding-right: 3rem ;
 
-.map-container{
-    width: 100%;
-}
+    margin-bottom: 3rem;
 
-.form-container{
-    display: flex;
-    height: 100%;
-    width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
+    &__map {
+        width: 50%;
+        padding: .8rem;
+    }
+
+    &__form {
+        width: 50%;
+        padding: .8rem;
+    }
 }
 
 .contact-form{
     background-color: $color-bg-primary;
-    padding: 4rem;
-    width: 95%;
+    padding: 2rem;
+    align-items: center;
     &__item{
-        padding: .2rem;
+        padding: 5px;
+    }
+    &__btn{
+        padding: .5rem;
+        border-radius: 5px;
+        border: none;
+        margin-left: .3rem;
     }
 }
 
-.field-container{
-    &__label{
+.contact-h1 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid $color-bg-primary;
+    margin-bottom: .8rem;
+    display: block;
+}
+
+
+
+.field-container {
+
+    &__label {
         padding: .5rem;
     }
-    &__input{
+
+    &__input {
         border-radius: 5px;
         border: none;
         padding: .5rem;
         width: 100%;
     }
-    &__input:focus{
+
+    &__input:focus {
         border: none;
         outline: 2px ridge $color-bg-primary;
         box-shadow: $shadow0;
     }
-    textarea{
+
+    &__area {
         height: 6rem;
     }
+
+    &__btn {
+        padding: 5px;
+    }
+}
+iframe {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
+@media screen and (max-width:600px) {
+    .main-contact {
+        flex-direction: column;
+        padding-left: 1rem ;
+        padding-right: 1rem ;
+    
+        margin-bottom: 1rem;
+
+        &__map {
+            width: 100%;
+        }
+        
+        &__form {
+            width: 100%;
+        }
+    }
+}

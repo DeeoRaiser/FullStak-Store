@@ -1,42 +1,53 @@
-.footer{
+.footer {
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-color: $color-bg-secondary;
-    &__column{
+
+    &__column {
         padding: 1rem 1.5rem;
     }
-    &__contact-item{
-        list-style: none;
-
-
+    &__center {
+        text-align: center;
     }
-    &__contact-link{
+
+    &__contact-item {
+        list-style: none;
+    }
+    &__logo {
+        height: 5rem;
+    }
+    &__contact-link {
         color: white;
-        padding: .25rem;    
+        padding: .25rem;
         display: flex;
         align-items: center;
         gap: .5rem;
         display: inline-block;
-
-
-       
     }
-    .footer__contact-icon{
+
+
+
+    .footer__contact-icon {
         font-size: 1.5rem;
-        &--facebook{    
+
+        &--facebook {
             color: #38529a;
         }
-        &--instagram{
-            color:#f14d59;
+
+        &--instagram {
+            color: #f14d59;
         }
-        &--linkedin{
-            color:#0077b6;
+
+        &--linkedin {
+            color: #0077b6;
         }
     }
 }
 
-@media screen and (min-width:600px){
-    .footer{
+@media screen and (min-width:600px) {
+    .footer {
+        justify-content: space-evenly;
         flex-direction: row;
     }
 }
