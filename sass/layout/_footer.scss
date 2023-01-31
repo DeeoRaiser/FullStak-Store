@@ -16,6 +16,7 @@
     }
     &__logo {
         height: 5rem;
+        filter: invert(100%);
     }
     &__contact-link {
         color: white;
@@ -26,7 +27,12 @@
         display: inline-block;
     }
 
-
+    &__company-name{
+        color: $color-wish-list-off;
+    }
+    &__copyrigth{
+        color: $color-wish-list-off;
+    }
 
     .footer__contact-icon {
         font-size: 1.5rem;

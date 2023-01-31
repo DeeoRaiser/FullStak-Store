@@ -43,6 +43,7 @@ body {
   color: rgb(236, 227, 227);
   align-items: center;
   padding: 0 1rem;
+  order: 3;
 }
 .user-navbar__user-avatar {
   padding-right: 10px;
@@ -170,7 +171,7 @@ body {
   color: rgb(85, 97, 85);
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 905px) {
   .navbar__menu-label, .navbar__menu-btn {
     display: none;
   }
@@ -183,8 +184,10 @@ body {
     height: 150px;
     margin-left: 3rem;
   }
+}
+@media screen and (max-width: 505px) {
   .user-navbar {
-    order: 3;
+    visibility: hidden;
   }
 }
 .footer {
@@ -204,6 +207,7 @@ body {
 }
 .footer__logo {
   height: 5rem;
+  filter: invert(100%);
 }
 .footer__contact-link {
   color: white;
@@ -212,6 +216,12 @@ body {
   align-items: center;
   gap: 0.5rem;
   display: inline-block;
+}
+.footer__company-name {
+  color: rgb(199, 194, 194);
+}
+.footer__copyrigth {
+  color: rgb(199, 194, 194);
 }
 .footer .footer__contact-icon {
   font-size: 1.5rem;
@@ -532,7 +542,6 @@ html {
   padding-left: 3rem;
   padding-right: 3rem;
   margin-bottom: 3rem;
-  height: 50vh;
 }
 .main-contact__map {
   width: 50%;
@@ -673,5 +682,59 @@ iframe {
 @media only screen and (max-width: 600px) {
   .form-container {
     width: 90vh;
+  }
+}
+.mainAboutUs {
+  padding: 1.5rem;
+  color: rgb(27, 26, 26);
+}
+.mainAboutUs__title {
+  font-size: 2rem;
+  text-align: center;
+  padding: 0.8rem;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(27, 26, 26);
+}
+.mainAboutUs__containerGeneral {
+  display: flex;
+  flex-direction: column;
+}
+.mainAboutUs__container1 {
+  display: flex;
+  flex-direction: row;
+}
+.mainAboutUs__container2 {
+  display: flex;
+  flex-direction: row;
+}
+.mainAboutUs__about-us-p {
+  padding: 1rem;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.mainAboutUs__storeImage {
+  height: 50%;
+  width: 50%;
+  border-radius: 8px;
+  filter: grayscale(90%);
+}
+.mainAboutUs__storeImage:hover {
+  filter: grayscale(10%);
+}
+
+@media screen and (max-width: 905px) {
+  .mainAboutUs__container1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .mainAboutUs__container2 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .mainAboutUs__storeImage {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
   }
 }/*# sourceMappingURL=main.css.map */

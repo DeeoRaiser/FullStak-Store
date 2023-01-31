@@ -13,6 +13,7 @@
     color:$color-font-ligth;
     align-items: center;
     padding: 0 1rem;
+    order:3;
 
     &__user-avatar{
         padding-right: 10px;
@@ -156,7 +157,7 @@
     
 }
 
-@media screen and (min-width: 600px){
+@media screen and (min-width: 905px){
     .navbar{
         &__menu-label, &__menu-btn{
             display: none;
@@ -172,7 +173,12 @@
             margin-left: 3rem;
         }
     }
+}
+
+@media screen and (max-width: 505px){
+
     .user-navbar{
-        order:3;
+        visibility: hidden;
+        
     }
 }
