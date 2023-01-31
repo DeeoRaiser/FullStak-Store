@@ -187,7 +187,7 @@ body {
 }
 @media screen and (max-width: 505px) {
   .user-navbar {
-    visibility: hidden;
+    display: none;
   }
 }
 .footer {
@@ -417,11 +417,12 @@ body {
 }
 .section-cards__products-count {
   padding: 1rem;
+  font-size: 0.8rem;
 }
 .section-cards__products-search-container {
   text-align: center;
   background-color: rgb(255, 255, 255);
-  padding: 2rem;
+  padding: 0.5rem;
   margin-bottom: 1rem;
 }
 .section-cards__category {
