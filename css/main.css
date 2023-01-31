@@ -417,7 +417,7 @@ body {
 }
 .section-cards__products-count {
   padding: 1rem;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
 }
 .section-cards__products-search-container {
   text-align: center;
@@ -508,7 +508,7 @@ html {
 
 .whatsapp-container {
   position: fixed;
-  bottom: 20px;
+  bottom: 15px;
   left: 20px;
   z-index: 10;
 }
