@@ -3,3 +3,12 @@
     padding: 1.5rem;
     color: $color-font-dark;
 }
+
+body{
+
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between
+
+}
