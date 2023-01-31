@@ -106,6 +106,15 @@
 
    }
 
+   &__btnTextDet{
+      display: inline;
+      visibility: hidden;
+   }
+
+   &__btnTextCart{
+      display: inline;
+      visibility: hidden;
+   }
    //----------------------
    &__btn-cart {
       position: relative;
@@ -118,10 +127,12 @@
       margin-bottom: .8rem;
    }
 
-   &__btn-cart:hover {
+   &__btn-cart:hover, &__btnTextCart{
       right: 0rem;
       transition: all 0.3s ease-out;
       background-color: $color-font-dark;
+
+      visibility:visible;
    }
 
 
@@ -135,10 +146,11 @@
       border-radius: 0px 10px 10px 0px;
    }
 
-   &__btn:hover {
+   &__btn:hover , &__btnTextDet {
       right: 0rem;
       transition: all 0.3s ease-out;
       background-color: $color-font-dark;
+      visibility:visible;
    }
 
    &__date {
