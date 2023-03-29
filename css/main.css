@@ -1,6 +1,4 @@
-/* $color-bg-primary: rgb(89, 158, 104);
-$color-bg-secondary: rgb(98, 185, 57);
-$color-bg-date: rgb(89, 158, 104); */
+/* REGISTER ALERT */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&display=swap");
 *,
 *::before,
@@ -28,7 +26,6 @@ body {
 }
 
 .header {
-  position: -webkit-sticky;
   position: sticky;
   width: 100%;
   top: 0;
@@ -531,9 +528,6 @@ html {
   width: 80px;
   filter: grayscale(20%);
 }
-.whatsapp-container__link {
-  url: "https://wa.me/543512531103?text=Hola%20Ranson%20and%20Wilder%20";
-}
 
 .swipe-up {
   position: fixed;
@@ -684,6 +678,56 @@ iframe {
 }
 .therms-container__label {
   margin-left: 0.5rem;
+}
+
+.err {
+  border: 2px solid red;
+}
+
+.alert {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 95vw;
+  align-items: center;
+  opacity: 1;
+  transition: 0.3s all linear;
+}
+.alert__error {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 90vw;
+  background-color: rgb(212, 96, 96);
+  color: rgb(236, 232, 232);
+}
+.alert__sussecs {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 90vw;
+  background-color: rgb(96, 212, 96);
+  color: rgb(236, 232, 232);
+}
+.alert__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.alert__hide {
+  opacity: 0;
+}
+.alert__button {
+  position: absolute;
+  cursor: pointer;
+  color: rgb(243, 234, 234);
+  top: 0.2rem;
+  right: 0.5rem;
 }
 
 .register__button {

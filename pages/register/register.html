@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Usuario</title>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header class="header">
@@ -54,13 +57,24 @@
         </nav>
 
     </header>
-    
-
     <main class="main">
+
         <h1 class="titulo-h1">REGISTRO DE USUARIO</h1>
 
+        <div id="alertContainer" class="alert alert__hide">
+            <div class="alert__error" id="alert"> 
+                <p id="alert__title" class="alert__title"></p>
+                <p id="alert__description" class="alert__description"></p>
+    
+                <div id="alert__button" class="alert__button" onclick="cerrar()">
+                    <i class="fas fa-times"></i>
+                </div> 
+            </div>
+        </div>
+
         <section class="section">
-            <form id="register" class="form-container">
+
+            <form id="register-form" class="form-container">
                 
                 <div class="name-container form-container__item">
                     <label class="name-container__label" for="name">Nombre Completo</label>
@@ -69,13 +83,13 @@
     
                 <div class="mail-container form-container__item">
                     <label class="mail-container__label" for="email">Email</label>
-                    <input class="mail-container__input input-form-register"  type="email" name="mail" minlength="8" maxlength="45"
+                    <input class="mail-container__input input-form-register" id="email" type="email" name="mail" minlength="8" maxlength="45"
                     pattern="[a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?" id="email" placeholder="example@email.com" required>
                 </div>
     
                 <div class="password-container form-container__item">
                     <label class="password-container__label" for="password1">Contraseña</label>
-                    <input class="password-container__input input-form-register" type="password" name="password1" id="password1" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required>
+                    <input class="password-container__input input-form-register" type="password" name="password1" id="password1" required>
                 </div>
     
                 <div class="reply-password-container form-container__item">
@@ -90,12 +104,12 @@
     
                 <div class="born-container form-container__item">
                     <label class="born-container__label" for="born-date">Fecha de Nacimiento</label>
-                    <input class="born-container__input input-form-register" type="date" name="age" id="born-date" required>
+                    <input class="born-container__input input-form-register" type="date" name="borndate" id="born-date" required>
                 </div>
     
                 <div class="born-country-container form-container__item">
                     <label class="born-country-container__label" for="born-country">Pais de Nacimiento</label>
-                    <select id="born-country" class="born-country-container__country" required>
+                    <select id="country" name="country" class="born-country-container__country" required>
                         <option value="AF">Afghanistan</option>
                             <option value="AX">Åland Islands</option>
                             <option value="AL">Albania</option>
@@ -350,21 +364,21 @@
     
                 <label class="form-container__item" for="">Sexo</label>
                 <div class="sex-container form-container__item">
-                    <input type="radio" class="sex-container__item " name="sex" id="female" required>
+                    <input type="radio" class="sex-container__item " name="sex" value="0" id="female" required>
                     <label class="sex-container__label" for="female">Femenino</label>
                     
-                    <input type="radio" class="sex-container__item" name="sex" id="male">
+                    <input type="radio" class="sex-container__item" name="sex" value="1" id="male">
                     <label class="sex-container__label" for="male">Masculino</label>
                     
-                    <input type="radio" class="sex-container__item" name="sex" id="other">
+                    <input type="radio" class="sex-container__item" name="sex" value="2" id="other">
                     <label class="sex-container__label" for="other">Otro</label>
                 </div>
     
                 <div class="therms-container form-container__item">
-                    <input class="therms-container__input" type="checkbox" name="checkbox" id="therms" required>
+                    <input class="therms-container__input" type="checkbox" name="therms" id="therms" required>
                     <label class="therms-container__label" for="therms">Acepto los términos y condiciones</label>
                 </div>
-                <input class="register__button" value="Enviar" type="submit">
+                <input id="submit" class="register__button" value="Enviar" type="submit">
             </form>
         </section>
     </main>
@@ -379,6 +393,8 @@
             <img src="/assets/img/icons/swipe-up.png" alt="Subir Arriba" class="swipe-up__img">
         </a>
     </div>
+
+
 
     <footer class="footer">
         <div class="footer__column1">
@@ -439,6 +455,7 @@
             </ul>
         </div>
     </footer>
+    <script src="/js/register.js"></script>
 
 </body>
 </html>
