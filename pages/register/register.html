@@ -83,18 +83,18 @@
     
                 <div class="mail-container form-container__item">
                     <label class="mail-container__label" for="email">Email</label>
-                    <input class="mail-container__input input-form-register" id="email" type="email" name="mail" minlength="8" maxlength="45"
+                    <input class="mail-container__input input-form-register" id="email" type="email" name="mail" minlength="8" maxlength="45" onfocus="quitMailErr()"
                     pattern="[a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?" id="email" placeholder="example@email.com" required>
                 </div>
     
                 <div class="password-container form-container__item">
                     <label class="password-container__label" for="password1">Contraseña</label>
-                    <input class="password-container__input input-form-register" type="password" name="password1" id="password1" required>
+                    <input class="password-container__input input-form-register" type="password" name="password1" id="password1" onfocus="quitPassErr()" required>
                 </div>
     
                 <div class="reply-password-container form-container__item">
                     <label class="reply-password-container__label" for="password2">Repetir Contraseña</label>
-                    <input class="reply-password-container__input input-form-register" type="password" name="password2" id="password2" required>
+                    <input class="reply-password-container__input input-form-register" type="password" name="password2" id="password2" onfocus="quitPassErr()" required>
                 </div>
     
                 <div class="age-container form-container__item">
@@ -362,23 +362,30 @@
                     </select>
                 </div>
     
-                <label class="form-container__item" for="">Sexo</label>
-                <div class="sex-container form-container__item">
-                    <input type="radio" class="sex-container__item " name="sex" value="0" id="female" required>
-                    <label class="sex-container__label" for="female">Femenino</label>
+                <label class="form-container__itemGender" for="">Sexo</label>
+                <div class="gender-container form-container__item">
                     
-                    <input type="radio" class="sex-container__item" name="sex" value="1" id="male">
-                    <label class="sex-container__label" for="male">Masculino</label>
-                    
-                    <input type="radio" class="sex-container__item" name="sex" value="2" id="other">
-                    <label class="sex-container__label" for="other">Otro</label>
+                    <div class="gender-container__sec">
+                        <input type="radio" class="gender-container__item " name="gender" value="0" id="female" required>
+                        <label class="gender-container__label" for="female">Femenino</label>
+                    </div>
+                    <div class="gender-container__sec">
+                        <input type="radio" class="gender-container__item" name="gender" value="1" id="male">
+                        <label class="gender-container__label" for="male">Masculino</label>
+                    </div>
+                    <div class="gender-container__sec">
+                        <input type="radio" class="gender-container__item" name="gender" value="2" id="other">
+                        <label class="gender-container__label" for="other">Otro</label>
+                    </div>
                 </div>
     
                 <div class="therms-container form-container__item">
                     <input class="therms-container__input" type="checkbox" name="therms" id="therms" required>
                     <label class="therms-container__label" for="therms">Acepto los términos y condiciones</label>
                 </div>
-                <input id="submit" class="register__button" value="Enviar" type="submit">
+                <div class="submit-container form-container__button">
+                    <input id="submit" class="register__button" value="Registrar !" type="submit">
+                </div>
             </form>
         </section>
     </main>

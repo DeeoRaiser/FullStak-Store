@@ -119,6 +119,7 @@
    &__btn-cart {
       position: relative;
       right: -4.8rem;
+      cursor: pointer;
 
       color: $color-font-ligth;
       background-color: $color-bg-primary;
@@ -140,6 +141,7 @@
       position: relative;
       right: +4.5rem;
 
+      cursor: pointer;
       color: $color-font-ligth;
       background-color: $color-bg-primary;
       padding: +1rem;

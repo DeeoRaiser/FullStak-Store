@@ -5,21 +5,27 @@ const users = JSON.parse(localStorage.getItem("users")) || []
 registerForm.addEventListener('submit',(event)=>{
     event.preventDefault()
     const elements = event.target.elements
-
     if (checkPass()){
         const userExist = users.find((user)=>{
             if (user.mail === registerForm.mail.value){
                 return true
             }
         })
+
         if (userExist){
+            document.getElementById("email").classList.add("err")
             showAlert("Mail Error","El mail ingresado ya existe", "err")
         }else{
             userSave(elements)
-            showAlert("D","El mail ingresado ya existe", "suc")
+            showAlert("Gracias por elegirnos!","Ya podes comprar en nuestra web.</br>te redireccionaremos al portal de ingreso", "suc")
+            setTimeout(redirIndex,4000)
         }   
     }
 })
+
+function redirIndex(){
+    window.location.href = "http://127.0.0.1:5500/index.html"
+}
 
 function checkPass(){
     if(password1.value !== password2.value && password1.value !== "" && password2.value !== "" ){
@@ -53,15 +59,15 @@ function hideAlert(){
 }
 
 function userSave(elem){
+    console.log(elem.country.value)
     const user = {
         name: elem.name.value,
         mail: elem.mail.value,
         password: elem.password1.value,
         age: elem.age.value,
         bornDate: elem.borndate.value,
-        name: elem.name.value,
         country:elem.country.value,
-        sex:elem.sex.checked,
+        sex: "" + elem.gender.value,
         therms:elem.therms.checked
     }
 
@@ -69,5 +75,11 @@ function userSave(elem){
     localStorage.setItem('users', JSON.stringify(users))
 }
 
+function quitMailErr(){
+    email.classList.remove("err")
+}
 
-
+function quitPassErr(){
+    password1.classList.remove("err")
+    password2.classList.remove("err")
+}

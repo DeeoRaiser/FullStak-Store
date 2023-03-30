@@ -78,11 +78,11 @@
                     <div class="product-search">
                         <div class="product-search__icon"><i class="fa-solid fa-magnifying-glass"></i></div>
                         <input placeholder="Que deseas comprar hoy ?" type="text" class="product-search__input">
-                        <button class="product-search__btn">Buscar</button>
+                        <button class="product-search__btn" onclick="addCard()" >Buscar</button>
                     </div>
 
                     <div class="section-cards__products-count">
-                        Se encontraron 12 productos
+                        Se encontraron 12 resultados
                     </div>
                 </div>
             </header>
@@ -93,7 +93,7 @@
                 </h1>
             </div>
 
-            <div class="cards-container">
+            <div id="cards-container" class="cards-container">
 
                 <!-- CARD ********************************************-->
                 <article class="card">
@@ -717,7 +717,7 @@
             </ul>
         </div>
     </footer>
-
+<script src="/js/index.js"></script>
 </body>
 
 </html>

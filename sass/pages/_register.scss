@@ -19,6 +19,14 @@
         color: $color-background;
         margin-bottom: 1rem;
     }
+    &__itemGender{
+        display: block;
+        width: 100%;
+        color: $color-background;
+    }
+    &__button{
+        text-align: center;
+    }
 }
 
 
@@ -35,18 +43,24 @@
     margin-bottom: 1rem;
 }
 
-.sex-container {
-    padding: 1rem;
+.gender-container {
+    padding: .3rem;
     font-family: Arial, Helvetica, sans-serif;
     color: $color-background;
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &__sec{
+        display: inline-flex;
+        
+    }
     &__label {
-        padding: 0.5rem;
+        padding: 0.3rem;
     }
 }
 
 .therms-container {
-    padding: 1rem;
+    padding: .3rem;
     font-family: Arial, Helvetica, sans-serif;
     color: $color-background;
     margin-bottom: 1rem;
@@ -57,7 +71,8 @@
 }
 
 .err {
-    border: 2px solid red;
+    box-shadow: 0px 0px 3px 1px red;
+    //border: 2px solid red;
 }
 
 .alert {
@@ -100,6 +115,7 @@
 
     &__hide {
         opacity: 0;
+        display: none;
     }
 
     &__button {
@@ -111,13 +127,14 @@
     }
 }
 
-
 .register__button {
     padding: .5rem .9rem .5rem .9rem;
     background-color: $color-bg-secondary;
     color: $color-background;
     border: none;
     border-radius: 4px;
+    cursor: pointer;
+    width: 50%;
 }
 
 @media only screen and (max-width: 600px) {
