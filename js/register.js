@@ -59,7 +59,6 @@ function hideAlert(){
 }
 
 function userSave(elem){
-    console.log(elem.country.value)
     const user = {
         name: elem.name.value,
         mail: elem.mail.value,
@@ -83,3 +82,6 @@ function quitPassErr(){
     password1.classList.remove("err")
     password2.classList.remove("err")
 }
+
+var url = window.location.pathname
+console.log(url.substring(url.lastIndexOf('/') + 1))
