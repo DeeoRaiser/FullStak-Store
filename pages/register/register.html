@@ -14,19 +14,19 @@
     <header class="header">
         <nav class="navbar">
             <a href="/index.html" class="navbar__nav-link">
-                <img class="navbar__logo" src="/assets/logo.png" alt="Logo del ecommerce">
+                <img class="navbar__logo" src="/assets/logo.png" alt="Logo de la empresa">
             </a>
-            <div class="user-navbar">
+            <div id="user-navbar" class="user-navbar">
                 <div class="user-navbar__cart-icon-container">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <div class="user-navbar__cart-counter">
+                    <div id="user-cart-counter" class="user-navbar__cart-counter">
                         12
                     </div>
                 </div>
                 <div class="user-navbar__user-avatar-container">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png"
                         class="user-navbar__user-avatar" alt="Imagen de usuario">
-                    <div class="user-navbar__user-name">
+                    <div id="user-name" class="user-navbar__user-name">
                         Juan
                     </div>
                 </div>
@@ -41,17 +41,20 @@
 
 
             <ul class="navbar__nav-links-container">
-                <li class="navbar__nav-item">
+                <li id="nav-inicio" class="navbar__nav-item">
                     <a href="/index.html" class="navbar__nav-link">Inicio</a>
                 </li>
-                <li class="navbar__nav-item">
+                <li id="nav-contacto" class="navbar__nav-item">
                     <a href="/pages/contact/contact.html" class="navbar__nav-link">Contacto</a>
                 </li>
-                <li class="navbar__nav-item">
+                <li id="nav-nosotros" class="navbar__nav-item">
                     <a href="/pages/about-us/about-us.html" class="navbar__nav-link">Nosotros</a>
                 </li>
-                <li class="navbar__nav-item">
+                <li id="nav-registro" class="navbar__nav-item">
                     <a href="/pages/register/register.html" class="navbar__nav-link">Registro</a>
+                </li>
+                <li id="nav-login" class="navbar__nav-item">
+                    <a href="/pages/login/login.html" class="navbar__nav-link">Login</a>
                 </li>
             </ul>
         </nav>
@@ -61,50 +64,39 @@
 
         <h1 class="titulo-h1">REGISTRO DE USUARIO</h1>
 
-        <div id="alertContainer" class="alert alert__hide">
-            <div class="alert__error" id="alert"> 
-                <p id="alert__title" class="alert__title"></p>
-                <p id="alert__description" class="alert__description"></p>
-    
-                <div id="alert__button" class="alert__button" onclick="cerrar()">
-                    <i class="fas fa-times"></i>
-                </div> 
-            </div>
-        </div>
-
         <section class="section">
 
             <form id="register-form" class="form-container">
                 
                 <div class="name-container form-container__item">
                     <label class="name-container__label" for="name">Nombre Completo</label>
-                    <input class="name-container__input input-form-register" type="text" name="name" id="name" placeholder="Nombre y Apellido" required>
+                    <input class="name-container__input input-form" type="text" name="name" id="name" placeholder="Nombre y Apellido" required>
                 </div>
     
                 <div class="mail-container form-container__item">
                     <label class="mail-container__label" for="email">Email</label>
-                    <input class="mail-container__input input-form-register" id="email" type="email" name="mail" minlength="8" maxlength="45" onfocus="quitMailErr()"
+                    <input class="mail-container__input input-form" id="email" type="email" name="mail" minlength="8" maxlength="45" onfocus="quitMailErr()"
                     pattern="[a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?" id="email" placeholder="example@email.com" required>
                 </div>
     
                 <div class="password-container form-container__item">
                     <label class="password-container__label" for="password1">Contraseña</label>
-                    <input class="password-container__input input-form-register" type="password" name="password1" id="password1" onfocus="quitPassErr()" required>
+                    <input class="password-container__input input-form" type="password" name="password1" id="password1" onfocus="quitPassErr()" required>
                 </div>
     
                 <div class="reply-password-container form-container__item">
                     <label class="reply-password-container__label" for="password2">Repetir Contraseña</label>
-                    <input class="reply-password-container__input input-form-register" type="password" name="password2" id="password2" onfocus="quitPassErr()" required>
+                    <input class="reply-password-container__input input-form" type="password" name="password2" id="password2" onfocus="quitPassErr()" required>
                 </div>
     
                 <div class="age-container form-container__item">
                     <label class="age-container__label" for="age">Edad</label>
-                    <input class="age-container__input input-form-register" type="number" name="age" id="age" min="12" max="110" step="1" required>
+                    <input class="age-container__input input-form" type="number" name="age" id="age" min="12" max="110" step="1" required>
                 </div>
     
                 <div class="born-container form-container__item">
                     <label class="born-container__label" for="born-date">Fecha de Nacimiento</label>
-                    <input class="born-container__input input-form-register" type="date" name="borndate" id="born-date" required>
+                    <input class="born-container__input input-form" type="date" name="borndate" id="born-date" required>
                 </div>
     
                 <div class="born-country-container form-container__item">
@@ -463,6 +455,6 @@
         </div>
     </footer>
     <script src="/js/register.js"></script>
-
+    <script src="/js/general.js"></script>
 </body>
 </html>

@@ -25,6 +25,10 @@ body {
   flex-direction: column;
 }
 
+.hiden-item {
+  display: none;
+}
+
 .header {
   position: sticky;
   width: 100%;
@@ -239,6 +243,13 @@ body {
     flex-direction: row;
   }
 }
+.input-form {
+  width: 100%;
+  padding: 8px;
+  border-radius: 3px;
+  border: none;
+}
+
 .main {
   padding: 1.5rem;
   color: rgb(27, 26, 26);
@@ -265,6 +276,7 @@ body {
 }
 .card__heart {
   position: relative;
+  color: rgb(199, 194, 194);
 }
 .card__heart i {
   position: absolute;
@@ -653,13 +665,6 @@ iframe {
 }
 .form-container__button {
   text-align: center;
-}
-
-.input-form-register {
-  width: 100%;
-  padding: 8px;
-  border-radius: 3px;
-  border: none;
 }
 
 .born-country-container__country {

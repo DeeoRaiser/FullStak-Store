@@ -14,7 +14,7 @@
 
    &__heart {
       position: relative;
-
+      color: $color-wish-list-off;
       i {
          position: absolute;
          right: 0;
@@ -23,6 +23,7 @@
          text-shadow: $shadow1;
          z-index: 2;
       }
+     
    }
 
    &__heart:hover {

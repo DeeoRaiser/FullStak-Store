@@ -1,3 +1,6 @@
+import { showAlert, hideAlert } from "./alert.js";
+
+
 const registerForm = document.getElementById("register-form")
 //obtengo si existieren los usuarios guardados en el localstorage
 const users = JSON.parse(localStorage.getItem("users")) || []
@@ -38,6 +41,34 @@ function checkPass(){
     }
 }
 
+function userSave(elem){
+    const user = {
+        name: elem.name.value,
+        mail: elem.mail.value,
+        password: elem.password1.value,
+        age: elem.age.value,
+        bornDate: elem.borndate.value,
+        country:elem.country.value,
+        sex: "" + elem.gender.value,
+        therms:elem.therms.checked,
+        cart:[]
+    }
+
+    users.push(user)
+    localStorage.setItem('users', JSON.stringify(users))
+}
+
+function quitMailErr(){
+    email.classList.remove("err")
+}
+
+function quitPassErr(){
+    password1.classList.remove("err")
+    password2.classList.remove("err")
+}
+
+
+
 function showAlert(titulo, message, tipo){
     _alert = document.getElementById('alert')
     _alert.classList.remove('alert__error')
@@ -57,31 +88,3 @@ function showAlert(titulo, message, tipo){
 function hideAlert(){
     document.getElementById('alertContainer').classList.add('alert__hide')
 }
-
-function userSave(elem){
-    const user = {
-        name: elem.name.value,
-        mail: elem.mail.value,
-        password: elem.password1.value,
-        age: elem.age.value,
-        bornDate: elem.borndate.value,
-        country:elem.country.value,
-        sex: "" + elem.gender.value,
-        therms:elem.therms.checked
-    }
-
-    users.push(user)
-    localStorage.setItem('users', JSON.stringify(users))
-}
-
-function quitMailErr(){
-    email.classList.remove("err")
-}
-
-function quitPassErr(){
-    password1.classList.remove("err")
-    password2.classList.remove("err")
-}
-
-var url = window.location.pathname
-console.log(url.substring(url.lastIndexOf('/') + 1))

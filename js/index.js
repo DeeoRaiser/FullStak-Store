@@ -1,5 +1,5 @@
 const cards = document.getElementsByClassName('cards-container')
-const art = JSON.parse(localStorage.getItem("articulos")) || {}
+const art = JSON.parse(localStorage.getItem("articulos")) || []
 var Articles =
     [   {
             id: '1',
@@ -109,56 +109,125 @@ var Articles =
             currency: '$',
             img: 12
         }]
+var user = JSON.parse(localStorage.getItem("user"))|| []
+addCards(Articles)
 
-addCard(Articles)
+function addCart(id){
+    console.log("dfdsfsdf")
+     showAlert("Articulo Agregado al carrito", "suc")
+          
+ }
 
-function addCard(arts) {
-    const cardContainer = document.getElementById('cards-container')
+function addCards(arts){
 
     arts.forEach(art => {
-        cardContainer.innerHTML +=
-            `<article class="card">
-        <div class="card__header">
-            <div class="card__heart whish-list-off">
-                <i class="fa-solid fa-heart"></i>
-            </div>
-            <img src="/assets/img/store/${art.img}.jpg" alt="Product Image" class="card__img">
-        </div>
+        const articleCard = document.createElement("article")
+        articleCard.classList.add("card")
+      
+        const headerDiv = document.createElement("div")
+        headerDiv.classList.add("card__header")
+      
+        const heartDiv = document.createElement("div")
+        
+        heartDiv.classList.add("card__heart")
+      
+        const heartIcon = document.createElement("i")
+        heartIcon.classList.add("fa-solid", "fa-heart")
+      
+        heartDiv.appendChild(heartIcon)
+        headerDiv.appendChild(heartDiv)
+      
+        const img = document.createElement("img")
+        img.src = `/assets/img/store/${art.img}.jpg`
+        img.alt = "Product Image"
+        img.classList.add("card__img")
+      
+        headerDiv.appendChild(img)
+        articleCard.appendChild(headerDiv)
+      
+        const bodyDiv = document.createElement("div")
+        bodyDiv.classList.add("card__body")
+      
+        const titleDiv = document.createElement("div")
+        titleDiv.classList.add("card__title")
+        titleDiv.textContent = art.title
+      
+        const descriptionP = document.createElement("p")
+        descriptionP.classList.add("card__description")
+        descriptionP.textContent = art.description
+      
+        const dateDiv = document.createElement("div")
+        dateDiv.classList.add("card__date")
+        dateDiv.textContent = art.date
+      
+        const priceDiv = document.createElement("div")
+        priceDiv.classList.add("card__price")
+        priceDiv.textContent = art.currency + art.price
+      
+        bodyDiv.appendChild(titleDiv)
+        bodyDiv.appendChild(descriptionP)
+        bodyDiv.appendChild(dateDiv)
+        bodyDiv.appendChild(priceDiv)
+      
+        articleCard.appendChild(bodyDiv)
+      
+        const footerDiv = document.createElement("div")
+        footerDiv.classList.add("card__footer")
+      
+        const detailBtnContainer = document.createElement("div")
+        detailBtnContainer.classList.add("card__btn-container")
+      
+        const detailBtn = document.createElement("a")
+        detailBtn.classList.add("card__btn")
+        detailBtn.setAttribute("onclick", `detailArt(${art.id})`)
+      
+        const detailText = document.createElement("p")
+        detailText.classList.add("card__btnTextDet")
+        detailText.textContent = "Detalle"
+      
+        const infoIcon = document.createElement("i");
+        infoIcon.classList.add("fa-solid", "fa-circle-info")
+      
+        detailBtn.appendChild(detailText)
+        detailBtn.appendChild(infoIcon)
+        detailBtnContainer.appendChild(detailBtn)
+      
+        const cartBtnContainer = document.createElement("div")
+        cartBtnContainer.classList.add("card__btn-container")
+      
+        const cartBtn = document.createElement("a")
+        cartBtn.classList.add("card__btn-cart")
+        cartBtn.setAttribute("onclick", `addCart(${art.id})`)
 
-        <div class="card__body">
-            <div class="card__title">
-                ${art.title}
-            </div>
-            <p class="card__description">
-                ${art.description}
-            </p>
+      
+        const cartIcon = document.createElement("i")
+        cartIcon.classList.add("fa-solid", "fa-cart-shopping")
+      
+        const cartText = document.createElement("p")
+        cartText.classList.add("card__btnTextCart")
+        
+        cartText.textContent = "Agregar"
+      
+        cartBtn.appendChild(cartIcon)
+        cartBtn.appendChild(cartText)
+        cartBtnContainer.appendChild(cartBtn)
+      
+        footerDiv.appendChild(detailBtnContainer)
+        footerDiv.appendChild(cartBtnContainer)
+      
+        articleCard.appendChild(footerDiv)
 
-            <div class="card__date">
-                ${art.date}
-            </div>
-            <div class="card__price">
-            ${art.currency} ${art.price}
-            </div>
-
-        </div>
-        <div class="card__footer">
-            <div class="card__btn-container">
-                <a class="card__btn">
-                    <p class="card__btnTextDet" onclick="artInfo=(${art.id})">Detalle</p>
-                    <i class="fa-solid fa-circle-info"> </i>
-                </a>
-            </div>
-            <div class="card__btn-container">
-                <a class="card__btn-cart">
-                    <i class="fa-solid fa-cart-shopping"> </i>
-                    <p class="card__btnTextCart" onclick="addCart=(${art.id})">Agregar</p>
-                </a>
-            </div>
-        </div>
-        </article>`
-    })
+        const cardsContainer = document.getElementById("cards-container")
+        cardsContainer.appendChild(articleCard)
+    });
+      
 }
 
+
+
+function detailArt(id){
+
+}
 
 
 
