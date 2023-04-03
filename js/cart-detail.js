@@ -1,4 +1,4 @@
-var cards = document.getElementsByClassName('cards-container')
+var row = document.getElementsByClassName('row-cart-detail')
 var art = JSON.parse(localStorage.getItem("articulos")) || []
 var loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
 
@@ -114,196 +114,161 @@ var Articles =
         currency: '$',
         img: 12
     }]
-addCards(Articles)
+
+addCards(filterCart(Articles))
 
 //Funcion que dibuja las card en el DOM, parametro Array de Articulos
 function addCards(arts) {
     loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
+    
+    const lista = document.getElementById('row-cart-detail')
+    lista.innerHTML = ""
+
+    if (arts == 0){
+        const title = document.getElementById('title-h1')
+        title.innerHTML = 'TU CARRITO ESTA VACIO'
+    }
+
+    let total = 0
+    const divCartDetail = document.getElementById('row-cart-detail')
     arts.forEach(art => {
-        const articleCard = document.createElement("article")
-        articleCard.classList.add("card")
+        
+        
+        const divRow = document.createElement('div')
+        divRow.className = 'row'
 
-        const headerDiv = document.createElement("div")
-        headerDiv.classList.add("card__header")
+        const divPic = document.createElement('div')
+        divPic.className = 'row__pic'
 
-        const heartDiv = document.createElement("div")
+        const trashIcon = document.createElement('i')
+        trashIcon.className = 'fa-solid fa-trash'
+        trashIcon.id = 'deleteart'
+        trashIcon.setAttribute('onclick', `delArtCart(${art.id})`)
 
-        heartDiv.classList.add("card__heart")
-        heartDiv.setAttribute("id", `heart_${art.id}`)
+        const img = document.createElement('img')
+        img.src = `/assets/img/store/${art.id}.jpg`
 
+        const divDesc = document.createElement('div')
+        divDesc.className = 'row__description'
+        divDesc.innerHTML = art.title
 
-        if (loginUser.length !== 0) {
-            let exist = loginUser.wish.includes(parseInt(art.id))
+        const divQty = document.createElement('div')
+        divQty.className = 'row__quantity'
 
-            if (exist) {
-                heartDiv.classList.add("card__heartWishOn")
-            }
-        }
+        const qtyInput = document.createElement('input')
+        qtyInput.type = 'number'
+        qtyInput.name = 'quantity'
+        qtyInput.id = `quantity-${art.id}`
+        qtyInput.setAttribute('onchange', `sumResCart(${art.id})`)
+        qtyInput.max = 100
+        qtyInput.min = 0;
+        qtyInput.value   = art.quantity;
 
-        const heartIcon = document.createElement("i")
-        heartIcon.classList.add("fa-solid", "fa-heart")
-        heartIcon.setAttribute("onclick", `addDelWish(${art.id})`)
+        const divPartialAmount = document.createElement('div')
+        divPartialAmount.className = 'row__partial-amount'
+        divPartialAmount.innerHTML = formatCurrency(art.quantity * art.price)
+        
+        total += (art.quantity * art.price)
 
-        heartDiv.appendChild(heartIcon)
-        headerDiv.appendChild(heartDiv)
+        divPic.appendChild(trashIcon)
+        divPic.appendChild(img)
+        divRow.appendChild(divPic)
+        divRow.appendChild(divDesc)
+        divRow.appendChild(divQty)
+        divRow.appendChild(divPartialAmount)
+        divQty.appendChild(qtyInput)
+        divCartDetail.appendChild(divRow)
+    })
 
-        const img = document.createElement("img")
-        img.src = `/assets/img/store/${art.img}.jpg`
-        img.alt = "Product Image"
-        img.classList.add("card__img")
+    //ROW TOTAL
+    const divRowTot = document.createElement('div')
+    divRowTot.className = 'total-row'
 
-        headerDiv.appendChild(img)
-        articleCard.appendChild(headerDiv)
+    const divTitle = document.createElement('div')
+    divTitle.className = 'total-row__title'
+    divTitle.innerHTML = `TOTAL: ${formatCurrency(total)}`  
 
-        const bodyDiv = document.createElement("div")
-        bodyDiv.classList.add("card__body")
+    divRowTot.appendChild(divTitle)
+    divCartDetail.appendChild(divRowTot)
 
-        const titleDiv = document.createElement("div")
-        titleDiv.classList.add("card__title")
-        titleDiv.setAttribute("id", `title${art.id}`)
-        titleDiv.textContent = art.title
-
-        const descriptionP = document.createElement("p")
-        descriptionP.classList.add("card__description")
-        descriptionP.textContent = art.description
-
-        const dateDiv = document.createElement("div")
-        dateDiv.classList.add("card__date")
-        dateDiv.textContent = art.date
-
-        const priceDiv = document.createElement("div")
-        priceDiv.classList.add("card__price")
-        priceDiv.textContent = art.currency + art.price
-
-        bodyDiv.appendChild(titleDiv)
-        bodyDiv.appendChild(descriptionP)
-        bodyDiv.appendChild(dateDiv)
-        bodyDiv.appendChild(priceDiv)
-
-        articleCard.appendChild(bodyDiv)
-
-        const footerDiv = document.createElement("div")
-        footerDiv.classList.add("card__footer")
-
-        const detailBtnContainer = document.createElement("div")
-        detailBtnContainer.classList.add("card__btn-container")
-
-        const detailBtn = document.createElement("a")
-        detailBtn.classList.add("card__btn")
-        detailBtn.setAttribute("onclick", `detailArt(${art.id})`)
-
-        const detailText = document.createElement("p")
-        detailText.classList.add("card__btnTextDet")
-        detailText.textContent = "Detalle"
-
-        const infoIcon = document.createElement("i");
-        infoIcon.classList.add("fa-solid", "fa-circle-info")
-
-        detailBtn.appendChild(detailText)
-        detailBtn.appendChild(infoIcon)
-        detailBtnContainer.appendChild(detailBtn)
-
-        const cartBtnContainer = document.createElement("div")
-        cartBtnContainer.classList.add("card__btn-container")
-
-        const cartBtn = document.createElement("a")
-        cartBtn.classList.add("card__btn-cart")
-        cartBtn.setAttribute("onclick", `addCart(${art.id})`)
-
-
-        const cartIcon = document.createElement("i")
-        cartIcon.classList.add("fa-solid", "fa-cart-shopping")
-
-        const cartText = document.createElement("p")
-        cartText.classList.add("card__btnTextCart")
-
-        cartText.textContent = "Agregar"
-
-        cartBtn.appendChild(cartIcon)
-        cartBtn.appendChild(cartText)
-        cartBtnContainer.appendChild(cartBtn)
-
-        footerDiv.appendChild(detailBtnContainer)
-        footerDiv.appendChild(cartBtnContainer)
-
-        articleCard.appendChild(footerDiv)
-
-        const cardsContainer = document.getElementById("cards-container")
-        cardsContainer.appendChild(articleCard)
-    });
-
+    showData(loginUser)
 }
 
-//Funcion que agrega articulos al carrito de compras, parametro ID articulo y Cantidad
-function addCart(idArt, quan = 1) {
+//Funcion para dar formato currency a el precio de los articulos
+function formatCurrency(num){
+    const options = { style: "currency", currency: "usd", minimumFractionDigits: 2 };
+    const numFormat = num.toLocaleString("en-US", options);
+    return numFormat
+}
+
+//Envio los datos del id y la cantidad en el array cart, y obtengo el resto de los datos del array de los articulos
+function filterCart(Arts) {
     loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
-    if (loginUser.length !== 0) {
-        let cart = loginUser.cart
+    cart = loginUser.cart
 
-        const searchCart = cart.find(cart => cart.id === idArt) || [] //BUSCO EL ARTICULO EN EL CARRITO
+    const artCart = []
+    Arts.forEach((art) => {
 
-        if (searchCart.length === 0) {   //si el array esta vacio (no esta ese articulo en el carrito) lo creo
-            let addArt = {
-                id: idArt,
-                quantity: 1
-            }
-            cart.push(addArt)
-        } else {                          //si este articulo ya esta en el carrito incremento la cantidad
-            searchCart.quantity += quan
-        }
+      const find = cart.find((item) => item.id === parseInt(art.id))
 
+      if (find) {
+        artCart.push({
+          id: find.id,
+          title: art.title,
+          description: art.description,
+          date: art.date,
+          price: art.price,
+          currency: art.currency,
+          img: art.img,
+          quantity: find.quantity,
+        });
+
+      }
+    });
+    return artCart;
+}
+
+//Funcion para eliminar un articulo del carrito
+function delArtCart(id){
+
+    loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
+    let cart = loginUser.cart
+    
+    const find = cart.find((item) => item.id === parseInt(id))
+    if (find){
+
+        let index = cart.indexOf(id)
+
+        cart.splice(index,1)
+        loginUser.cart = cart
+        localStorage.setItem("loginUser", JSON.stringify(loginUser))
+    }
+    addCards(filterCart(Articles))
+}
+
+function sumResCart(id){
+    let quantity = document.getElementById(`quantity-${id}`).value
+    modifiCart(id, quantity)
+}
+
+function modifiCart(id, qty){
+    loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
+    let cart = loginUser.cart
+    
+    const find = cart.find((item) => item.id === parseInt(id))
+
+    if (find){
+
+        let index = cart.indexOf(cart.find(ar => ar.id === id))
+
+        console.log(index)
+        cart[index].quantity = qty
         loginUser.cart = cart
         localStorage.setItem("loginUser", JSON.stringify(loginUser))
 
-
-        const nombre = document.getElementById("title" + idArt)
-        showAlert(`${quan} ${nombre.innerHTML}`, "Se agrego a tu carrito")
-        showData(loginUser)
-
-    } else {
-        showAlert("Crea una cuenta e inicia sesion", "para poder armar tu carrito", "err")
     }
-
+    addCards(filterCart(Articles))
 }
-
-//Funcion que agrega o elimina el articulo de la lista de deseos
-function addDelWish(idArt) {
-    loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
-    if (loginUser.length !== 0) {
-        let searchWish = loginUser.wish.includes(idArt) //Busco si el articulo ya esta en la lista
-
-
-        if (searchWish) {                 //si esta lo elimino
-            let index = loginUser.wish.indexOf(idArt)
-            loginUser.wish.splice(index, 1)
-        } else {
-            loginUser.wish.push(idArt)       //si no esta lo agrego
-        }
-
-        //actualizo las clases del DOM para pintar los corazones
-        let h = document.getElementById(`heart_${idArt}`)
-        if (h.classList.contains("card__heartWishOn")) {
-            h.classList.remove("card__heartWishOn")
-        } else {
-            h.classList.add("card__heartWishOn")
-        }
-
-
-        localStorage.setItem("loginUser", JSON.stringify(loginUser))
-        document.getElementById("title" + idArt)
-
-        showData(loginUser)
-
-    } else {
-        showAlert("Crea una cuenta e inicia sesion", "para poder armar tu lista de deseos", "err")
-    }
-
-}
-
-
-
-
-
 
 /* ALERT ---------------------------------- */
 function showAlert(titulo, message, tipo = "suc") {

@@ -1,17 +1,24 @@
 
-checkLogin()
+if (checkLogin()){
+    hideElementsLoginOn()
+}else{
+    hideElementsLoginoff()
+}
 
+
+//funcion que verifica si el usuario esta o no logeado
 function checkLogin(){
-    const user = JSON.parse(localStorage.getItem("loginUser"))||[]
+    var user = JSON.parse(localStorage.getItem("loginUser"))||[]
 
-    user.length !== 0 ? 
-        hideElementsLoginOn():
-        hideElementsLoginoff()  
-    if (user.length !== 0){
+    if(user.length !== 0){
         showData(user)
+        return true
+    }else{
+        return false
     }
 }
 
+//muestra la informacion del usuario en el DOM cuando esta logeado
 function showData(user){
     //modifico los elementos del DOM con los datos del usuario
     let nombreUsuario = document.getElementById("user-name")
@@ -20,14 +27,16 @@ function showData(user){
     nombreUsuario.innerHTML = user.name.split(" ",1) //coloco el primer nombre del usuario
     
     let cartCounter = user.cart.reduce((acum, obj)=>{ //muestro el acumulado de la cantidad de productos en el carrito
-        return acum + obj.quantity
+        return acum + parseInt(obj.quantity)
     },0)
 
-    console.log(user.wish.length   )
-    cantidadListaDeseos.innerHTML = user.wish.length              //muestro el acumulado de la cantidad de productos en la lista de deseos
+    //actualizo el DOM la cantidad de productos en la lista de deseos
+    cantidadListaDeseos.innerHTML = user.wish.length
+    //actualizo el DOM la cantidad de productos en la carrito de compras
     cantidadCarrito.innerHTML = cartCounter
 }
 
+//Da a la vista los acceso de un usuario logeado
 function hideElementsLoginOn(){
 //funcion que oculta/muestra elementos del DOM si el usuario esta logueado
 
@@ -46,6 +55,7 @@ function hideElementsLoginOn(){
     userIcons.classList.remove("hiden-item")
 }
 
+//Da a la vista los acceso de un usuario deslogeado
 function hideElementsLoginoff(){
 //funcion que oculta/muestra elementos del DOM si el usuario esta deslogueado
     //MUESTRO los botones del navbar de registro y login

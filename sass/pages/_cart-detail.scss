@@ -1,0 +1,100 @@
+.row-cart-detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+
+#deleteart{
+    position: absolute;
+    color: rgb(172, 52, 52);
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.row{
+    height: 7rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    margin-top: .5rem;
+    width: 80%;
+    border-bottom:$color-font-ligth2 solid 1px ;
+    &__pic{
+        position:relative;
+        height: 100%;
+        
+        img{
+            height: 100%;
+        }
+    }
+
+    &__description{
+        display: flex;
+        text-align:left;
+        align-items: center;
+        padding: 0 1rem 0 1rem;
+        width: 50%;
+        color: $color-font-dark;
+    }
+
+    &__quantity{
+        display: flex;
+        text-align:left;
+        align-items: center;
+        padding: 1rem;
+        width: 15%;
+        input{
+            font-size: 1rem;
+            padding: 5px;
+            width: 4rem;
+            border: none;
+            text-align: center;
+            border-radius: 5px;
+            border: $color-font-ligth2 solid 1px;
+            color: $color-font-dark;
+        }
+        input:focus{
+            outline: none;
+            
+
+        }
+        input:active{
+            outline: none;
+
+        }
+    }
+    &__price{
+        display: flex;
+        text-align:left;
+        align-items: center;
+        padding: 0 1rem 0 1rem;
+        width: 15%;
+    }
+    &__partial-amount{
+        display: flex;
+        text-align:left;
+        align-items: center;
+        padding: 0 1rem 0 1rem;
+        width: 15%;
+    }
+
+
+}
+
+.total-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 80%;
+    padding: .8rem;
+    
+
+    &__title{
+        font-size: 2rem;
+        color: $color-font-dark;
+    }
+
+}

@@ -18,13 +18,15 @@
     &__user-avatar{
         padding-right: 10px;
         width: 50px;
+        cursor: pointer;
     }
-    &__cart-icon-container{
+    &__icon-container{
         display: flex;
         padding-right: 15px;
         color: $color-font-ligth;
         font-size: 2rem;
         text-align: center;
+        cursor: pointer;
     }
     &__user-name{
         position: fixed;
