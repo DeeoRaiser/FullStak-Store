@@ -23,7 +23,10 @@
          text-shadow: $shadow1;
          z-index: 2;
       }
-     
+   }
+
+   &__heartWishOn{
+      color: $color-wish-list-on;
    }
 
    &__heart:hover {

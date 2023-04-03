@@ -68,58 +68,6 @@
     //border: 2px solid red;
 }
 
-.alert {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    width: 95vw;
-    align-items: center;
-    opacity: 1;
-    transition: .3s all linear;
-
-    &__error {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        padding: .5rem;
-        border-radius: 5px;
-        width: 90vw;
-        background-color: $color-alert-error;
-        color: rgb(236, 232, 232);
-    }
-
-    &__sussecs {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        padding: .5rem;
-        border-radius: 5px;
-        width: 90vw;
-        background-color: $color-alert-success;
-        color: rgb(236, 232, 232);
-    }
-
-    &__title {
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
-
-    &__hide {
-        opacity: 0;
-        display: none;
-    }
-
-    &__button {
-        position: absolute;
-        cursor: pointer;
-        color: rgb(243, 234, 234);
-        top: .2rem;
-        right: .5rem;
-    }
-}
-
 .register__button {
     padding: .5rem .9rem .5rem .9rem;
     background-color: $color-bg-secondary;

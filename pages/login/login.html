@@ -27,14 +27,20 @@
                 <div class="user-navbar__cart-icon-container">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <div id="user-cart-counter" class="user-navbar__cart-counter">
-                        12
+                        {cart}
+                    </div>
+                </div>
+                <div class="user-navbar__cart-icon-container">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div id="user-cart-counter" class="user-navbar__cart-counter">
+                        {whish}
                     </div>
                 </div>
                 <div class="user-navbar__user-avatar-container">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png"
                         class="user-navbar__user-avatar" alt="Imagen de usuario">
                     <div id="user-name" class="user-navbar__user-name">
-                        Juan
+                        {user}
                     </div>
                 </div>
                 <!-- TODO: avatar de la persona logueada o nombre -->
@@ -68,11 +74,12 @@
 
     </header>
 
-    <h1 class="titulo-h1">
-        LOGIN
-    </h1>
+    <main class="main">
 
-    <section class="section">
+        <h1 class="titulo-h1">Login</h1>
+
+        <section class="section">
+
         <div class="login-container">
             <form id="login-form" class="form-container">
     
@@ -94,7 +101,8 @@
                 </div>
             </form>
         </div>
-    </section>
+        </section>
+    </main>
 
 
     <div class="whatsapp-container">

@@ -286,6 +286,9 @@ body {
   text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
   z-index: 2;
 }
+.card__heartWishOn {
+  color: rgb(204, 29, 29);
+}
 .card__heart:hover {
   color: rgb(238, 155, 155);
 }
@@ -514,6 +517,59 @@ body {
     width: 90%;
   }
 }
+.alert {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 95vw;
+  align-items: center;
+  opacity: 1;
+  z-index: 5;
+  align-items: center;
+  margin-top: 3rem;
+}
+.alert__error {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0.8rem;
+  border-radius: 5px;
+  width: 90vw;
+  background-color: rgb(212, 96, 96);
+  color: rgb(236, 232, 232);
+}
+.alert__sussecs {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 90vw;
+  background-color: rgb(96, 212, 96);
+  color: rgb(236, 232, 232);
+}
+.alert__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem;
+}
+.alert__description {
+  padding-bottom: 0.8rem;
+}
+.alert__hide {
+  opacity: 0;
+  display: none;
+}
+.alert__button {
+  position: absolute;
+  cursor: pointer;
+  color: rgb(243, 234, 234);
+  top: 0.2rem;
+  right: 0.5rem;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -700,53 +756,6 @@ iframe {
 
 .err {
   box-shadow: 0px 0px 3px 1px red;
-}
-
-.alert {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  width: 95vw;
-  align-items: center;
-  opacity: 1;
-  transition: 0.3s all linear;
-}
-.alert__error {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding: 0.5rem;
-  border-radius: 5px;
-  width: 90vw;
-  background-color: rgb(212, 96, 96);
-  color: rgb(236, 232, 232);
-}
-.alert__sussecs {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding: 0.5rem;
-  border-radius: 5px;
-  width: 90vw;
-  background-color: rgb(96, 212, 96);
-  color: rgb(236, 232, 232);
-}
-.alert__title {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-.alert__hide {
-  opacity: 0;
-  display: none;
-}
-.alert__button {
-  position: absolute;
-  cursor: pointer;
-  color: rgb(243, 234, 234);
-  top: 0.2rem;
-  right: 0.5rem;
 }
 
 .register__button {
