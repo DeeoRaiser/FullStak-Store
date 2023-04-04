@@ -1,12 +1,17 @@
-var cards = document.getElementsByClassName('cards-container')
-var art = JSON.parse(localStorage.getItem("articulos")) || []
-var loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
-
-addCards(Articles)
+addCards(filterWish(Articles))
 
 //Funcion que dibuja las card en el DOM, parametro Array de Articulos
 function addCards(arts) {
     loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
+
+    const lista = document.getElementById('cards-container')
+    lista.innerHTML = ""
+
+    if (arts == 0){
+        const title = document.getElementById('title-h1')
+        title.innerHTML = 'TUS FAVORITOS ESTA VACIO'
+    }
+
     arts.forEach(art => {
         const articleCard = document.createElement("article")
         articleCard.classList.add("card")
@@ -122,7 +127,62 @@ function addCards(arts) {
 
 }
 
-//Funcion que agrega articulos al carrito de compras, parametro ID articulo y Cantidad
+//Funcion que agrega o elimina el articulo de la lista de deseos
+function addDelWish(idArt) {
+    loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
+
+    if (loginUser.length !== 0) {
+        let searchWish = loginUser.wish.includes(idArt) //Busco si el articulo ya esta en la lista
+
+        if (searchWish) {                 //si esta lo elimino
+            let index = loginUser.wish.indexOf(idArt)
+            loginUser.wish.splice(index, 1)
+        } else {
+            loginUser.wish.push(idArt)    //si no esta lo agrego
+        }
+        //actualizo las clases del DOM para pintar los corazones
+        let h = document.getElementById(`heart_${idArt}`)
+        if (h.classList.contains("card__heartWishOn")) {
+            h.classList.remove("card__heartWishOn")
+        } else {
+            h.classList.add("card__heartWishOn")
+        }
+
+        localStorage.setItem("loginUser", JSON.stringify(loginUser))
+        document.getElementById("title" + idArt)
+        addCards(filterWish(Articles))
+        showData(loginUser)
+    }
+
+}
+
+//Envio los datos del id y la cantidad en el array wish, y obtengo el resto de los datos del array de los articulos
+function filterWish(Arts) {
+    loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
+    wish = loginUser.wish
+
+    const artWish = []
+    Arts.forEach((art) => {
+
+      const find = wish.find((item) => item === parseInt(art.id))
+
+      if (find) {
+        artWish.push({
+          id: art.id,
+          title: art.title,
+          description: art.description,
+          date: art.date,
+          price: art.price,
+          currency: art.currency,
+          img: art.img,
+        });
+      }
+    });
+    
+    return artWish;
+}
+
+//Funcion para agregar artiulos al carrito
 function addCart(idArt, quan = 1) {
     loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
     if (loginUser.length !== 0) {
@@ -151,41 +211,75 @@ function addCart(idArt, quan = 1) {
     } else {
         showAlert("Crea una cuenta e inicia sesion", "para poder armar tu carrito", "err")
     }
-
 }
 
-//Funcion que agrega o elimina el articulo de la lista de deseos
-function addDelWish(idArt) {
-    loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
-    if (loginUser.length !== 0) {
-        let searchWish = loginUser.wish.includes(idArt) //Busco si el articulo ya esta en la lista
+/* ALERT ---------------------------------- */
+function showAlert(titulo, message, tipo = "suc") {
 
+    createAlert()
 
-        if (searchWish) {                 //si esta lo elimino
-            let index = loginUser.wish.indexOf(idArt)
-            loginUser.wish.splice(index, 1)
-        } else {
-            loginUser.wish.push(idArt)       //si no esta lo agrego
-        }
+    _alert = document.getElementById('alert')
+    _alert.classList.remove('alert__error')
+    _alert.classList.remove('alert__sussecs')
 
-        //actualizo las clases del DOM para pintar los corazones
-        let h = document.getElementById(`heart_${idArt}`)
-        if (h.classList.contains("card__heartWishOn")) {
-            h.classList.remove("card__heartWishOn")
-        } else {
-            h.classList.add("card__heartWishOn")
-        }
+    tipo == 'err' ?
+        _alert.classList.add('alert__error') :
+        _alert.classList.add('alert__sussecs')
 
+    document.getElementById('alert__title').innerHTML = titulo
+    document.getElementById('alert__description').innerHTML = message
+    document.getElementById('alertContainer').classList.remove('alert__hide')
 
-        localStorage.setItem("loginUser", JSON.stringify(loginUser))
-        document.getElementById("title" + idArt)
-
-        showData(loginUser)
-
-    } else {
-        showAlert("Crea una cuenta e inicia sesion", "para poder armar tu lista de deseos", "err")
-    }
-
+    setTimeout(hideAlert, 2800)
 }
+function hideAlert() {
+    document.getElementById('alertContainer').classList.add('alert__hide')
+    setTimeout(deleteAlert, 100)
+}
+function deleteAlert() {
 
+    document.getElementById('alertContainer').remove()
+}
+function createAlert() {
+    const container = document.createElement("div")
+    container.id = "alertContainer"
+    container.classList.add("alert", "alert__hide")
+
+    // Crear elemento de alerta
+    const alertElement = document.createElement("div")
+    alertElement.classList.add("alert__error")
+    alertElement.id = "alert"
+
+    // Crear título de alerta
+    const titleElement = document.createElement("p")
+    titleElement.classList.add("alert__title")
+    titleElement.id = "alert__title"
+    alertElement.appendChild(titleElement)
+
+    // Crear descripción de alerta
+    const descriptionElement = document.createElement("p")
+    descriptionElement.classList.add("alert__description")
+    descriptionElement.id = "alert__description"
+    alertElement.appendChild(descriptionElement)
+
+    // Crear botón de cerrar
+    const closeButton = document.createElement("div")
+    closeButton.classList.add("alert__button")
+    closeButton.id = "alert__button"
+    closeButton.addEventListener("click", hideAlert)
+
+    const iconElement = document.createElement("i")
+    iconElement.classList.add("fas", "fa-times")
+    closeButton.appendChild(iconElement)
+
+    // Agregar botón de cerrar al elemento de alerta
+    alertElement.appendChild(closeButton)
+
+    // Agregar elemento de alerta al contenedor principal
+    container.appendChild(alertElement)
+
+    // Agregar contenedor principal al cuerpo del documento
+    document.body.appendChild(container)
+}
+  /* ALERT ---------------------------------- */
 

@@ -1,4 +1,4 @@
-function showAlert(titulo, message, tipo) {
+function showAlert(titulo, message, tipo = "suc") {
 
     createAlert()
 
@@ -14,15 +14,15 @@ function showAlert(titulo, message, tipo) {
     document.getElementById('alert__description').innerHTML = message
     document.getElementById('alertContainer').classList.remove('alert__hide')
 
-    setTimeout(hideAlert, 3500)
+    setTimeout(hideAlert, 2800)
 }
 function hideAlert() {
     document.getElementById('alertContainer').classList.add('alert__hide')
-
-    createAlert
+    setTimeout(deleteAlert, 100)
 }
-function deleteAlert(){
-    setTimeout(document.getElementById('alertContainer').remove(), 500)
+function deleteAlert() {
+
+    document.getElementById('alertContainer').remove()
 }
 function createAlert() {
     const container = document.createElement("div")
@@ -50,7 +50,7 @@ function createAlert() {
     const closeButton = document.createElement("div")
     closeButton.classList.add("alert__button")
     closeButton.id = "alert__button"
-    closeButton.addEventListener("click", cerrar)
+    closeButton.addEventListener("click", hideAlert)
 
     const iconElement = document.createElement("i")
     iconElement.classList.add("fas", "fa-times")

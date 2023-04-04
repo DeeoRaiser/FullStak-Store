@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home - Ecommerce</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/main.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="/index.html" class="navbar__nav-link">
+                <img class="navbar__logo" src="/assets/logo.png" alt="Logo de la empresa">
+            </a>
+            <div id="user-navbar" class="user-navbar">
+                <a href="/pages/cart/cart-detail.html">
+                    <div class="user-navbar__icon-container" id="btn-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <div id="user-cart-counter" class="user-navbar__cart-counter">
+                            {c}
+                        </div>
+                    </div>
+                </a>
+                <a href="/pages/wishlist/wishlist.html">
+                    <div class="user-navbar__icon-container" id="btn-wish">
+                        <i class="fa-solid fa-heart"></i>
+                        <div id="user-wish-counter" class="user-navbar__cart-counter">
+                            {w}
+                        </div>
+                    </div>
+                </a>
+                <div class="user-navbar__user-avatar" id="btn-avatar">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png"
+                        class="user-navbar__user-avatar" alt="Imagen de usuario">
+                    <div id="user-name" class="user-navbar__user-name">
+                        {u}
+                    </div>
+                </div>
+            </div>
+
+            <input type="checkbox" class="navbar__menu-btn" id="menu-btn">
+
+            <label for="menu-btn" class="navbar__menu-label">
+                <span class="navbar__menu-icon"></span>
+            </label>
+
+
+            <ul class="navbar__nav-links-container">
+                <li id="nav-inicio" class="navbar__nav-item">
+                    <a href="/index.html" class="navbar__nav-link">Inicio</a>
+                </li>
+                <li id="nav-contacto" class="navbar__nav-item">
+                    <a href="/pages/contact/contact.html" class="navbar__nav-link">Contacto</a>
+                </li>
+                <li id="nav-nosotros" class="navbar__nav-item">
+                    <a href="/pages/about-us/about-us.html" class="navbar__nav-link">Nosotros</a>
+                </li>
+                <li id="nav-registro" class="navbar__nav-item">
+                    <a href="/pages/register/register.html" class="navbar__nav-link">Registro</a>
+                </li>
+                <li id="nav-login" class="navbar__nav-item">
+                    <a href="/pages/login/login.html" class="navbar__nav-link">Login</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+    <!-- TODO: Implementar carousel en 2do módulo -->
+    <main class="main">
+        <section class="section-cards">
+            <div class="section-cards__category">
+                <h1 ID="title-h1">
+                    LISTA DE FAVORITOS
+                </h1>
+            </div>
+            <div id="cards-container" class="cards-container">
+
+                <!-- AQUI SE CARGAN LAS CARDS! -->
+
+            </div>
+
+        </section>
+    </main>
+
+
+    <div class="whatsapp-container">
+        <a class="whatsapp-container__link" href="https://wa.me/543512531103?text=Hola%20Ranson%20and%20Wilder%20">
+            <img src="/assets/img/icons/whatsapp.png" alt="Whatsapp contact link" class="whatsapp-container__img">
+        </a>
+    </div>
+
+    <div class="swipe-up">
+        <a href="#" class="swipe-up-container__link">
+            <img src="/assets/img/icons/swipe-up.png" alt="Subir Arriba" class="swipe-up__img">
+        </a>
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer__column1">
+            <ul class="footer__contact-container">
+                <li class="footer__contact-item">
+                    <a href="#" class="footer__contact-link">
+                        <i class="fa-brands fa-facebook footer__contact-icon footer__contact-icon--facebook"></i>
+                        Ranson and Wilder
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    <a href="#" class="footer__contact-link">
+                        <i class="fa-brands fa-instagram 
+                        footer__contact-icon
+                        footer__contact-icon--instagram"></i>
+                        Ranson_Wilder
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    <a href="#" class="footer__contact-link">
+                        <i class="fa-brands fa-linkedin 
+                        footer__contact-icon
+                        footer__contact-icon--linkedin"></i>
+                        Ranson_Wilder
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__column footer__center">
+            <img src="/assets/logo.png" alt="Company Logo" class="footer__logo">
+            <h2 class="footer__company-name">
+                Ransom & Wilder
+            </h2>
+            <p class="footer__copyrigth">
+                Todos los derechos reservados a Ransom & Wilder Company
+            </p>
+        </div>
+        <div class="footer__column">
+            <ul class="footer__contact-container">
+                <li class="footer__contact-item">
+                    <a href="tel://+541115514452)" class="footer__contact-link">
+                        <i class="fa-solid fa-square-phone-flip footer__contact-icon"></i>
+                        Telefono (+54-11-15514452)
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    <a href="https://goo.gl/maps/CCm7u2cHw5U7m2fD7" class="footer__contact-link">
+                        <i class="fa-solid fa-location-dot footer__contact-icon"></i>
+                        Street 135 AV Wilder, Los Angeles
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    <a href="mail:websell@ransomwilder.com" class="footer__contact-link">
+                        <i class="fa-solid fa-envelope footer__contact-icon"></i>
+                        Email: websell@ransomwilder.com
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/js/alert.js"></script>
+    <script src="/js/general.js"></script>
+    <script src="/js/wish-detail.js"></script>
+
+
+</body>
+
+</html>

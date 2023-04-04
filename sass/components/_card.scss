@@ -1,10 +1,19 @@
 .card {
-   margin: 1rem;
+   /* margin: 1rem;
    border: 0px solid $color-font-dark;
    box-shadow: $shadow0;
    border-radius: 5px 5px 0 0;
    overflow: hidden;
+   max-width: 290px; */
 
+   border-radius: 5px 5px 0 0;
+   border: 0px solid $color-font-dark;
+   box-shadow: $shadow0;
+   width: 290px;
+   margin-bottom: 20px;
+   border-radius: 4px;
+   overflow: hidden;
+   margin: 1rem;
 
    &__header {
       height: 200px;
@@ -168,7 +177,6 @@
       font-size: .8rem;
       padding: .2rem; */
 
-      //background-color: $color-bg-date;
       color: $color-font-ligth2;
       text-align: right;
       font-weight: bold;

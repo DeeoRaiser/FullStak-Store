@@ -265,11 +265,20 @@ body {
 }
 
 .card {
-  margin: 1rem;
-  border: 0px solid rgb(27, 26, 26);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* margin: 1rem;
+  border: 0px solid $color-font-dark;
+  box-shadow: $shadow0;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
+  max-width: 290px; */
+  border-radius: 5px 5px 0 0;
+  border: 0px solid rgb(27, 26, 26);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 290px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 1rem;
 }
 .card__header {
   height: 200px;
@@ -576,9 +585,9 @@ html {
 }
 
 .cards-container {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
 }
 
 .whatsapp-container {
@@ -845,8 +854,6 @@ iframe {
 }
 
 .row {
-  height: 7rem;
-  overflow: hidden;
   display: flex;
   flex-direction: row;
   margin-top: 0.5rem;
@@ -856,6 +863,7 @@ iframe {
 .row__pic {
   position: relative;
   height: 100%;
+  height: 7rem;
 }
 .row__pic img {
   height: 100%;
@@ -916,4 +924,26 @@ iframe {
 .total-row__title {
   font-size: 2rem;
   color: rgb(27, 26, 26);
+}
+
+@media only screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .row-cart-detail {
+    align-items: flex-start;
+    width: 100%;
+  }
+  .total-row {
+    text-align: center;
+  }
+  #deleteart {
+    position: absolute;
+    color: rgb(172, 52, 52);
+    left: 5px;
+    top: 5px;
+    cursor: pointer;
+  }
 }/*# sourceMappingURL=main.css.map */
