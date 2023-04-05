@@ -10,7 +10,7 @@
     -webkit-box-shadow: $shadow0;
     -moz-box-shadow: $shadow0;
     box-shadow: $shadow0;
-    width: 60vh;
+    width: 30vw;
     border-radius: 5px;
 
     &__item {
@@ -80,6 +80,6 @@
 
 @media only screen and (max-width: 600px) {
     .form-container {
-        width: 90vh;
+        width: 90vw;
     }
 }

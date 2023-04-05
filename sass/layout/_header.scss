@@ -21,6 +21,7 @@
         cursor: pointer;
     }
     &__icon-container{
+        position: relative;
         display: flex;
         padding-right: 15px;
         color: $color-font-ligth;
@@ -46,11 +47,12 @@
         background-color: $color-bg-secondary;
         top: 6rem;
         width: 36px;
+        text-align: center;
     }
+
 }
 
 .navbar{
-    height:60 px;
     background-color: $color-bg-primary;
     display: flex;
     align-items: center;
@@ -160,6 +162,10 @@
     
 }
 
+.user-icons{
+    display: none;
+}
+
 @media screen and (min-width: 905px){
     .navbar{
         &__menu-label, &__menu-btn{
@@ -178,10 +184,14 @@
     }
 }
 
-@media screen and (max-width: 505px){
+@media screen and (max-width: 560px){
 
     .user-navbar{
         display: none;
         
+    }
+    .user-icons{
+        display: flex;
+        flex-direction: row;
     }
 }
