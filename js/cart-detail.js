@@ -20,8 +20,6 @@ function addCards(arts) {
     let total = 0
     const divCartDetail = document.getElementById('row-cart-detail')
 
-    console.log(arts)
-
     arts.forEach(art => {
         
         
@@ -82,7 +80,7 @@ function addCards(arts) {
     divRowTot.appendChild(divTitle)
     divCartDetail.appendChild(divRowTot)
 
-    showData(loginUser)
+    
 }
 
 //Envio los datos del id y la cantidad en el array cart, y obtengo el resto de los datos del array de los articulos

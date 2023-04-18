@@ -1,4 +1,4 @@
-
+logout()
 const users = JSON.parse(localStorage.getItem("users")) || []
 
 const loginForm = document.getElementById("login-form")
@@ -29,4 +29,8 @@ function checkUserPass() {
       window.location.href = "/index.html"
     },3000);
   }
+}
+
+function logout(){
+  localStorage.removeItem("loginUser")
 }

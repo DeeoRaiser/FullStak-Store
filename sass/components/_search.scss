@@ -84,22 +84,17 @@
         z-index: 1;
     }
 
-    
-
     /* ANIMACION LUPA */
     .product-search__icon:hover{  
         transition:  all .8s ease-out;
         transform: rotate(360deg);
     }
-
-
 }
 
 @media screen and (max-width: 600px){
-
     .product-search{
         &__input{
-            width: 100%
+            width: 100%;
         }
     }
 }
@@ -108,7 +103,11 @@
 
     .product-search{
         &__input{
-            width: 90%
+            width: 90%;
+            font-size: medium;
+            font-weight: 500;
+            padding-top: .8rem;
+            padding-left: 2.6rem;
         }
     }
 }

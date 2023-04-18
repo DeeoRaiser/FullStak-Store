@@ -7,6 +7,8 @@ addCards(Articles)
 //Funcion que dibuja las card en el DOM, parametro Array de Articulos
 function addCards(arts) {
     loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
+
+    
     arts.forEach(art => {
         const articleCard = document.createElement("article")
         articleCard.classList.add("card")
@@ -61,7 +63,7 @@ function addCards(arts) {
 
         const priceDiv = document.createElement("div")
         priceDiv.classList.add("card__price")
-        priceDiv.textContent = art.currency + art.price
+        priceDiv.textContent = formatCurrency(parseFloat(art.price))
 
         bodyDiv.appendChild(titleDiv)
         bodyDiv.appendChild(descriptionP)
@@ -146,7 +148,8 @@ function addCart(idArt, quan = 1) {
 
         const nombre = document.getElementById("title" + idArt)
         showAlert(`${quan} ${nombre.innerHTML}`, "Se agrego a tu carrito")
-        showData(loginUser)
+
+        renderUserMenu(checkLogin())
 
     } else {
         showAlert("Crea una cuenta e inicia sesion", "para poder armar tu carrito", "err")
@@ -179,8 +182,7 @@ function addDelWish(idArt) {
 
         localStorage.setItem("loginUser", JSON.stringify(loginUser))
         document.getElementById("title" + idArt)
-
-        showData(loginUser)
+        renderUserMenu(checkLogin())
 
     } else {
         showAlert("Crea una cuenta e inicia sesion", "para poder armar tu lista de deseos", "err")

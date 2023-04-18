@@ -151,7 +151,7 @@ function addDelWish(idArt) {
         localStorage.setItem("loginUser", JSON.stringify(loginUser))
         document.getElementById("title" + idArt)
         addCards(filterWish(Articles))
-        showData(loginUser)
+
     }
 
 }
@@ -206,8 +206,6 @@ function addCart(idArt, quan = 1) {
 
         const nombre = document.getElementById("title" + idArt)
         showAlert(`${quan} ${nombre.innerHTML}`, "Se agrego a tu carrito")
-        showData(loginUser)
-
     } else {
         showAlert("Crea una cuenta e inicia sesion", "para poder armar tu carrito", "err")
     }

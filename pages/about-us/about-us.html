@@ -20,40 +20,28 @@
             <a href="/index.html" class="navbar__nav-link">
                 <img class="navbar__logo" src="/assets/logo.png" alt="Logo de la empresa">
             </a>
+
             <div id="user-navbar" class="user-navbar">
-                <a href="/pages/cart/cart-detail.html">
-                <div class="user-navbar__icon-container" id="btn-cart" >
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <div id="user-cart-counter" class="user-navbar__cart-counter">
-                        {c}
-                    </div>
-                </div>
-                </a>
-                <a href="/pages/wishlist/wishlist.html">
-                <div class="user-navbar__icon-container" id="btn-wish">
-                    <i class="fa-solid fa-heart"></i>
-                    <div id="user-wish-counter" class="user-navbar__cart-counter">
-                        {w}
-                    </div>
-                </div>
-                </a>
-                <div class="user-navbar__user-avatar" id="btn-avatar">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png"
-                        class="user-navbar__user-avatar" alt="Imagen de usuario">
-                    <div id="user-name" class="user-navbar__user-name">
-                        {u}
-                    </div>
-                </div>
+                
+                <!-- WISH AND CART ICON -->
+
             </div>
 
+            <!-- MENU HAMBURGUESA -->
             <input type="checkbox" class="navbar__menu-btn" id="menu-btn">
-
             <label for="menu-btn" class="navbar__menu-label">
                 <span class="navbar__menu-icon"></span>
             </label>
 
-
             <ul class="navbar__nav-links-container">
+                <li class="user-icons">
+                    <div id="user-navbar2" class="user-navbar2">
+
+                        <!-- WISH AND CART ICON -->
+                        
+                    </div>
+                </li>
+
                 <li id="nav-inicio" class="navbar__nav-item">
                     <a href="/index.html" class="navbar__nav-link">Inicio</a>
                 </li>
@@ -63,12 +51,7 @@
                 <li id="nav-nosotros" class="navbar__nav-item">
                     <a href="/pages/about-us/about-us.html" class="navbar__nav-link">Nosotros</a>
                 </li>
-                <li id="nav-registro" class="navbar__nav-item">
-                    <a href="/pages/register/register.html" class="navbar__nav-link">Registro</a>
-                </li>
-                <li id="nav-login" class="navbar__nav-item">
-                    <a href="/pages/login/login.html" class="navbar__nav-link">Login</a>
-                </li>
+                    <!-- LOGIN Y REGISTRO -->
             </ul>
         </nav>
 
@@ -123,22 +106,11 @@
         </div>
 
     </main>
-
-    <div class="whatsapp-container">
-        <a href="https://wa.me/543512531103?text=Hola%20Ranson%20and%20Wilder%20" class="whatsapp-container__link">
-            <img src="/assets/img/icons/whatsapp.png" alt="Whatsapp contact link" class="whatsapp-container__img">
-        </a>
-    </div>
-    <div class="swipe-up">
-        <a href="#" class="swipe-up-container__link">
-            <img src="/assets/img/icons/swipe-up.png" alt="Subir Arriba" class="swipe-up__img">
-        </a>
-    </div>
-    <footer class="footer">
     
+    <footer class="footer">
     </footer>
-    <script src="/js/render.js"></script>
     <script src="/js/general.js"></script>
+    <script src="/js/render.js"></script>
 </body>
 
 </html>
