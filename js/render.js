@@ -249,7 +249,7 @@ function renderUserMenu(user) {
         userAvatar.alt = "Imagen de usuario"
         const userName = document.createElement("div")
         userName.classList.add("user-name", "user-navbar__user-name")
-        userName.textContent = user.name.split()[0]
+        userName.textContent = user.name.split (" ")[0]
         userAvatarContainer.appendChild(userAvatar)
         userAvatarContainer.appendChild(userName)
 

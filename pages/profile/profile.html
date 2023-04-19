@@ -22,7 +22,7 @@
             </a>
 
             <div id="user-navbar" class="user-navbar">
-                
+
                 <!-- WISH AND CART ICON -->
 
             </div>
@@ -38,7 +38,7 @@
                     <div id="user-navbar2" class="user-navbar2">
 
                         <!-- WISH AND CART ICON -->
-                        
+
                     </div>
                 </li>
 
@@ -51,14 +51,68 @@
                 <li id="nav-nosotros" class="navbar__nav-item">
                     <a href="/pages/about-us/about-us.html" class="navbar__nav-link">Nosotros</a>
                 </li>
-                    
+
             </ul>
         </nav>
 
     </header>
-    <!-- TODO: Implementar carousel en 2do módulo -->
+
+    <h1 class="titulo-h1">Profile</h1>
     <main class="main">
-       
+        <section class="section">
+            <div class="user">
+                <div class="user__pic">
+                    <img src="/assets/img/avatar/avatar-default.png" alt="Imagen de usuario">
+                    <label class="user__editPic"><i class="fa-solid fa-pen"></i></label>
+                </div>
+
+                <div class="user__name">
+                    <div class="user__container">
+                        <label class="user__title">Nombre</label>
+                        <label class="user__edit"><i class="fa-solid fa-pen"></i></label>
+                    </div>
+                    <label id="username" class="user__description">{name}</label>
+                </div>
+
+
+                <div class="user__email">
+                    <div class="user__container">
+                        <label class="user__title">Email</label>
+                        <label class="user__edit"><i class="fa-solid fa-pen"></i></label>
+                    </div>
+                    <label id="email" class="user__description">{email}</label>
+                </div>
+                
+
+                <div class="user__born-date">
+                    <div class="user__container">
+                        <label class="user__title">Fecha Nacimiento</label>
+                        <label class="user__edit"><i class="fa-solid fa-pen"></i></label>
+                    </div>
+                    <label id="born-date" class="user__description">{bornDate}</label>
+                </div>
+
+                <div class="user__country">
+                    <div class="user__container">
+                        <label class="user__title">Pais</label>
+                        <label class="user__edit"><i class="fa-solid fa-pen"></i></label>
+                    </div>
+                    <label id="country" class="user__description">{Pais}</label>
+                </div>
+
+                <div class="user__password">
+                    <div class="user__container">
+                        <label class="user__title">Contraseña</label>
+                        <label class="user__edit"><i class="fa-solid fa-pen"></i></label>
+                    </div>
+                    <label class="user__description">*********</label>
+                </div>
+
+                
+            </div>
+
+
+        </section>
     </main>
 
 

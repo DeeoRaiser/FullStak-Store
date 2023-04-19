@@ -112,21 +112,23 @@ var Articles =
     }]
 
 //funcion que verifica si el usuario esta o no logeado
-function checkLogin(){
-    var user = JSON.parse(localStorage.getItem("loginUser"))||[]
+function checkLogin() {
+    var user = JSON.parse(localStorage.getItem("loginUser")) || []
 
-    if(user.length !== 0){
-       let userData = {
-            name:user.name,
-            cartCounter:user.cart.reduce((acum, obj)=>{ //muestro el acumulado de la cantidad de productos en el carrito
+    if (user.length !== 0) {
+        let userData = {
+            name: user.name,
+            cartCounter: user.cart.reduce((acum, obj) => { //muestro el acumulado de la cantidad de productos en el carrito
                 return acum + parseInt(obj.quantity)
-            },0),
-            wish:user.wish.length,
-            role:"admin",
-            avatar:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png"
+            }, 0),
+            wish: user.wish.length,
+            role: "admin",
+            avatar: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png",
+            mail: user.mail,
+            bDate: user.bornDate
         }
         return userData
-    }else{
+    } else {
         return false
     }
 
@@ -135,7 +137,7 @@ function checkLogin(){
 
 
 //Funcion para dar formato currency a el precio de los articulos
-function formatCurrency(num){
+function formatCurrency(num) {
     const options = { style: "currency", currency: "usd", minimumFractionDigits: 2 };
     const numFormat = num.toLocaleString("en-US", options);
     return numFormat

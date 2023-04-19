@@ -1,0 +1,147 @@
+.user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40vw;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: $color-bg-primary;
+
+    &__pic{
+        height: 150px;
+        position: relative;
+        margin-bottom: .5rem;
+        img {
+            border-radius: 100px;
+            object-fit: cover;
+            width:100%;
+            height:100%;
+        }
+        
+
+        label{
+            position: absolute;
+            color: $color-font-ligth;
+            right: 5px;
+            top: 5px;
+            cursor: pointer;
+        }
+    }
+
+    &__title{
+        font-size: 1.2rem;
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+        color: $color-font-ligth;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    &__container{
+        position: relative;
+        background-color: $color-bg-secondary;
+        border-radius: 5px 5px 0 0;
+        padding: .3rem;
+        width: 35vw;
+        
+    }
+    &__description{
+        font-size: 1.2rem;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: $color-font-ligth2;
+        color: $color-font-ligth;
+        text-transform: capitalize;
+        padding: .3rem;
+        border-radius: 5px;
+        width: 35vw;
+        text-align: center;
+    }
+
+    &__name{
+        margin-top: .6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: $shadow0;
+        border-radius: 0 0 5px 5px;
+    }
+    &__email{
+        margin-top: .6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: $shadow0;
+        border-radius: 0 0 5px 5px;
+    }
+
+    &__born-date{
+        margin-top: .6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: $shadow0;
+        border-radius: 0 0 5px 5px;
+    }
+
+    &__country{
+        margin-top: .6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: $shadow0;
+        border-radius: 0 0 5px 5px;
+    }
+    &__password{
+        margin-top: .6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: $shadow0;
+        border-radius: 0 0 5px 5px;
+    }
+
+    &__edit{
+        position: absolute;
+        color: $color-font-ligth;
+        cursor: pointer;
+        right: 5px;
+    }
+}
+
+
+@media screen and (max-width:800px) {
+    .user{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 99vw;
+
+        &__container{
+            width: 90vw;
+            
+        }
+        &__description{
+            width: 99vw;
+        }
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .user{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70vw;
+
+        &__container{
+            width: 65vw;
+            
+        }
+        &__description{
+            width: 65vw;
+        }
+    }
+}
+
+#email{
+    text-transform: lowercase;
+}
