@@ -3,6 +3,8 @@
     justify-content: center;
 }
 
+
+
 .form-container {
     padding: 1.5rem;
     background-color: $color-bg-primary;
@@ -10,7 +12,7 @@
     -webkit-box-shadow: $shadow0;
     -moz-box-shadow: $shadow0;
     box-shadow: $shadow0;
-    width: 30vw;
+    width: 50vw;
     border-radius: 5px;
 
     &__item {
@@ -26,6 +28,16 @@
     }
     &__button{
         text-align: center;
+    }
+    &__label{
+        margin-top: 5px;
+    }
+    &__input{
+        width: 100%;
+        padding: 8px;
+        border-radius: 3px;
+        border: none;
+        margin-top: 5px;
     }
 }
 
@@ -81,5 +93,11 @@
 @media only screen and (max-width: 600px) {
     .form-container {
         width: 90vw;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .form-container {
+        width: 70vw;
     }
 }

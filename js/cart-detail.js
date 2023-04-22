@@ -143,7 +143,6 @@ function modifiCart(id, qty){
 
         let index = cart.indexOf(cart.find(ar => ar.id === id))
 
-        console.log(index)
         cart[index].quantity = qty
         loginUser.cart = cart
         localStorage.setItem("loginUser", JSON.stringify(loginUser))

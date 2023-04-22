@@ -216,7 +216,9 @@ function renderUserMenu(user) {
         const cartCounter = document.createElement("div")
         cartCounter.classList.add("user-navbar__cart-counter")
         cartCounter.id = "user-cart-counter2"
-        cartCounter.textContent = user.cartCounter
+        cartCounter.textContent = user.cart.reduce((acum, obj) => { //muestro el acumulado de la cantidad de productos en el carrito
+            return acum + parseInt(obj.quantity)
+        }, 0)
         cartIconContainer.appendChild(cartIcon)
         cartIconContainer.appendChild(cartCounter)
         cartLink.appendChild(cartIconContainer)
@@ -231,7 +233,7 @@ function renderUserMenu(user) {
         const wishCounter = document.createElement("div")
         wishCounter.classList.add("user-navbar__cart-counter")
         wishCounter.id = "user-wish-counter2"
-        wishCounter.textContent = user.wish
+        wishCounter.textContent = user.wish.length
         wishIconContainer.appendChild(wishIcon)
         wishIconContainer.appendChild(wishCounter)
         wishLink.appendChild(wishIconContainer)
@@ -244,7 +246,8 @@ function renderUserMenu(user) {
         userAvatarContainer.classList.add("user-navbar__user-avatar")
         userAvatarContainer.id = "btn-avatar"
         const userAvatar = document.createElement("img")
-        userAvatar.src = '/assets/img/avatar/avatar-default.png'
+        userAvatar.onerror = loadAvatarError
+        userAvatar.src = user.avatar
         userAvatar.classList.add("user-navbar__user-avatar")
         userAvatar.alt = "Imagen de usuario"
         const userName = document.createElement("div")
@@ -289,8 +292,6 @@ function renderUserMenu(user) {
 
         userNavbar2.innerHTML = userNavbar.innerHTML
     }
-
-
 }
 
 function renderMenuLoginRegister(){
@@ -321,4 +322,9 @@ function renderMenuLoginRegister(){
     navLinksContainer.appendChild(loginNavItem)
 }
 
+//Funcion para cargar imagen por defecto ante error en avatar
+function loadAvatarError() {
+    var IMG = document.querySelector('div.user-navbar__user-avatar img');
+    IMG.src = '/assets/img/avatar/avatar-default.png';
+}
 
