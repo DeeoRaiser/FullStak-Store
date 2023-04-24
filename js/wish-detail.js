@@ -1,4 +1,4 @@
-addCards(filterWish(Articles))
+addCards(filterWish(JSON.parse(localStorage.getItem("articulos"))))
 
 //Funcion que dibuja las card en el DOM, parametro Array de Articulos
 function addCards(arts) {
@@ -41,8 +41,8 @@ function addCards(arts) {
         headerDiv.appendChild(heartDiv)
 
         const img = document.createElement("img")
-        img.src = `/assets/img/store/${art.img}.jpg`
-        img.alt = "Product Image"
+        img.src = art.img
+        img.alt = `Imagen de producto ${art.title}`
         img.classList.add("card__img")
 
         headerDiv.appendChild(img)
@@ -66,7 +66,7 @@ function addCards(arts) {
 
         const priceDiv = document.createElement("div")
         priceDiv.classList.add("card__price")
-        priceDiv.textContent = art.currency + art.price
+        priceDiv.textContent = formatCurrency(parseFloat(art.price))
 
         bodyDiv.appendChild(titleDiv)
         bodyDiv.appendChild(descriptionP)
@@ -103,7 +103,6 @@ function addCards(arts) {
         cartBtn.classList.add("card__btn-cart")
         cartBtn.setAttribute("onclick", `addCart(${art.id})`)
 
-
         const cartIcon = document.createElement("i")
         cartIcon.classList.add("fa-solid", "fa-cart-shopping")
 
@@ -123,22 +122,25 @@ function addCards(arts) {
 
         const cardsContainer = document.getElementById("cards-container")
         cardsContainer.appendChild(articleCard)
-    });
 
+        
+    })
 }
 
 //Funcion que agrega o elimina el articulo de la lista de deseos
 function addDelWish(idArt) {
     loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
-
     if (loginUser.length !== 0) {
         let searchWish = loginUser.wish.includes(idArt) //Busco si el articulo ya esta en la lista
 
         if (searchWish) {                 //si esta lo elimino
             let index = loginUser.wish.indexOf(idArt)
             loginUser.wish.splice(index, 1)
+            
+            showAlert("FAVORIO ELIMINADO !","Se elimino el articulo de tus favoritos")
         } else {
             loginUser.wish.push(idArt)    //si no esta lo agrego
+            showAlert("NUEVO FAVORIO !", "Se agrego el articulo a tu lista defavoritos")
         }
         //actualizo las clases del DOM para pintar los corazones
         let h = document.getElementById(`heart_${idArt}`)
@@ -150,8 +152,9 @@ function addDelWish(idArt) {
 
         localStorage.setItem("loginUser", JSON.stringify(loginUser))
         document.getElementById("title" + idArt)
-        addCards(filterWish(Articles))
+        addCards(filterWish(JSON.parse(localStorage.getItem("articulos"))))
 
+        renderUserMenu(checkLogin())
     }
 
 }
@@ -181,103 +184,4 @@ function filterWish(Arts) {
     
     return artWish;
 }
-
-//Funcion para agregar artiulos al carrito
-function addCart(idArt, quan = 1) {
-    loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
-    if (loginUser.length !== 0) {
-        let cart = loginUser.cart
-
-        const searchCart = cart.find(cart => cart.id === idArt) || [] //BUSCO EL ARTICULO EN EL CARRITO
-
-        if (searchCart.length === 0) {   //si el array esta vacio (no esta ese articulo en el carrito) lo creo
-            let addArt = {
-                id: idArt,
-                quantity: 1
-            }
-            cart.push(addArt)
-        } else {                          //si este articulo ya esta en el carrito incremento la cantidad
-            searchCart.quantity += quan
-        }
-
-        loginUser.cart = cart
-        localStorage.setItem("loginUser", JSON.stringify(loginUser))
-
-
-        const nombre = document.getElementById("title" + idArt)
-        showAlert(`${quan} ${nombre.innerHTML}`, "Se agrego a tu carrito")
-    } else {
-        showAlert("Crea una cuenta e inicia sesion", "para poder armar tu carrito", "err")
-    }
-}
-
-/* ALERT ---------------------------------- */
-function showAlert(titulo, message, tipo = "suc") {
-
-    createAlert()
-
-    _alert = document.getElementById('alert')
-    _alert.classList.remove('alert__error')
-    _alert.classList.remove('alert__sussecs')
-
-    tipo == 'err' ?
-        _alert.classList.add('alert__error') :
-        _alert.classList.add('alert__sussecs')
-
-    document.getElementById('alert__title').innerHTML = titulo
-    document.getElementById('alert__description').innerHTML = message
-    document.getElementById('alertContainer').classList.remove('alert__hide')
-
-    setTimeout(hideAlert, 2800)
-}
-function hideAlert() {
-    document.getElementById('alertContainer').classList.add('alert__hide')
-    setTimeout(deleteAlert, 100)
-}
-function deleteAlert() {
-
-    document.getElementById('alertContainer').remove()
-}
-function createAlert() {
-    const container = document.createElement("div")
-    container.id = "alertContainer"
-    container.classList.add("alert", "alert__hide")
-
-    // Crear elemento de alerta
-    const alertElement = document.createElement("div")
-    alertElement.classList.add("alert__error")
-    alertElement.id = "alert"
-
-    // Crear título de alerta
-    const titleElement = document.createElement("p")
-    titleElement.classList.add("alert__title")
-    titleElement.id = "alert__title"
-    alertElement.appendChild(titleElement)
-
-    // Crear descripción de alerta
-    const descriptionElement = document.createElement("p")
-    descriptionElement.classList.add("alert__description")
-    descriptionElement.id = "alert__description"
-    alertElement.appendChild(descriptionElement)
-
-    // Crear botón de cerrar
-    const closeButton = document.createElement("div")
-    closeButton.classList.add("alert__button")
-    closeButton.id = "alert__button"
-    closeButton.addEventListener("click", hideAlert)
-
-    const iconElement = document.createElement("i")
-    iconElement.classList.add("fas", "fa-times")
-    closeButton.appendChild(iconElement)
-
-    // Agregar botón de cerrar al elemento de alerta
-    alertElement.appendChild(closeButton)
-
-    // Agregar elemento de alerta al contenedor principal
-    container.appendChild(alertElement)
-
-    // Agregar contenedor principal al cuerpo del documento
-    document.body.appendChild(container)
-}
-  /* ALERT ---------------------------------- */
 

@@ -20,7 +20,7 @@
     margin-top: .5rem;
     width: 80%;
     border-bottom:$color-font-ligth2 solid 1px ;
-
+    align-items: center;
     &__pic{
         position:relative;
         height: 100%;
@@ -81,6 +81,10 @@
     }
 
 
+}
+
+.quantity-container{
+    height: 2rem;
 }
 
 .total-row{

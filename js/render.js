@@ -12,7 +12,6 @@ function renderHeader() {
     } else {
         renderMenuLoginRegister()
     }
-
 }
 //genera el render del Footer
 function renderFooter() {
@@ -198,9 +197,7 @@ function flotantIcons() {
 }
 
 function renderUserMenu(user) {
-
     if (user) {
-
         const userNavbar = document.getElementById("user-navbar")
         const userNavbar2 = document.getElementById("user-navbar2")
 
@@ -252,7 +249,7 @@ function renderUserMenu(user) {
         userAvatar.alt = "Imagen de usuario"
         const userName = document.createElement("div")
         userName.classList.add("user-name", "user-navbar__user-name")
-        userName.textContent = user.name.split (" ")[0]
+        userName.textContent = user.name.split(" ")[0]
         userAvatarContainer.appendChild(userAvatar)
         userAvatarContainer.appendChild(userName)
 
@@ -266,11 +263,18 @@ function renderUserMenu(user) {
         profileIcon.classList.add("fa-solid", "fa-user")
         profileLink.appendChild(profileIcon);
         profileLink.appendChild(document.createTextNode("Profile"))
-        const academyLink = document.createElement("a")
-        academyLink.rel = "noopener"
-        academyLink.target = ""
-        academyLink.href = "https://academy.hubspot.com/"
-        academyLink.textContent = "Academy"
+        const adminLink = document.createElement("a")
+        adminLink.rel = "noopener"
+        adminLink.target = ""
+        adminLink.href = ""
+        adminLink.textContent = "Admin"
+
+        dropdownContent.appendChild(profileLink)
+
+        if (user.role === "admin") {
+            dropdownContent.appendChild(adminLink)
+        }
+
         const salirLink = document.createElement("a")
         salirLink.rel = "noopener"
         salirLink.target = ""
@@ -279,8 +283,7 @@ function renderUserMenu(user) {
         salirIcon.classList.add("fa-solid", "fa-arrow-right-from-bracket")
         salirLink.appendChild(salirIcon)
         salirLink.appendChild(document.createTextNode("Salir"))
-        dropdownContent.appendChild(profileLink)
-        dropdownContent.appendChild(academyLink)
+
         dropdownContent.appendChild(salirLink)
 
         menuDropDown.appendChild(userAvatarContainer)
@@ -294,7 +297,9 @@ function renderUserMenu(user) {
     }
 }
 
-function renderMenuLoginRegister(){
+//carga el link de registro y login
+function renderMenuLoginRegister() {
+    
     const registerNavItem = document.createElement("li")
     registerNavItem.setAttribute("id", "nav-registro")
     registerNavItem.classList.add("navbar__nav-item")
@@ -320,6 +325,7 @@ function renderMenuLoginRegister(){
     const navLinksContainer = document.querySelector(".navbar__nav-links-container")
     navLinksContainer.appendChild(registerNavItem)
     navLinksContainer.appendChild(loginNavItem)
+
 }
 
 //Funcion para cargar imagen por defecto ante error en avatar

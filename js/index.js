@@ -2,13 +2,13 @@ var cards = document.getElementsByClassName('cards-container')
 var art = JSON.parse(localStorage.getItem("articulos")) || []
 var loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
 
-addCards(Articles)
+addCards(art)
 
 //Funcion que dibuja las card en el DOM, parametro Array de Articulos
 function addCards(arts) {
     loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
 
-    
+
     arts.forEach(art => {
         const articleCard = document.createElement("article")
         articleCard.classList.add("card")
@@ -38,8 +38,8 @@ function addCards(arts) {
         headerDiv.appendChild(heartDiv)
 
         const img = document.createElement("img")
-        img.src = `/assets/img/store/${art.img}.jpg`
-        img.alt = "Product Image"
+        img.src = art.img
+        img.alt = `Imagen de producto ${art.title}`
         img.classList.add("card__img")
 
         headerDiv.appendChild(img)
@@ -126,6 +126,10 @@ function addCards(arts) {
 
 //Funcion que agrega articulos al carrito de compras, parametro ID articulo y Cantidad
 function addCart(idArt, quan = 1) {
+
+console.log(idArt+ "  " + quan)
+
+
     loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
     if (loginUser.length !== 0) {
         let cart = loginUser.cart
@@ -135,7 +139,7 @@ function addCart(idArt, quan = 1) {
         if (searchCart.length === 0) {   //si el array esta vacio (no esta ese articulo en el carrito) lo creo
             let addArt = {
                 id: idArt,
-                quantity: 1
+                quantity: quan
             }
             cart.push(addArt)
         } else {                          //si este articulo ya esta en el carrito incremento la cantidad
@@ -167,8 +171,10 @@ function addDelWish(idArt) {
         if (searchWish) {                 //si esta lo elimino
             let index = loginUser.wish.indexOf(idArt)
             loginUser.wish.splice(index, 1)
+            showAlert("FAVORIO ELIMINADO !","Se elimino el articulo de tus favoritos")
         } else {
             loginUser.wish.push(idArt)       //si no esta lo agrego
+            showAlert("NUEVO FAVORIO !", "Se agrego el articulo a tu lista defavoritos")
         }
 
         //actualizo las clases del DOM para pintar los corazones
@@ -189,5 +195,9 @@ function addDelWish(idArt) {
     }
 
 }
+
+
+
+
 
 

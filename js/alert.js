@@ -1,29 +1,5 @@
-function showAlert(titulo, message, tipo = "suc") {
 
-    createAlert()
-
-    _alert = document.getElementById('alert')
-    _alert.classList.remove('alert__error')
-    _alert.classList.remove('alert__sussecs')
-
-    tipo == 'err' ?
-        _alert.classList.add('alert__error') :
-        _alert.classList.add('alert__sussecs')
-
-    document.getElementById('alert__title').innerHTML = titulo
-    document.getElementById('alert__description').innerHTML = message
-    document.getElementById('alertContainer').classList.remove('alert__hide')
-
-    setTimeout(hideAlert, 2800)
-}
-function hideAlert() {
-    document.getElementById('alertContainer').classList.add('alert__hide')
-    setTimeout(deleteAlert, 100)
-}
-function deleteAlert() {
-
-    document.getElementById('alertContainer').remove()
-}
+//Funcion que crea la alerta en el DOM
 function createAlert() {
     const container = document.createElement("div")
     container.id = "alertContainer"
@@ -65,3 +41,36 @@ function createAlert() {
     // Agregar contenedor principal al cuerpo del documento
     document.body.appendChild(container)
 }
+
+//Funcion que muestra la alerta creada
+function showAlert(titulo, message, tipo = "suc") {
+
+    createAlert()
+
+    _alert = document.getElementById('alert')
+    _alert.classList.remove('alert__error')
+    _alert.classList.remove('alert__sussecs')
+
+    tipo == 'err' ?
+        _alert.classList.add('alert__error') :
+        _alert.classList.add('alert__sussecs')
+
+    document.getElementById('alert__title').innerHTML = titulo
+    document.getElementById('alert__description').innerHTML = message
+    document.getElementById('alertContainer').classList.remove('alert__hide')
+
+    setTimeout(hideAlert, 2800)
+}
+
+//Funcion que oculta la alerta
+function hideAlert() {
+    document.getElementById('alertContainer').classList.add('alert__hide')
+    setTimeout(deleteAlert, 100)
+}
+
+//Funcion que borra el alerta del DOM
+function deleteAlert() {
+
+    document.getElementById('alertContainer').remove()
+}
+

@@ -1,6 +1,6 @@
 logout()
-const users = JSON.parse(localStorage.getItem("users")) || []
 
+const users = JSON.parse(localStorage.getItem("users")) || []
 const loginForm = document.getElementById("login-form")
 const { email, password } = loginForm.elements
 
@@ -33,4 +33,9 @@ function checkUserPass() {
 
 function logout(){
   localStorage.removeItem("loginUser")
+  let h = document.getElementsByClassName("user-navbar")
+  h[0].innerHTML = ""
+  let h2 = document.getElementsByClassName("user-navbar2")
+  h2[0].innerHTML = ""
+
 }

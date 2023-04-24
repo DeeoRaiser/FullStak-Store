@@ -22,7 +22,7 @@
             </a>
 
             <div id="user-navbar" class="user-navbar">
-                
+
                 <!-- WISH AND CART ICON -->
 
             </div>
@@ -38,7 +38,7 @@
                     <div id="user-navbar2" class="user-navbar2">
 
                         <!-- WISH AND CART ICON -->
-                        
+
                     </div>
                 </li>
 
@@ -51,7 +51,7 @@
                 <li id="nav-nosotros" class="navbar__nav-item">
                     <a href="/pages/about-us/about-us.html" class="navbar__nav-link">Nosotros</a>
                 </li>
-                    <!-- LOGIN Y REGISTRO -->
+                <!-- LOGIN Y REGISTRO -->
             </ul>
         </nav>
 
@@ -73,13 +73,56 @@
         </section>
     </main>
 
+    <!-- MODAL DESCRIPCION DE ARTICULO  -->
+    <div id="modal" class="modal-index">
+        <div class="modal-index__container">
+            <span id="close" class="modal-index__container__close">&times;</span>
+            <div class="article">
+                <div id="art-Title" class="article__name-product">
+                    SONOMA V-NECK T-SHIRT POLAR MELANGE
+                </div>
+                <div class="article__body">
+                    <div class="article__column1">
+                        <img id="article-photo" class="article__image" src=""
+                            alt="Imagen de Producto">
+                    </div>
+                    <div class="article__column2">
+                        <p id="article-description" class="article__description">
+                        </p>
+
+                        <div id="article-price" class="article__price">
+
+                        </div>
+
+                        <div class="cart-containter">
+                            <label class="cart-containter__label">CANTIDAD</label>
+
+                            <div class="quantity-container">
+                                <div class="cart-containter__del" id="del"><i class="fa-solid fa-minus"></i></div>
+                                <input id="quantity" class="cart-containter__qnty" value="1" min="1" max="100"
+                                    type="number" name="quantity" readonly>
+                                <div class="cart-containter__add" id="add"><i class="fa-solid fa-plus"></i></div>
+                            </div>
+
+                            <div id="modalAddCart" class="cart-containter__addCart button__ok">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Agregar
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
 
     </footer>
-    
+
+    <script src="/js/general.js"></script>
     <script src="/js/render.js"></script>
     <script src="/js/alert.js"></script>
-    <script src="/js/general.js"></script>
     <script src="/js/wish-detail.js"></script>
 
 

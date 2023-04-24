@@ -1,4 +1,5 @@
 /* REGISTER ALERT */
+/* Botones OK y Cancel */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&display=swap");
 *,
 *::before,
@@ -315,6 +316,44 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.button__cancel {
+  padding: 0.5rem 0.9rem 0.5rem 0.9rem;
+  background-color: rgb(102, 40, 40);
+  color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: auto;
+}
+.button__ok {
+  padding: 0.5rem 0.9rem 0.5rem 0.9rem;
+  margin-right: 0.8rem;
+  background-color: rgb(41, 128, 59);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.button__ok:hover {
+  background-color: rgb(45, 150, 66);
+}
+.button__wl {
+  padding: 0.5rem 0.9rem 0.5rem 0.9rem;
+  background-color: rgb(158, 85, 85);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.button__wl:hover {
+  background-color: rgb(223, 28, 28);
 }
 
 .card {
@@ -685,6 +724,191 @@ body {
     transform: translateX(-100%);
   }
 }
+.modal-index {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  z-index: 20;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.modal-index__container {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  background-color: rgb(106, 121, 106);
+  width: 90vw;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
+}
+.modal-index__container__close {
+  font-size: 1.8rem;
+  color: rgb(236, 227, 227);
+  position: absolute;
+  top: 4px;
+  right: 10px;
+  text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+}
+
+.article {
+  padding: 2rem;
+  width: 100%;
+}
+.article__name-product {
+  display: block;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-top: -1rem;
+  color: rgb(236, 227, 227);
+  text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.article__body {
+  display: flex;
+  flex-direction: row;
+}
+.article__column1 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+}
+.article__image {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
+}
+.article__column2 {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+.article__description {
+  color: rgb(236, 227, 227);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: start;
+  font-size: 1rem;
+  overflow-y: scroll;
+  margin: 1rem;
+  height: 10rem;
+  border-bottom: 1px solid rgb(85, 97, 85);
+  border-top: 1px solid rgb(85, 97, 85);
+  padding: 1rem 1rem 1rem 0;
+}
+.article__price {
+  color: rgb(236, 227, 227);
+  font-size: 2rem;
+  text-align: center;
+}
+
+.cart-containter {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.cart-containter__label {
+  color: rgb(236, 227, 227);
+}
+.cart-containter__qnty {
+  width: 3.5rem;
+  text-align: center;
+  padding: 0.5rem;
+  border: none;
+  outline-style: none;
+  font-size: 1rem;
+}
+.cart-containter__del:hover, .cart-containter__add:hover {
+  background-color: rgba(143, 138, 138, 0.637);
+  color: rgb(27, 26, 26);
+}
+.cart-containter__del, .cart-containter__add {
+  color: rgb(236, 227, 227);
+  background-color: rgb(85, 97, 85);
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.cart-containter__del {
+  border-radius: 5px 0 0 5px;
+}
+.cart-containter__add {
+  border-radius: 0 5px 5px 0;
+}
+
+.quantity-container {
+  display: flex;
+  flex-direction: row;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+  margin-inline: 0.5rem;
+}
+
+/* ESTILO DEL INPUT TEXT, PARA QUITAR LAS FLECHITAS */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* ------------------------------------------------ */
+/* ESTILO SCROLLBAR DE LAS DESCRIPCIONES EL EL CONTENEDOR DEL MODAL */
+p::-webkit-scrollbar, .modal-index__container::-webkit-scrollbar {
+  width: var(--scroll-size, 8px);
+  height: var(--scroll-size, 8px);
+}
+
+p::-webkit-scrollbar-thumb, .modal-index__container::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb-color, rgb(85, 97, 85));
+  border-radius: var(--scroll-thumb-radius, var(--scroll-radius));
+  --scroll-size: 5px;
+  --scroll-radius: 5px;
+}
+
+@media screen and (max-width: 900px) {
+  .modal-index {
+    height: 100%;
+    width: 100%;
+  }
+  .modal-index__container {
+    height: 80%;
+    width: 90%;
+    overflow-y: scroll;
+  }
+  .article__column1 {
+    width: 90%;
+  }
+  .article__column2 {
+    width: 90%;
+  }
+  .article__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cart-containter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cart-containter__label {
+    margin-bottom: 0.8rem;
+  }
+  .cart-containter__addCart {
+    margin: 1rem;
+  }
+}
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -977,6 +1201,7 @@ iframe {
   margin-top: 0.5rem;
   width: 80%;
   border-bottom: rgba(143, 138, 138, 0.637) solid 1px;
+  align-items: center;
 }
 .row__pic {
   position: relative;
@@ -1030,6 +1255,10 @@ iframe {
   align-items: center;
   padding: 0 1rem 0 1rem;
   width: 15%;
+}
+
+.quantity-container {
+  height: 2rem;
 }
 
 .total-row {
@@ -1228,20 +1457,8 @@ iframe {
   justify-content: space-evenly;
 }
 .submit__button-cancel {
-  padding: 0.5rem 0.9rem 0.5rem 0.9rem;
-  background-color: rgb(102, 40, 40);
-  color: rgb(255, 255, 255);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
   width: 40%;
 }
 .submit__button-save {
-  padding: 0.5rem 0.9rem 0.5rem 0.9rem;
-  background-color: rgb(41, 128, 59);
-  color: rgb(255, 255, 255);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
   width: 40%;
 }/*# sourceMappingURL=main.css.map */
