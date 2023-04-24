@@ -41,19 +41,6 @@ function addCards(arts) {
         divDesc.className = 'row__description'
         divDesc.innerHTML = art.title
 
-        /*      const divQty = document.createElement('div')
-                divQty.className = 'row__quantity'
-        
-                const qtyInput = document.createElement('input')
-                qtyInput.type = 'number'
-                qtyInput.name = 'quantity'
-                qtyInput.id = `quantity-${art.id}`
-                qtyInput.setAttribute('onchange', `sumResCart(${art.id})`)
-                qtyInput.max = 100
-                qtyInput.min = 0;
-                qtyInput.value = art.quantity; */
-
-
         const quantityContainer = document.createElement('div')
         quantityContainer.classList.add('quantity-container')
 
@@ -78,7 +65,6 @@ function addCards(arts) {
         quantityInput.setAttribute('name', 'quantity')
 
         quantityContainer.appendChild(quantityInput)
-
 
         const addContainer = document.createElement('div')
         addContainer.classList.add('cart-containter__add')

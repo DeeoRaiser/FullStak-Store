@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'tab1')">ABM Artículos</button>
+        <button class="tablinks" onclick="openTab(event, 'tab2')">ABM Usuarios</button>
+        <button class="tablinks" onclick="openTab(event, 'tab3')">ABM Ordenes</button>
+    </div>
+
+    <div id="tab1" class="tabcontent">
+        <div id="modal" class="modal">
+            <form id="profile-form" class="form-container">
+                <span class="close">&times;</span>
+                <div id="name-container" class="name-container form-container__item">
+                    <label class="form-container__label" for="name">Nombre del artículo</label>
+                    <input class="form-container__input input-form" type="text" name="name"
+                        placeholder=" Nombre del producto">
+                </div>
+
+                <div id="pic-container" class="pic-container form-container__item">
+                    <div class="art__pic">
+                        <img id="artPic" alt="Imagen de producto">
+                    </div>
+                    <label class="form-container__label" for="routeImage">Ruta de imagen de usuario</label>
+                    <input id="routeImage" class="form-container__input input-form" type="text"
+                        name="routeImage">
+                    <input id="loadImage" class="submit__button-save" value="Cargar" type="button">
+                </div>
+
+                <div id="date-container" class="date-container form-container__item">
+                    <label class="form-container__label" for="date-date">Descripcion del Artículo</label>
+                    <textarea class="form-container__textarea textarea-form" name="artDescription"></textarea>
+                </div>
+
+                <div id="price-container" class="price-container form-container__item">
+                    <label class="form-container__label" for="price">Precio</label>
+                    <input class="form-container__input input-form" type="text" name="price"
+                        placeholder="1000,00">
+                </div>
+
+                <div id="date-container" class="date-container form-container__item">
+                    <label class="form-container__label" for="date-date">Fecha</label>
+                    <input class="form-container__input input-form" type="date" name="artDate">
+                </div>
+
+                <div class="submit">
+                    <input id="cancel" class="submit__button-cancel button__cancel" value="Cancelar" type="button">
+                    <input id="submit" class="submit__button-save button__ok" value="Actualizar" type="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="tab2" class="tabcontent">
+        t2
+    </div>
+
+    <div id="tab3" class="tabcontent">
+        t3
+    </div>
+
+    <script src="/js/general.js"></script>
+    <script src="/js/admin.js"></script>
+</body>
+
+</html>
