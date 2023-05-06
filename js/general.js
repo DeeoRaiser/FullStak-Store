@@ -1,165 +1,20 @@
 
-//CONFIGURACION INICIAL DE SITIO =======================================
-
-//CARGA AUTOMATICA DE ARTICULOS Y GENERACION DE USUARIO ADMIN
-//
-//USUARIO admin@admin.com / PASS: Admin-123
-//
-//VARIABLE DONDE ESTAN LOS ARTICULOS
-/* var Articles =
-    [{
-        id: 1,
-        title: 'SONOMA V-NECK T-SHIRT POLAR MELANGE',
-        description: 'With its deep V neck and close-fitting design, the short-sleeved Sonoma T-shirt hugs your figure. The comfortable thick cotton makes this an essential casual piece.',
-        date: '10/12/2022',
-        price: '689',
-        img: "/assets/img/store/1.jpg"
-    },
-    {
-        id: 2,
-        title: 'FIZVALLEY T-SHIRT VINTAGE PEANUT',
-        description: 'The model measures 172 cm and wears a size S. Short-sleeve crew neck T-shirt, straight cut 100% COTTON',
-        date: '10/12/2022',
-        price: '395',
-        img: "/assets/img/store/2.jpg"
-    },
-    {
-        id: 3,
-        title: 'LOW MAN VEAU BRODERIE MILITAIRE',
-        description: "Calf leather upper with suede details. Embroidery on the shield, the brand's emblem. Rubber sole band. Sole height 2.5 cm. Leather and terry cotton lining. True to size.",
-        date: '10/12/2022',
-        price: '669',
-        img: "/assets/img/store/3.jpg"
-    },
-    {
-        id: 4,
-        title: 'PRSX LOW MAN FOXY LAMINE BLANC ARGENT',
-        description: 'The idea of "lived-in" as a synonym for craftsmanship can be seen clearly in the PRSX, thanks to unique, patented foxing tape that creates a purposefully imperfect sole. The shield on the side of the shoe features the coat of arms of the City of Paris, where Philippe Model launched its brand.',
-        date: '10/12/2022',
-        price: '669',
-        img: "/assets/img/store/4.jpg"
-    },
-    {
-        id: 5,
-        title: 'BOOTS 45MM SUEDE AMBRE',
-        description: "A master of the urban-folk look, Vanessa Bruno is once again offering a pair of boots this season that are sure to add a Bohemian touch to any wardrobe. Featuring a suede upper, these shoes have a 4.5-cm heel that is both comfortable and practical.",
-        date: '10/12/2022',
-        price: '919',
-        img: "/assets/img/store/5.jpg"
-    },
-    {
-        id: 6,
-        title: 'LE SKINNY DE JEANNE DUBLIN',
-        description: "A modern wardrobe essential, this classic mid-rise skinny jean features a clean and slim silhouette. In a medium-blue wash. Mid Rise Fit Super Stretch Denim 44% Cotton/42% Lyocell/13% Polyester/1% Elastane Machine Wash 9'' Front Rise/29'' Inseam/10'' Leg Opening",
-        date: '10/12/2022',
-        price: '419',
-        img: "/assets/img/store/6.jpg"
-    },
-    {
-        id: 7,
-        title: 'HIS | HER EAU DE PARFUM',
-        description: 'A unisex scent for the every guy and girl, this is the debut fragrance by who is elijah, revealing His | Her wild side. Heady enough to take you dancing through to dawn, His|Her doesn’t take itself too seriously.',
-        date: '10/12/2022',
-        price: '419',
-        img: "/assets/img/store/7.jpg"
-    },
-    {
-        id: 8,
-        title: 'NOR O-N SHORT 7355 SPRUCESTONE',
-        description: 'A boxy fit knitwear staple in fluffy alpaca and merino wool yarn, offering an effortless everyday jumper, with style and comfort combined. A wide round neck creates a flattering neckline to this cosy, medium gauge wool knit sweater.',
-        date: '10/12/2022',
-        price: '249',
-        img: "/assets/img/store/8.jpg"
-    },
-    {
-        id: 9,
-        title: 'GARSON VEST GRAPHITE',
-        description: "A simplified version of the Freestyle Vest. Take on unpredictable weather conditions with a classic, quilt-through vest that offers enduring warmth where it's needed most. Crafted with a protective, hi-low hem and a leather-trimmed standing collar, it shields against high winds. Wear it on its own or layered under a soft shell for premium comfort A specialised and fully weather proofed duck down vest from the Canadian label. Classic, versatile, light-weight and well-insulated, with 625 fill power white duck down, and a proven textile designed to stay dry in extreme conditions. Heavy duty zips, storm flaps, fleece-lined handwarmer pockets, lifetime guarantee. Made in Canada.",
-        date: '10/12/2022',
-        price: '799',
-        img: "/assets/img/store/9.jpg"
-    },
-    {
-        id: 10,
-        title: 'WAVERLEIGH BLAZER BLACK',
-        description: "Made from a premium wool fabrication the Waverleigh Blazer holds its shape and drapes fluidly. This tailored single breasted blazer has a streamlined silhouette that's punctuated with an exaggerated shoulder, a wide notched collar, and side welt pockets.",
-        date: '10/12/2022',
-        price: '849',
-        img: "/assets/img/store/10.jpg"
-    },
-    {
-        id: 11,
-        title: 'SUNGLASSES GG1195SK001 GOLD',
-        description: 'Refined classic concept for an everyday look combining comfort and style. Square shape in full metal with acetate end tips that enriches the overall look. Gucci interlocking Logo on both temples.',
-        date: '10/12/2022',
-        price: '659',
-        img: "/assets/img/store/11.jpg"
-    },
-    {
-        id: 12,
-        title: 'SUNGLASSES GG1183S006 GOLD',
-        description: 'This concept is cool & easy to wear directly developed from a vintage archive piece. Crafted in lightweight metal this pilot shape present the Gucci lettering logo on temples and comfortable flat end tips.',
-        date: '10/12/2022',
-        price: '579',
-        img: "/assets/img/store/12.jpg"
-    }]
-localStorage.removeItem("articulos")
-localStorage.setItem("articulos", JSON.stringify(Articles)) 
-
-var adm = {
-        id: 0,
-        name: "Admin",
-        mail: "admin@admin.com",
-        password: "Admin-123",
-        avatar:'https://www.yourbrainonporn.com/wp-content/uploads/2017/09/god-mode-on-t-shirts-men-s-t-shirt-by-american-apparel.jpg',
-        age: 99,
-        bornDate: "1/1/1111",
-        country:"AR",
-        gender: 3,
-        therms:true,
-        cart:[],
-        wish:[],
-        role:'admin'
-    }
-    let us = JSON.parse(localStorage.getItem('users')) || [];
-    let admin = false 
-
-    for (let i = 0; i < us.length; i++) {
-        if (us[i].id == 0){
-            admin = true
-            break
-        };
-    }
-
-    if (!admin){
-        us.push(adm)
-        localStorage.setItem('users', JSON.stringify(us))
-    } */
-    
-//FIN CONFIGURACION INICIAL DE SITIO =======================================
-
-
-
-
-
-
-
 //funcion que verifica si el usuario esta o no logeado
 function checkLogin() {
     var user = JSON.parse(localStorage.getItem("loginUser")) || []
 
     if (user.length !== 0) {
         let userData = {
-            id:user.id,
+            id: user.id,
             name: user.name,
             mail: user.mail,
-            password:user.password,
+            password: user.password,
             avatar: user.avatar,
-            bornDate:user.bornDate,
-            country:user.country,
-            gender:user.gender,
-            therms:user.therms,
-            cart:user.cart,
+            bornDate: user.bornDate,
+            country: user.country,
+            gender: user.gender,
+            therms: user.therms,
+            cart: user.cart,
             wish: user.wish,
             role: user.role,
         }
@@ -441,10 +296,10 @@ function countryName(value) {
 }
 
 //funcion que carga la informacion del articulo en el modal
-function artDetail(article){
+function artDetail(article) {
     const title = document.getElementById("art-Title")
     title.innerHTML = article.title
-    
+
     const photo = document.getElementById("article-photo")
     photo.src = article.img
 
@@ -488,18 +343,18 @@ function addCart(idArt, quan = 1) {
 //Funcion que muestra el modal, carga los datos el articulo y escucha los eventos
 function detailArt(id) {
 
-    let arts = JSON.parse(localStorage.getItem("articulos"))||[]
+    let arts = JSON.parse(localStorage.getItem("articulos")) || []
     let Art = ""
     for (let i = 0; i < arts.length; i++) {
-        if(arts[i].id == id){
+        if (arts[i].id == id) {
             Art = arts[i]
             artDetail(arts[i])
             break
-        }  
+        }
     }
     var modal = document.getElementById("modal")
     modal.style.display = "flex"
-  modal.style.animation = "drop-modal 0.3s ease-out forwards"
+    modal.style.animation = "drop-modal 0.3s ease-out forwards"
 
     /* -------------------------------------------------------EVENTOS MODAL------------------------------------------------------- */
     /* EVENTO BOTON + EN MODAL */
@@ -510,7 +365,7 @@ function detailArt(id) {
         if (parseInt(campo.value) < 99) {
             campo.value = parseInt(campo.value) + 1
             let price = document.getElementById("article-price")
-            price.innerHTML = formatCurrency(parseFloat(Art.price)*(parseInt(campo.value)))
+            price.innerHTML = formatCurrency(parseFloat(Art.price) * (parseInt(campo.value)))
         }
     })
 
@@ -521,7 +376,7 @@ function detailArt(id) {
         if (parseInt(campo.value) > 1) {
             campo.value = parseInt(campo.value) - 1
             let price = document.getElementById("article-price")
-            price.innerHTML = formatCurrency(parseFloat(Art.price)*(parseInt(campo.value)))
+            price.innerHTML = formatCurrency(parseFloat(Art.price) * (parseInt(campo.value)))
         }
     })
 
@@ -531,27 +386,266 @@ function detailArt(id) {
         var modal = document.getElementById("modal")
         setTimeout(function () {
             modal.style.display = "none"
-          }, 300)
-          modal.style.animation = "hide-modal 0.3s ease-out forwards"
+        }, 300)
+        modal.style.animation = "hide-modal 0.3s ease-out forwards"
     })
 
     //Agregar funcion al boton de agregar al carrito
     var addC = document.getElementById("modalAddCart")
-    addC.addEventListener('click', (event)=>{
+    addC.addEventListener('click', (event) => {
         let quantity = parseInt(document.getElementById("quantity").value)
         addCart(Art.id, quantity)
     })
 
     //agregar funcion al boton de wishlist
     var addW = document.getElementById("modalWishAdd")
-    addW.addEventListener('click', (event)=>{
+    addW.addEventListener('click', (event) => {
         addDelWish(id)
     })
 
 
 }
 
+//Funcion para ordenar un array antes de dibujarlo
+function orderBy(array, ordBy) {
+    hideIcons()
+    if (ordBy === "Descripción A-Z") {
+        iconAZ.style.display = "inline"
+        array.sort((a, b) => {
+            if (a.title < b.title) {
+                return -1
+            } else {
+                return 1
+            }
+        })
+
+    } else if (ordBy === "Descripción Z-A") {
+        iconZA.style.display = "inline"
+        array.sort((a, b) => {
+            if (a.title > b.title) {
+                return -1
+            } else {
+                return 1
+            }
+        })
+
+    } else if (ordBy === "Precio mayor primero") {
+        icon91.style.display = "inline"
+        array.sort((a, b) => {
+            if (a.price > b.price) {
+                return -1
+            } else {
+                return 1
+            }
+        })
+
+    } else if (ordBy === "Precio menor primero") {
+        icon19.style.display = "inline"
+        array.sort((a, b) => {
+            if (a.price < b.price) {
+                return -1
+            } else {
+                return 1
+            }
+        })
+    }
+    return array
+}
+
+//Funcion para ordenar un array antes de dibujarlo
+function orderByUsers(array, ordBy) {
+
+    hideIcons()
+    if (ordBy === "Nombre A-Z") {
+        iconAZUsr.style.display = "inline"
+        array.sort((a, b) => {
+            if (a.name < b.name) {
+                return -1
+            } else {
+                return 1
+            }
+        })
+
+    } else if (ordBy === "Nombre Z-A") {
+        iconZAUsr.style.display = "inline"
+        array.sort((a, b) => {
+            if (a.name > b.name) {
+                return -1
+            } else {
+                return 1
+            }
+        })
+
+    } else if (ordBy === "Mail A-Z") {
+        icon91Usr.style.display = "inline"
+        array.sort((a, b) => {
+            if (a.mail > b.mail) {
+                return -1
+            } else {
+                return 1
+            }
+        })
+
+    } else if (ordBy === "Mail Z-A") {
+        icon19Usr.style.display = "inline"
+        array.sort((a, b) => {
+            if (a.mail < b.mail) {
+                return -1
+            } else {
+                return 1
+            }
+        })
+    }
+
+    return array
+}
+
+//CONFIGURACION INICIAL DE SITIO =======================================
+
+//CARGA AUTOMATICA DE ARTICULOS Y GENERACION DE USUARIO ADMIN
+//
+//USUARIO admin@admin.com / PASS: Admin-123
+//
+//OBJETO DONDE ESTAN LOS ARTICULOS
+if (localStorage.getItem('articulos') === null) {
+    var Articles =
+        [{
+            id: 1,
+            title: 'SONOMA V-NECK T-SHIRT POLAR MELANGE',
+            description: 'With its deep V neck and close-fitting design, the short-sleeved Sonoma T-shirt hugs your figure. The comfortable thick cotton makes this an essential casual piece.',
+            date: '10/12/2022',
+            price: '689',
+            img: "/assets/img/store/1.jpg"
+        },
+        {
+            id: 2,
+            title: 'FIZVALLEY T-SHIRT VINTAGE PEANUT',
+            description: 'The model measures 172 cm and wears a size S. Short-sleeve crew neck T-shirt, straight cut 100% COTTON',
+            date: '10/12/2022',
+            price: '395',
+            img: "/assets/img/store/2.jpg"
+        },
+        {
+            id: 3,
+            title: 'LOW MAN VEAU BRODERIE MILITAIRE',
+            description: "Calf leather upper with suede details. Embroidery on the shield, the brand's emblem. Rubber sole band. Sole height 2.5 cm. Leather and terry cotton lining. True to size.",
+            date: '10/12/2022',
+            price: '669',
+            img: "/assets/img/store/3.jpg"
+        },
+        {
+            id: 4,
+            title: 'PRSX LOW MAN FOXY LAMINE BLANC ARGENT',
+            description: 'The idea of "lived-in" as a synonym for craftsmanship can be seen clearly in the PRSX, thanks to unique, patented foxing tape that creates a purposefully imperfect sole. The shield on the side of the shoe features the coat of arms of the City of Paris, where Philippe Model launched its brand.',
+            date: '10/12/2022',
+            price: '669',
+            img: "/assets/img/store/4.jpg"
+        },
+        {
+            id: 5,
+            title: 'BOOTS 45MM SUEDE AMBRE',
+            description: "A master of the urban-folk look, Vanessa Bruno is once again offering a pair of boots this season that are sure to add a Bohemian touch to any wardrobe. Featuring a suede upper, these shoes have a 4.5-cm heel that is both comfortable and practical.",
+            date: '10/12/2022',
+            price: '919',
+            img: "/assets/img/store/5.jpg"
+        },
+        {
+            id: 6,
+            title: 'LE SKINNY DE JEANNE DUBLIN',
+            description: "A modern wardrobe essential, this classic mid-rise skinny jean features a clean and slim silhouette. In a medium-blue wash. Mid Rise Fit Super Stretch Denim 44% Cotton/42% Lyocell/13% Polyester/1% Elastane Machine Wash 9'' Front Rise/29'' Inseam/10'' Leg Opening",
+            date: '10/12/2022',
+            price: '419',
+            img: "/assets/img/store/6.jpg"
+        },
+        {
+            id: 7,
+            title: 'HIS | HER EAU DE PARFUM',
+            description: 'A unisex scent for the every guy and girl, this is the debut fragrance by who is elijah, revealing His | Her wild side. Heady enough to take you dancing through to dawn, His|Her doesn’t take itself too seriously.',
+            date: '10/12/2022',
+            price: '419',
+            img: "/assets/img/store/7.jpg"
+        },
+        {
+            id: 8,
+            title: 'NOR O-N SHORT 7355 SPRUCESTONE',
+            description: 'A boxy fit knitwear staple in fluffy alpaca and merino wool yarn, offering an effortless everyday jumper, with style and comfort combined. A wide round neck creates a flattering neckline to this cosy, medium gauge wool knit sweater.',
+            date: '10/12/2022',
+            price: '249',
+            img: "/assets/img/store/8.jpg"
+        },
+        {
+            id: 9,
+            title: 'GARSON VEST GRAPHITE',
+            description: "A simplified version of the Freestyle Vest. Take on unpredictable weather conditions with a classic, quilt-through vest that offers enduring warmth where it's needed most. Crafted with a protective, hi-low hem and a leather-trimmed standing collar, it shields against high winds. Wear it on its own or layered under a soft shell for premium comfort A specialised and fully weather proofed duck down vest from the Canadian label. Classic, versatile, light-weight and well-insulated, with 625 fill power white duck down, and a proven textile designed to stay dry in extreme conditions. Heavy duty zips, storm flaps, fleece-lined handwarmer pockets, lifetime guarantee. Made in Canada.",
+            date: '10/12/2022',
+            price: '799',
+            img: "/assets/img/store/9.jpg"
+        },
+        {
+            id: 10,
+            title: 'WAVERLEIGH BLAZER BLACK',
+            description: "Made from a premium wool fabrication the Waverleigh Blazer holds its shape and drapes fluidly. This tailored single breasted blazer has a streamlined silhouette that's punctuated with an exaggerated shoulder, a wide notched collar, and side welt pockets.",
+            date: '10/12/2022',
+            price: '849',
+            img: "/assets/img/store/10.jpg"
+        },
+        {
+            id: 11,
+            title: 'SUNGLASSES GG1195SK001 GOLD',
+            description: 'Refined classic concept for an everyday look combining comfort and style. Square shape in full metal with acetate end tips that enriches the overall look. Gucci interlocking Logo on both temples.',
+            date: '10/12/2022',
+            price: '659',
+            img: "/assets/img/store/11.jpg"
+        },
+        {
+            id: 12,
+            title: 'SUNGLASSES GG1183S006 GOLD',
+            description: 'This concept is cool & easy to wear directly developed from a vintage archive piece. Crafted in lightweight metal this pilot shape present the Gucci lettering logo on temples and comfortable flat end tips.',
+            date: '10/12/2022',
+            price: '579',
+            img: "/assets/img/store/12.jpg"
+        }]
+
+    showQuestion("No se verifican articulos cargados ni usuario Admin desea crearlos?", "Usuario: admin@admin.com</br>Pass: Admin-123", () => { //funcion si clickea en SI
+        localStorage.setItem("articulos", JSON.stringify(Articles))
+
+        var adm = {
+            id: 0,
+            name: "Admin",
+            mail: "admin@admin.com",
+            password: "Admin-123",
+            avatar: 'https://www.yourbrainonporn.com/wp-content/uploads/2017/09/god-mode-on-t-shirts-men-s-t-shirt-by-american-apparel.jpg',
+            age: 99,
+            bornDate: "1/1/1111",
+            country: "AR",
+            gender: 3,
+            therms: true,
+            cart: [],
+            wish: [],
+            role: 'admin'
+        }
+        let us = JSON.parse(localStorage.getItem('users')) || [];
+        let admin = false
+    
+        for (let i = 0; i < us.length; i++) {
+            if (us[i].id == 0) {
+                admin = true
+                break
+            };
+        }
+    
+        if (!admin) {
+            us.push(adm)
+            localStorage.setItem('users', JSON.stringify(us))
+        }
+
+        location.reload() //recargo la web
+
+    }, () => { //funcion si clickea en no
+
+    })   
+}
 
 
-
+//FIN CONFIGURACION INICIAL DE SITIO =======================================
 

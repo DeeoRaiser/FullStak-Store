@@ -73,20 +73,34 @@
 
                     <div class="product-search">
                         <div class="product-search__icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-                        <input placeholder="Que deseas comprar hoy ?" type="text" class="product-search__input">
-                        <button class="product-search__btn" onclick="addCard()">Buscar</button>
+                        <input id="search-input" placeholder="Que deseas comprar hoy ?" type="text"
+                            class="product-search__input">
+                        <button id="search-button" class="product-search__btn">Buscar</button>
                     </div>
 
-                    <div class="section-cards__products-count">
-                        Se encontraron 12 resultados
+                    <div id="count-result" class="section-cards__products-count">
+                        <!-- Se encontraron 12 resultados -->
                     </div>
                 </div>
             </header>
 
-            <div class="section-cards__category">
-                <h1>
-                    CATEGORÍA: OFERTAS
+            <div class="section-cards__search-title">
+                <h1 id="search-title">
+                    Todos los articulos
                 </h1>
+                <div class="orderBy">
+                    <select class="section-cards__orderby" name="order-by" id="order-by">
+                        <option value="Descripción A-Z">Descripción A-Z</option>
+                        <option value="Descripción Z-A">Descripción Z-A</option>
+                        <option value="Precio mayor primero">Precio mayor primero</option>
+                        <option value="Precio menor primero">Precio menor primero</option>
+                    </select>
+                    <i id="menor-mayor" class="fa-solid fa-arrow-down-short-wide"></i>
+                    <i id="mayor-menor" class="fa-solid fa-arrow-down-wide-short"></i>
+                    <i id="a-z" class="fa-solid fa-arrow-down-a-z"></i>
+                    <i id="z-a" class="fa-solid fa-arrow-down-z-a"></i>
+                </div>
+
             </div>
             <div id="cards-container" class="cards-container">
 
@@ -113,7 +127,7 @@
                                 {description}
                             </p>
                             <div id="article-price" class="article__price">
-                                    {price}
+                                {price}
                             </div>
                             <div class="cart-containter">
                                 <label class="cart-containter__label">CANTIDAD</label>
@@ -124,7 +138,7 @@
                                         type="number" name="quantity" readonly>
                                     <div class="cart-containter__add" id="add"><i class="fa-solid fa-plus"></i></div>
                                 </div>
-                                
+
                                 <div id="modalAddCart" class="cart-containter__addCart button__ok">
                                     <i class="fa-solid fa-cart-shopping"></i>
                                     Agregar!
@@ -146,9 +160,10 @@
     <footer class="footer">
         <!-- FOOTER -->
     </footer>
+    <script src="/js/alert.js"></script>
     <script src="/js/general.js"></script>
     <script src="/js/render.js"></script>
-    <script src="/js/alert.js"></script>
+    
     <script src="/js/index.js"></script>
 
 </body>

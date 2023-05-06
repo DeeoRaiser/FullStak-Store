@@ -1,9 +1,11 @@
 var row = document.getElementsByClassName('row-cart-detail')
 var art = JSON.parse(localStorage.getItem("articulos")) || []
 var loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
+var total = 0
 
+var artCart = filterCart(art)
 
-addCards(filterCart(art))
+addCards(artCart)
 
 //Funcion que dibuja las card en el DOM, parametro Array de todos los Articulos 
 function addCards(arts) {
@@ -13,11 +15,18 @@ function addCards(arts) {
     lista.innerHTML = ""
 
     if (arts == 0) {
+        
         const title = document.getElementById('title-h1')
         title.innerHTML = 'TU CARRITO ESTA VACIO'
+
+        const orderButton = document.getElementById("order-buy")
+        orderButton.style.display = "none"
+    }else{
+        const orderButton = document.getElementById("order-buy")
+        orderButton.style.display = "flex"
     }
 
-    let total = 0
+    total = 0
     const divCartDetail = document.getElementById('row-cart-detail')
 
 
@@ -103,15 +112,12 @@ function addCards(arts) {
 
     divRowTot.appendChild(divTitle)
     divCartDetail.appendChild(divRowTot)
-
-
-
 }
 
 //Envio los datos del id y la cantidad en el array Arts, y obtengo el resto de los datos del array de los articulos
 function filterCart(Arts) {
     loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
-    cart = loginUser.cart
+    let cart = loginUser.cart
 
     const artCart = []
     Arts.forEach((art) => {
@@ -149,7 +155,8 @@ function delArtCart(id) {
         loginUser.cart = cart
         localStorage.setItem("loginUser", JSON.stringify(loginUser))
     }
-    addCards(filterCart(art))
+    artCart = filterCart(art)
+    addCards(artCart)
     renderUserMenu(checkLogin())
 }
 
@@ -191,7 +198,56 @@ function modifiCart(id, qty) {
     addCards(filterCart(art))
 }
 
+const genOrder = document.getElementById("generate-order")
+genOrder.addEventListener("click",(evt)=>{
+    artCart = filterCart(art)
+    orderDetail = generateOrderDetail(artCart)
+    generateOrder(orderDetail)
+})
 
+//Genero el listado de los articulos ID, CANTIDAD, PRECIO
+function generateOrderDetail(array){
+    let arr = []
+    array.forEach(element => {
+        let det = {
+            id: element.id,
+            price: element.price,
+            quantity:element.quantity
+        }
+        arr.push(det)
+    });
 
+    return arr
+}
+
+//funcion que genera la orden, y limpia el carrito del usuario
+function generateOrder(orderDetail){
+    loginUser = JSON.parse(localStorage.getItem("loginUser")) || []
+    let Users = JSON.parse(localStorage.getItem("loginUser")) || []
+    let orders = JSON.parse(localStorage.getItem("orders")) || []
+    let c = loginUser.cart
+
+    let order = {
+        id:Math.floor(Math.random() * 100000), //genero un id aleatorio,
+        arts:orderDetail,
+        amount: total,
+        user:loginUser.id,
+        status:"Pagada"
+    }
+
+    
+
+    
+    loginUser.cart = []
+    localStorage.setItem("loginUser", JSON.stringify(loginUser))
+
+    artCart = filterCart(art)
+    addCards(artCart)
+
+    orders.push(order)
+    localStorage.setItem("orders", JSON.stringify(orders))
+
+    showAlert("Orden Creada", "Puedes segirla desde tu panel de usuario.", "sus")
+}
 
 

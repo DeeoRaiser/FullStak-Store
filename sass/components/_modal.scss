@@ -113,7 +113,8 @@
   }
 
   &__image {
-    width: 100%;
+    max-width: 80vh;
+    max-height: 55vh;
     border-radius: 10px;
     box-shadow: $shadow1;
   }

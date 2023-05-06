@@ -28,10 +28,18 @@
         margin-bottom: 1rem;
 
     }
-    &__category{
+    &__search-title{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         color: $color-font-ligth2;
         padding: .5rem;
         border-bottom: 3px solid $color-bg-primary;
+    }
+    &__orderby{
+        border: none;
+        padding: .3rem;
+        outline: 1px solid $color-font-ligth2;
     }
 
 }

@@ -244,6 +244,9 @@ function userSave() {
   renderHeader()
 }
 
+
+
+  
 //carga la imagen del usuario en el preview
 function loadImage() {
   const av = document.getElementById("avatar2")

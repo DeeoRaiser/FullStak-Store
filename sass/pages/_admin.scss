@@ -1,0 +1,297 @@
+.tabButtons {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 2rem;
+}
+
+.tab-art,
+.tab-usr,
+.listArt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+.searchOption {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.arts-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90vh;
+
+    &__new-art {
+        border: 1px solid $color-font-dark;
+        cursor: pointer;
+        margin-left: .5rem;
+        border-radius: 5px;
+        text-align: center;
+        padding: .5rem;
+    }
+}
+
+.buttons-containter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+
+    &__input {
+        border: 1px solid $color-font-dark;
+        outline: none;
+        border-radius: 5px;
+        box-shadow: $shadow0;
+    }
+
+    &__button {
+        border: 1px solid $color-font-dark;
+        cursor: pointer;
+        margin-left: .5rem;
+        border-radius: 5px;
+        padding: .5rem;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+.fullRow {
+    display: flex;
+    flex-direction: row;
+    margin-top: .5rem;
+    width: 95vw;
+    border-bottom: $color-font-ligth2 solid 1px;
+    align-items: center;
+
+
+    &__pic {
+        position: relative;
+        height: 7rem;
+        width: 15rem;
+        text-align: center;
+
+        img {
+            height: 95%;
+        }
+    }
+
+    &__title {
+        font-size: .9rem;
+        height: 2rem;
+        text-align: center;
+    }
+
+    &__description {
+        font-size: .9rem;
+        display: flex;
+        text-align: left;
+        align-items: center;
+        padding: 0 1rem 0 1rem;
+        height: 2rem;
+        width: 80%;
+        color: $color-font-dark;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__price {
+        display: flex;
+        text-align: left;
+        align-items: center;
+        padding: 0 1rem 0 1rem;
+    }
+
+    &__user-pic {
+        display: flex;
+        flex-direction: row;
+        margin-top: .5rem;
+        width: 80%;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        height: 7rem;
+
+        img {
+            height: 100%;
+            border-radius: 100%;
+        }
+
+    }
+
+    &__role {
+        font-weight: bold;
+        padding: 1rem;
+    }
+}
+
+.search {
+
+    &__input {
+        padding: .3rem;
+    }
+
+    &__button {
+        padding: .3rem;
+    }
+}
+
+.btn {
+    padding: .5rem;
+    margin: .2rem;
+    cursor: pointer;
+}
+
+.buttons-containter {
+    padding: .3rem;
+    border: none;
+    margin-left: 1rem;
+
+
+    &__edit,
+    &__order,
+    &__wishlist,
+    &__cart {
+        color: $color-edit;
+        width: 6rem;
+    }
+
+    &__edit:hover,
+    &__order:hover,
+    &__wishlist:hover,
+    &__cart:hover {
+        color: $color-edit-hv;
+    }
+
+    &__delete {
+        width: 6rem;
+        color: $color-delete;
+    }
+
+    &__delete:hover {
+        color: $color-delete-hv;
+    }
+
+    /* USERS */
+
+    &__delete:hover {
+        color: $color-delete-hv;
+    }
+
+
+}
+
+.art__pic {
+    height: 50%;
+    width: 100%;
+    text-align: center;
+    margin-bottom: .5rem;
+
+    img {
+        width: 50%;
+        height: 50%;
+        box-shadow: $shadow1;
+    }
+
+}
+
+.tabButtons{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    
+}
+.tablinks{
+    padding: .5rem;
+    width: 33%;
+    margin-bottom: .5rem;
+    margin-right: .5rem;
+}
+
+
+@media screen and (max-width: 650px) {
+    .fullRow {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        &__pic {
+            position: relative;
+            height: 15rem;
+            width: 30rem;
+            text-align: center;
+
+            img {
+                height: 95%;
+            }
+        }
+
+        &__user-pic {
+            justify-content: center;
+        }
+
+        &__title {
+            padding: 1rem;
+        }
+
+        &__description {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        &__price {
+            padding: 1rem;
+        }
+    }
+
+    .tabButtons{
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+
+    .tablinks{
+        padding: .5rem;
+        width: 80%;
+        margin-bottom: .5rem;
+    }
+
+    .searchOption {
+        flex-direction: column;
+        border-top: 1px solid $color-font-dark;
+        border-bottom: 1px solid $color-font-dark;
+
+    }
+
+    .arts-options {
+        &__new-art {
+            margin: 1rem 1rem 1rem 1rem;
+        }
+    }
+
+    .search {
+        margin: 0rem 1rem 1rem 1rem;
+    }
+
+    .orderBy {
+        margin: 0rem 1rem 1rem 1rem;
+    }
+}
+

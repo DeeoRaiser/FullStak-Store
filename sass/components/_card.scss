@@ -68,6 +68,7 @@
    }
 
    &__title {
+      text-align: center;
       font-weight: 400;
       font-size: 1.2rem;
       border-bottom: 2px solid $color-font-dark;
@@ -78,15 +79,22 @@
       padding: 1rem 0;
       font-size: .8rem;
       margin-bottom: 1rem;
-      height: 6rem;
+      height: 3rem;
       color: $color-font-dark;
       overflow: hidden;
+
+      display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
    }
 
-   &__description:hover {
+/*    &__description:hover {
       overflow-x: hidden;
       overflow-y: auto;
-   }
+   } */
 
    &__footer {
       display: flex;

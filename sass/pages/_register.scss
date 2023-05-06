@@ -38,6 +38,16 @@
         border-radius: 3px;
         border: none;
         margin-top: 5px;
+        border: none;
+        outline: none;
+    }
+
+    &__textarea{
+        width: 100%;
+        height: 5rem;
+        outline: none;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        border-radius: 5px;
     }
 }
 
@@ -79,6 +89,8 @@
     box-shadow: 0px 0px 3px 1px red;
     //border: 2px solid red;
 }
+
+
 
 .register__button {
     padding: .5rem .9rem .5rem .9rem;

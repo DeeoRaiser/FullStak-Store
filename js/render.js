@@ -255,22 +255,36 @@ function renderUserMenu(user) {
 
         const dropdownContent = document.createElement("div")
         dropdownContent.classList.add("dropdown-content")
+
         const profileLink = document.createElement("a")
-        profileLink.rel = ""
-        profileLink.target = ""
         profileLink.href = "/pages/profile/profile.html"
         const profileIcon = document.createElement("i")
         profileIcon.classList.add("fa-solid", "fa-user")
         profileLink.appendChild(profileIcon);
-        profileLink.appendChild(document.createTextNode("Profile"))
+        profileLink.appendChild(document.createTextNode(" Perfil"))
+
+
+        const orderLink = document.createElement("a")
+        orderLink.href = "/pages/profile/orders.html"
+        const orderIcon = document.createElement("i")
+        orderIcon.classList.add("fa-solid", "fa-box")
+        orderLink.appendChild(orderIcon);
+        orderLink.appendChild(document.createTextNode(" Ordenes"))
+
+
         const adminLink = document.createElement("a")
         adminLink.rel = "noopener"
         adminLink.target = ""
-        adminLink.href = ""
-        adminLink.textContent = "Admin"
+        adminLink.href = "/pages/profile/admin.html"
+        const adminIcon = document.createElement("i")
+        adminIcon.classList.add("fa-solid", "fa-screwdriver-wrench")
+        adminLink.appendChild(adminIcon)
+        adminLink.appendChild(document.createTextNode(" Admin"))
+        
 
         dropdownContent.appendChild(profileLink)
-
+        dropdownContent.appendChild(orderLink)
+        
         if (user.role === "admin") {
             dropdownContent.appendChild(adminLink)
         }
@@ -282,7 +296,7 @@ function renderUserMenu(user) {
         const salirIcon = document.createElement("i")
         salirIcon.classList.add("fa-solid", "fa-arrow-right-from-bracket")
         salirLink.appendChild(salirIcon)
-        salirLink.appendChild(document.createTextNode("Salir"))
+        salirLink.appendChild(document.createTextNode(" Salir"))
 
         dropdownContent.appendChild(salirLink)
 
