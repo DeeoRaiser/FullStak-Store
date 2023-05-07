@@ -13,7 +13,47 @@
 </head>
 
 <body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="/index.html" class="navbar__nav-link">
+                <img class="navbar__logo" src="/assets/logo.png" alt="Logo de la empresa">
+            </a>
 
+            <div id="user-navbar" class="user-navbar">
+                
+                <!-- WISH AND CART ICON -->
+
+            </div>
+
+            <!-- MENU HAMBURGUESA -->
+            <input type="checkbox" class="navbar__menu-btn" id="menu-btn">
+            <label for="menu-btn" class="navbar__menu-label">
+                <span class="navbar__menu-icon"></span>
+            </label>
+
+            <ul class="navbar__nav-links-container">
+                <li class="user-icons">
+                    <div id="user-navbar2" class="user-navbar2">
+
+                        <!-- WISH AND CART ICON -->
+                        
+                    </div>
+                </li>
+
+                <li id="nav-inicio" class="navbar__nav-item">
+                    <a href="/index.html" class="navbar__nav-link">Inicio</a>
+                </li>
+                <li id="nav-contacto" class="navbar__nav-item">
+                    <a href="/pages/contact/contact.html" class="navbar__nav-link">Contacto</a>
+                </li>
+                <li id="nav-nosotros" class="navbar__nav-item">
+                    <a href="/pages/about-us/about-us.html" class="navbar__nav-link">Nosotros</a>
+                </li>
+                    <!-- LOGIN Y REGISTRO -->
+            </ul>
+        </nav>
+
+    </header>
     <main class="main">
         <div class="tabButtons">
             <button class="tablinks" onclick="openTab(event, 'tab1')">ABM Artículos</button>
@@ -474,18 +514,16 @@
         </div>
 
         <div id="tab3" class="tabcontent">
-            AGSDGSDFSDF
-            SDFSDFS
-            DFSDFSFSD
-            FSDFSDFSD
-            FSDFSDFSDFSDFSDF
-            SDFSDFSDFSDF
-            SDFSDFSDF
+
         </div>
 
-    </main>
 
+    </main>
+    <footer class="footer">
+
+    </footer>
     <script src="/js/general.js"></script>
+    <script src="/js/render.js"></script>
     <script src="/js/alert.js"></script>
     <script src="/js/admin.js"></script>
 </body>

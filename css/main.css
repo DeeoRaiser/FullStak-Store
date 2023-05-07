@@ -310,6 +310,9 @@ body {
 .main {
   padding: 1.5rem;
   color: rgb(27, 26, 26);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 body {
@@ -1782,4 +1785,19 @@ iframe {
   .orderBy {
     margin: 0rem 1rem 1rem 1rem;
   }
+}
+#tab3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.order__detail {
+  width: 100%;
+  color: rgb(236, 227, 227);
+  text-align: center;
+  background-color: rgba(143, 138, 138, 0.637);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0.5rem;
 }/*# sourceMappingURL=main.css.map */

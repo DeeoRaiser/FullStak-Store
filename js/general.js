@@ -22,9 +22,9 @@ function checkLogin() {
     } else {
         return false
     }
-
-
 }
+
+
 
 //Funcion para dar formato currency a el precio de los articulos
 function formatCurrency(num) {

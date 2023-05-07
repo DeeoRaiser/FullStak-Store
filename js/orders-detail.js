@@ -6,44 +6,62 @@ var total = 0
 let user = checkLogin()
 
 
-//Obtengo todas las ordenes que haya del usuario por ID
-function ordersUser(userID) {
-    const orders = JSON.parse(localStorage.getItem("orders")) || []
-    return orders.filter(order => order.user === userID)
-}
-
-
-
-
 //cargo las ordenes al array segun usuario logeado
-let userOrders = ordersUser(user.id)
+let userOrders = getOrdersByUser(user.id)
 
 
 
-const divCartDetail = document.getElementById('row-cart-detail')
+const divCartDetail = document.getElementById('row-order-detail')
 
 
 userOrders.forEach(element => {
+    
+    const order = document.createElement('div')
+    order.className = `order` 
+    order.id = `order${element.id}` 
 
-    console.log(element.arts)
-    const lista = document.getElementById('row-cart-detail')
-    lista.innerHTML += `Orden n ${element.id}`
+    const orderTitle = document.createElement('div')
+    orderTitle.className = 'order__title'
+
+    const orderDetail = document.createElement('div')
+    orderDetail.className = 'order__detail'
+
+    const Col1 = document.createElement('div')
+    const Col2 = document.createElement('div')
+    const Col3 = document.createElement('div')
+    Col1.className = 'order__column'
+    Col2.className = 'order__column'
+    Col3.className = 'order__column'
+
+
+    Col1.innerHTML = `Orden N° ${element.id}`
+    Col2.innerHTML=`Estado: ${element.status}`
+    Col3.innerHTML=`${formatCurrency(element.amount)}`
+
+    orderDetail.appendChild(Col1)
+    orderDetail.appendChild(Col2)
+    orderDetail.appendChild(Col3)
 
     const divSeparator = document.createElement('div')
     divSeparator.className = 'row separator'
-    divCartDetail.appendChild(divSeparator)
+    order.appendChild(orderDetail)
+    divCartDetail.appendChild(order)
+    
 
-    addCards(getOrder(element.arts),element.id)
-
-});
-
-
+    
+    addCards(modifyData(element.arts), element.id)
+})
 
 
+//Filtra todas las ordenes correspondiente a x usuario
+function getOrdersByUser(userId) {
+    const orders = JSON.parse(localStorage.getItem("orders")) || []
+    const userOrders = orders.filter(order => order.user === userId)
+    return userOrders
+}
 
 //Funcion que dibuja las card en el DOM, parametro Array de todos los Articulos 
-function addCards(arts) {
-
+function addCards(arts, idOrder) {
 
     if (arts == 0) {
 
@@ -52,9 +70,6 @@ function addCards(arts) {
     }
 
     total = 0
-    
-
-
 
     arts.forEach(art => {
 
@@ -94,8 +109,12 @@ function addCards(arts) {
         divRow.appendChild(divDesc)
         divRow.appendChild(quantityContainer)
         divRow.appendChild(divPartialAmount)
-        divCartDetail.appendChild(divRow)
 
+        const rowOrder = document.getElementById(`order${idOrder}`)
+
+        rowOrder.appendChild(divRow)
+
+        
 
     })
 
@@ -103,37 +122,26 @@ function addCards(arts) {
 
 }
 
-function getOrder(Arts) {
 
-    
+function modifyData(data) {
+    const result = []
+    let articles = JSON.parse(localStorage.getItem("articulos")) || []
+    console.log(data)
 
-    const orders = JSON.parse(localStorage.getItem("orders")) || []
-
-    
-    art = JSON.parse(localStorage.getItem("articulos")) || []
-    const artOrder = [];
-
-    art.forEach((art) => {
-        const findOrder = orders.find((order) => {
-            return order.arts.find((item) => item.id === parseInt(art.id))
-        });
-
-        if (findOrder) {
-            const findArt = findOrder.arts.find((item) => item.id === parseInt(art.id))
-
-            artOrder.push({
-                id: findArt.id,
-                title: art.title,
-                description: art.description,
-                date: art.date,
-                price: findArt.price,
-                currency: art.currency,
-                img: art.img,
-                quantity: findArt.quantity,
-            });
+    data.forEach((art) => {
+        const article = articles.find((a) => a.id === art.id)
+        const obj = {
+            title: article.title,
+            description: article.description,
+            date: article.date,
+            price: Number(article.price),
+            img: article.img,
+            quantity: art.quantity,
+            id: article.id,
         }
-    });
-
-    return artOrder;
+        result.push(obj)
+    })
+    return result
 }
+
 
