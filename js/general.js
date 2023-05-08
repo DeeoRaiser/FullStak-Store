@@ -25,7 +25,6 @@ function checkLogin() {
 }
 
 
-
 //Funcion para dar formato currency a el precio de los articulos
 function formatCurrency(num) {
     const options = { style: "currency", currency: "usd", minimumFractionDigits: 2 };

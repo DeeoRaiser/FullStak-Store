@@ -127,6 +127,20 @@
         flex-direction: column;
         width: 100%;
         align-items: center;
+
+        &__partial-amount{
+            display: flex;
+            width: 80%;
+            justify-content: center;
+            margin: .5rem;
+        }
+
+        &__description{
+            width: 80%;
+            margin: .5rem;
+            display: flex;
+            justify-content: center;
+        }
     }
     .row-cart-detail {
         align-items:flex-start;

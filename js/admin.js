@@ -662,8 +662,6 @@ function modifyData(data) {
 }
 
 
-
-
 let admin = checkLogin()
 
 if (admin.role==="admin"){
